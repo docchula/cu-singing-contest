@@ -1,0 +1,51 @@
+<p>คุณสามารถเลือกวันที่ท่านจะมาเข้าแข่งขัน<strong>ในรอบแรก</strong> ได้ 3 อันดับ โดยไม่ซ้ำกัน</p>
+<form [formGroup]="daysForm" (ngSubmit)="submit()">
+  <div class="field">
+    <label class="label">อันดับที่ 1</label>
+    <div class="control is-expanded">
+      <div class="select is-fullwidth">
+        <select formControlName="d1">
+          <option value="" disabled selected hidden>เลือก</option>
+          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d1)?.id">{{day.text}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">อันดับที่ 2</label>
+    <div class="control is-expanded">
+      <div class="select is-fullwidth">
+        <select formControlName="d2">
+          <option value="" disabled selected hidden>เลือก</option>
+          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d2)?.id">{{day.text}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">อันดับที่ 3</label>
+    <div class="control is-expanded">
+      <div class="select is-fullwidth">
+        <select formControlName="d3">
+          <option value="" disabled selected hidden>เลือก</option>
+          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d3)?.id">{{day.text}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input type="submit" value="บันทึกข้อมูล" class="button is-primary" [disabled]="disableSubmit || daysForm.invalid">
+    </div>
+  </div>
+</form>
+<div *ngIf="daysDone$ | async">
+  <article class="message is-success" style="margin-top: 0.75rem;">
+    <div class="message-header">
+      <p><strong>ขอแสดงความยินดี</strong></p>
+    </div>
+    <div class="message-body">
+      คุณได้เลือกวันในการแข่งขันรอบแรกเรียบร้อยแล้ว <a [routerLink]="['../4_pay']">ไปขั้นตอนถัดไป</a>
+    </div>
+  </article>
+</div>

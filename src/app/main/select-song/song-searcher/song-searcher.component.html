@@ -1,0 +1,21 @@
+<h2 class="is-size-3">คุณเลือกเพลง: {{selected | song}}</h2>
+<div class="field">
+  <label class="label">ค้นหาเพลงที่นี่</label>
+  <div class="control">
+    <input type="text" [formControl]="searchBox" class="input" placeholder="ค้นหาโดยใช้ชื่อเพลง">
+  </div>
+</div>
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>ชื่อเพลง</th>
+      <th>ศิลปิน</th>
+      <th>เลือก</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let song of searchResult$ | async">
+    <td>{{song.name}}</td>
+    <td>{{song.artist}}</td>
+    <td><a class="button is-primary" (click)="selectSong(song)">เลือก</a></td>
+  </tr>
+</table>

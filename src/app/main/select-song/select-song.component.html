@@ -1,0 +1,49 @@
+<p>คุณสามารถเลือกใช้เพลง Backing Track ของคณะกรรมการ หรือคุณอาจเตรียม Backing Track ของคุณมาใช้ในวันแข่งขันก็ได้</p>
+<form [formGroup]="songForm" (ngSubmit)="submit()">
+  <div class="field">
+    <label class="label">คุณต้องการใช้ Backing Track จากไหน?</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" value="standard" formControlName="mode"> ใช้ Backing Track ของคณะกรรมการ
+      </label>
+    </div>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" value="custom" formControlName="mode"> ใช้ Backing Track ที่เตรียมมาเอง
+      </label>
+    </div>
+  </div>
+  <span *ngIf="songForm.get('mode').value === 'standard'; then standard"></span>
+  <ng-template #standard>
+    <cusc-song-searcher formControlName="song"></cusc-song-searcher>
+  </ng-template>
+  <div class="field">
+    <div class="control">
+      <input type="submit" value="บันทึกข้อมูล" class="button is-primary" [disabled]="disableSubmit || songForm.invalid">
+    </div>
+  </div>
+</form>
+<div *ngIf="selected$ | async">
+  <div *ngIf="currentSelectedSong$ | async as currentSelectedSong">
+    <article class="message is-success" style="margin-top: 0.75rem;">
+      <div class="message-header">
+        <p><strong>ใกล้เสร็จแล้ว</strong></p>
+      </div>
+      <span *ngIf="currentSelectedSong.mode === 'standard'; then mStandard; else mCustom"></span>
+      <ng-template #mStandard>
+        <div class="message-body">
+          คุณได้เลือกที่จะใช้เพลง {{currentSelectedSong.song | song}} โดยใช้ Backing Track ของคณะกรรมการ<br>
+          ให้คุณส่งข้อความมาที่ <a href="https://m.me/cusinging"><i class="fa fa-facebook-official" aria-hidden="true"></i> CU Singing Contest</a> พร้อมกับ<strong>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร</strong> และแจ้งว่าจะขอรับ Backing Track เพลง {{currentSelectedSong.song | song}}<br>
+          หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
+        </div>
+      </ng-template>
+      <ng-template #mCustom>
+        <div class="message-body">
+          คุณได้เลือกที่จะใช้ Backing Track ของคุณเองในการแข่งขัน<br>
+          ให้คุณส่งข้อความมาที่ <a href="https://m.me/cusinging"><i class="fa fa-facebook-official" aria-hidden="true"></i> CU Singing Contest</a> พร้อมกับ<strong>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร</strong> พร้อมแนบไฟล์ Backing Track ที่คุณจะใช้ พร้อมแจ้งรายละเอียดของเพลง (ชื่อเพลง, ศิลปิน)<br>
+          หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
+        </div>
+      </ng-template>
+    </article>
+  </div>
+</div>

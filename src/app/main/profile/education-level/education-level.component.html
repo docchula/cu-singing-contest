@@ -1,0 +1,28 @@
+<div class="field">
+  <div class="field-body">
+    <div class="field">
+      <label class="label">ระดับการศึกษา</label>
+      <div class="control is-expanded">
+        <div class="select is-fullwidth">
+          <select [formControl]="educationLevel" (blur)="onTouch()">
+            <option value="" disabled selected hidden>เลือก</option>
+            <option *ngFor="let title of stringEducationLevelPreset" [value]="title">{{title}}</option>
+            <option [value]="stringOtherEducationLevel">{{stringOtherEducationLevel}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field" *ngIf="modeYear$ | async">
+      <label class="label">ชั้นปี</label>
+      <div class="control is-expanded">
+        <input type="number" class="input" placeholder="ชั้นปี" min="1" max="6" [formControl]="year" (blur)="onTouch()">
+      </div>
+    </div>
+    <div class="field" *ngIf="modeOther$ | async">
+      <label class="label">&nbsp;</label>
+      <div class="control is-expanded">
+        <input class="input" type="text" placeholder="ระดับการศึกษา" [formControl]="otherEducationLevel" (blur)="onTouch()">
+      </div>
+    </div>
+  </div>
+</div>

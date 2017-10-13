@@ -1,0 +1,58 @@
+<section class="hero is-info is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h1 class="title"><i class="fa fa-lock" aria-hidden="true"></i> เข้าสู่ระบบ</h1>
+          <h2 class="subtitle">โปรดใช้บัญชี CUNET ในการเข้าสู่ระบบ</h2>
+        </div>
+        <div class="column">
+          <form [formGroup]="loginForm" (ngSubmit)="submit()">
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">เลขประจำตัวนิสิต</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="text" formControlName="username" placeholder="รหัสประจำตัวนิสิต 8 หลัก">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">รหัสผ่าน</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="password" formControlName="password" placeholder="รหัสผ่าน">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field is-horizontal">
+              <div class="field-label"></div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <input type="submit" value="เข้าสู่ระบบ" class="button is-primary is-inverted" [disabled]="disableSubmit || !loginForm.valid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="container">
+  <div class="columns">
+    <div class="column is-6 is-offset-3">
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<section class="hero is-primary is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h1 class="title">
+            CU Singing Contest 25<sup>th</sup>
+          </h1>
+          <h2 class="subtitle">
+            การแข่งขันร้องเพลงแห่งจุฬาลงกรณ์มหาวิทยาลัย ครั้งที่ 25
+          </h2>
+        </div>
+        <div class="column">
+          <ng-container [ngSwitch]="mode$ | async">
+            <div *ngSwitchCase="'pre-register'">ขณะนี้ยังไม่ถึงเวลาสมัครเข้าการแข่งขัน<br>เริ่มรับสมัครวันที่ 1 ตุลาคม 2560 เวลา 10.00 น.</div>
+            <div *ngSwitchCase="'post-register'">ขณะนี้หมดเวลาสมัครเข้าแข่งขันแล้ว</div>
+            <ng-template [ngSwitchCase]="'register'">
+              <div class="has-text-centered">
+                <div>เปิดรับสมัครตั้งแต่วันที่ 1 ตุลาคม 2560 - 31 ตุลาคม 2560</div>
+                <button class="button is-inverted is-outlined is-primary" [routerLink]="['main']">สมัครเลย</button>
+              </div>
+            </ng-template>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<!--<div fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign.gt-sm="start start" fxLayoutGap.gt-sm="16px">
+  <div fxFlex.gt-sm="1 0 0.000000001px" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+    <button md-raised-button [color]="step1ButtonColor | async">รับทราบขั้นตอนการสมัคร</button>
+    <button md-raised-button [color]="step2ButtonColor | async" [disabled]="!(step1Done | async)">กรอกข้อมูลพื้นฐานของผู้สมัคร</button>
+    <button md-raised-button [color]="step3ButtonColor | async" [disabled]="!(step2Done | async)">เลือกวันที่ต้องการจะมาแข่งขัน</button>
+    <button md-raised-button [color]="step4ButtonColor | async" [disabled]="!(step3Done | async)">ชำระเงิน</button>
+    <button md-raised-button [color]="step5ButtonColor | async" [disabled]="!(step4Done | async)">เลือกเพลง</button>
+  </div>
+  <div fxFlex.gt-sm="3 0 0.000000001px" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+    <router-outlet></router-outlet>
+  </div>
+</div>-->
+<div class="container">
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <aside class="menu">
+        <ul class="menu-list">
+          <li><a [routerLinkActive]="'is-active'" [routerLink]="['/main', '1_accept']"><cusc-checkbox [checked]="step1Done | async"></cusc-checkbox> รับทราบขั้นตอนการสมัคร</a></li>
+          <li><a [routerLinkActive]="'is-active'" [routerLink]="['/main', '2_profile']"><cusc-checkbox [checked]="step2Done | async"></cusc-checkbox>กรอกข้อมูลพื้นฐานของผู้สมัคร</a></li>
+          <li><a [routerLinkActive]="'is-active'" [routerLink]="['/main', '3_selectDay']"><cusc-checkbox [checked]="step3Done | async"></cusc-checkbox>เลือกวันที่ต้องการจะมาแข่งขัน</a></li>
+          <li><a [routerLinkActive]="'is-active'" [routerLink]="['/main', '4_pay']"><cusc-checkbox [checked]="step4Done | async"></cusc-checkbox>ชำระเงิน</a></li>
+          <li><a [routerLinkActive]="'is-active'" [routerLink]="['/main', '5_selectSong']"><cusc-checkbox [checked]="step5Done | async"></cusc-checkbox>เลือกเพลง</a></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="column is-three-quarters">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>

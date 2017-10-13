@@ -1,0 +1,39 @@
+<p>
+  ให้ผู้เข้าแข่งขันชำระค่าสมัคร 160 บาท (หนึ่งร้อยหกสิบบาทถ้วน) โดยโอนเงินเข้าบัญชีธนาคารไทยพาณิชย์ สาขาสภากาชาดไทย ชื่อบัญชี
+  <strong>นายพันธกานต์ อุไพศิลป์สถาพร และ/หรือ นายจิรภัทร ลัทธิธรรม</strong> เลขที่บัญชี <strong>408-031455-4</strong>
+</p>
+<p>
+  หลังจากโอนเงินเรียบร้อยแล้ว ให้ทำการ Upload หลักฐานการโอนเงินด้านล่างนี้
+</p>
+<div class="field" *ngIf="!(slipStatus$ | async)">
+  <div class="control">
+    <input type="file" class="input" accept="image/*" #uploadFile (change)="selectedFile(uploadFile)">
+  </div>
+</div>
+
+<div *ngIf="slipUrl$ | async as slipUrl">
+  <img [src]="slipUrl" style="max-width: 150px;">
+  <p>สถานะการตรวจสอบ: <span *ngIf="slipStatus$ | async; else notChecked" class="has-text-success">ตรวจสอบเรียบร้อย</span></p>
+  <ng-template #notChecked>
+    <span class="has-text-danger">ยังไม่ได้รับการตรวจสอบ</span>
+  </ng-template>
+  <article *ngIf="slipStatus$ | async; else notCheckedArticle" class="message is-success" style="margin-top: 0.75rem;">
+    <div class="message-header">
+      <p><strong>ขอแสดงความยินดี</strong></p>
+    </div>
+    <div class="message-body">
+      หลักฐานการโอนเงินของคุณได้รับการตรวจสอบแล้ว <a [routerLink]="['../5_selectSong']">ไปขั้นตอนถัดไป</a>
+    </div>
+  </article>
+  <ng-template #notCheckedArticle>
+    <article class="message is-info">
+      <div class="message-header">
+        <p><strong>กรุณารอสักครู่</strong></p>
+      </div>
+      <div class="message-body">
+        คุณได้ทำการ Upload หลักฐานการโอนเงินเรียบร้อยแล้ว<br> กรุณารอเพื่อให้คณะกรรมการตรวจสอบหลักฐานการโอนเงิน หากผ่านไปแล้ว
+        24 ชั่วโมง สถานะการตรวจสอบยังไม่เปลี่ยนแปลง ให้ส่งข้อความมาที่ <a href="https://m.me/cusinging"><i class="fa fa-facebook-official" aria-hidden="true"></i> CU Singing Contest</a> พร้อมแจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร
+      </div>
+    </article>
+  </ng-template>
+</div>

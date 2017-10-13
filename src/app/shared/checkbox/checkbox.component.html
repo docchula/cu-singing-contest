@@ -1,0 +1,7 @@
+<span *ngIf="checked; then _checked;else _notChecked"></span>
+<ng-template #_checked>
+  <i class="fa fa-check-square-o" aria-hidden="true"></i>
+</ng-template>
+<ng-template #_notChecked>
+  <i class="fa fa-square-o" aria-hidden="true"></i>
+</ng-template>

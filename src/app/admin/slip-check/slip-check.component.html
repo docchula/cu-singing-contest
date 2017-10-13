@@ -1,0 +1,45 @@
+<div class="container">
+  <h1 class="is-size-3">ตรวจสอบหลักฐานการโอนเงิน</h1>
+  <h2 class="is-size-4">ผู้เข้าแข่งขันที่ยังไม่ได้รับการตรวจสอบหลักฐาน</h2>
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>เลขประจำตัวนิสิต</th>
+        <th>ชื่อ-นามสกุล</th>
+        <th>Facebook</th>
+        <th>ดูหลักฐาน</th>
+        <th>สถานะ</th>
+        <th>เปลี่ยนสถานะ</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let user of notChecked$ | async">
+      <td>{{user.$key}}</td>
+      <td>{{user.profile.title}}{{user.profile.fname}} {{user.profile.lname}} ({{user.profile.nname}})</td>
+      <td>{{user.profile.facebook}}</td>
+      <td><a [href]="user.slipUrl" target="_blank">ดูหลักฐาน</a></td>
+      <td>{{user.slipChecked | status}}</td>
+      <td><button class="button is-primary" (click)="toggleStatus(user.$key)">เปลี่ยนสถานะ</button></td>
+    </tr>
+  </table>
+  <h2 class="is-size-4">ผู้เข้าแข่งขันที่ตรวจสอบหลักฐานแล้ว</h2>
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>เลขประจำตัวนิสิต</th>
+        <th>ชื่อ-นามสกุล</th>
+        <th>Facebook</th>
+        <th>ดูหลักฐาน</th>
+        <th>สถานะ</th>
+        <th>เปลี่ยนสถานะ</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let user of checked$ | async">
+      <td>{{user.$key}}</td>
+      <td>{{user.profile.title}}{{user.profile.fname}} {{user.profile.lname}} ({{user.profile.nname}})</td>
+      <td>{{user.profile.facebook}}</td>
+      <td><a [href]="user.slipUrl" target="_blank">ดูหลักฐาน</a></td>
+      <td>{{user.slipChecked | status}}</td>
+      <td><button class="button is-primary" (click)="toggleStatus(user.$key)">เปลี่ยนสถานะ</button></td>
+    </tr>
+  </table>
+</div>

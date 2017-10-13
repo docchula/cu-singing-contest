@@ -1,0 +1,23 @@
+@import '~bulma/sass/utilities/initial-variables';
+
+$family-sans-serif: "Roboto", "Trirong", sans-serif;
+
+@import '~bulma/bulma';
+
+.ng-valid.ng-dirty,
+cusc-title.ng-valid.ng-dirty > .field > .control > .select,
+cusc-title.ng-valid.ng-dirty > .field > .control > .input,
+cusc-education-level.ng-valid.ng-dirty > .field > .field-body > .field > .control > .select,
+cusc-education-level.ng-valid.ng-dirty > .field > .field-body > .field > .control > .input {
+  @extend .is-success;
+}
+
+.ng-invalid.ng-dirty,
+cusc-title.ng-invalid.ng-dirty > .field > .control > .select,
+cusc-title.ng-invalid.ng-dirty > .field > .control > .input,
+cusc-education-level.ng-invalid.ng-dirty > .field > .field-body > .field > .control > .select,
+cusc-education-level.ng-invalid.ng-dirty > .field > .field-body > .field > .control > .input {
+  @extend .is-danger;
+}
+
+

@@ -1,0 +1,4 @@
+<div class="container" *ngIf="token$ | async as token">
+  <a [routerLink]="['/', token]">กลับไปหน้าผู้ดูแล</a>
+</div>
+<router-outlet></router-outlet>
