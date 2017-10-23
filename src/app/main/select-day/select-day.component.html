@@ -1,34 +1,34 @@
-<p>คุณสามารถเลือกวันที่ท่านจะมาเข้าแข่งขัน<strong>ในรอบแรก</strong> ได้ 3 อันดับ โดยไม่ซ้ำกัน</p>
+<p i18n="@@dayInstruction">คุณสามารถเลือกวันที่ท่านจะมาเข้าแข่งขัน<strong>ในรอบแรก</strong> ได้ 3 อันดับ โดยไม่ซ้ำกัน</p>
 <form [formGroup]="daysForm" (ngSubmit)="submit()">
   <div class="field">
-    <label class="label">อันดับที่ 1</label>
+    <label class="label" i18n="@@day1">อันดับที่ 1</label>
     <div class="control is-expanded">
       <div class="select is-fullwidth">
         <select formControlName="d1">
-          <option value="" disabled selected hidden>เลือก</option>
-          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d1)?.id">{{day.text}}</option>
+          <option value="" disabled selected hidden i18n="@@select">เลือก</option>
+          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d1)?.id">{{day[daysTextKey]}}</option>
         </select>
       </div>
     </div>
   </div>
   <div class="field">
-    <label class="label">อันดับที่ 2</label>
+    <label class="label" i18n="@@day2">อันดับที่ 2</label>
     <div class="control is-expanded">
       <div class="select is-fullwidth">
         <select formControlName="d2">
-          <option value="" disabled selected hidden>เลือก</option>
-          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d2)?.id">{{day.text}}</option>
+          <option value="" disabled selected hidden i18n="@@select">เลือก</option>
+          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d2)?.id">{{day[daysTextKey]}}</option>
         </select>
       </div>
     </div>
   </div>
   <div class="field">
-    <label class="label">อันดับที่ 3</label>
+    <label class="label" i18n="@@day3">อันดับที่ 3</label>
     <div class="control is-expanded">
       <div class="select is-fullwidth">
         <select formControlName="d3">
-          <option value="" disabled selected hidden>เลือก</option>
-          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d3)?.id">{{day.text}}</option>
+          <option value="" disabled selected hidden i18n="@@select">เลือก</option>
+          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d3)?.id">{{day[daysTextKey]}}</option>
         </select>
       </div>
     </div>
@@ -42,9 +42,9 @@
 <div *ngIf="daysDone$ | async">
   <article class="message is-success" style="margin-top: 0.75rem;">
     <div class="message-header">
-      <p><strong>ขอแสดงความยินดี</strong></p>
+      <p><strong i18n="@@congrats">ขอแสดงความยินดี</strong></p>
     </div>
-    <div class="message-body">
+    <div class="message-body" i18n="@@dayNext">
       คุณได้เลือกวันในการแข่งขันรอบแรกเรียบร้อยแล้ว <a [routerLink]="['../4_pay']">ไปขั้นตอนถัดไป</a>
     </div>
   </article>

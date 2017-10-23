@@ -1,4 +1,4 @@
-import { Component, forwardRef, OnInit } from '@angular/core';
+import { Component, forwardRef, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import {
   ControlValueAccessor,
   FormControl,
@@ -26,14 +26,20 @@ export class TitleComponent implements OnInit, ControlValueAccessor {
   otherTitle: FormControl;
 
   modeOther$: Observable<boolean>;
-  stringPresetTitle: string[] = ['นาย', 'นางสาว', 'นาง'];
-  stringOtherTitle = 'อื่น ๆ';
+  stringPresetTitle: string[];
+  stringPresetTitleTh: string[] = ['นาย', 'นางสาว', 'นาง'];
+  stringPresetTitleEn: string[] = ['Mr.', 'Ms.', 'Mrs.'];
+  stringOtherTitle: string;
+  stringOtherTitleTh = 'อื่น ๆ';
+  stringOtherTitleEn = 'Other';
   onChange: (val: any) => void;
   onTouch: () => void;
 
-  constructor() {}
+  constructor(@Inject(LOCALE_ID) private localeId: string) {}
 
   ngOnInit() {
+    this.stringOtherTitle = this.localeId === 'th' ? this.stringOtherTitleTh : this.stringOtherTitleEn;
+    this.stringPresetTitle = this.localeId === 'th' ? this.stringPresetTitleTh : this.stringPresetTitleEn;
     this.title = new FormControl('');
     this.otherTitle = new FormControl('');
     this.modeOther$ = this.title.valueChanges.pipe(

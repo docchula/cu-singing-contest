@@ -1,56 +1,56 @@
 <form [formGroup]="profileForm" (ngSubmit)="submit()">
   <div class="field">
-    <label class="label">คำนำหน้าชื่อ</label>
+    <label class="label" i18n="@@titleLabel">คำนำหน้าชื่อ</label>
     <cusc-title formControlName="title"></cusc-title>
   </div>
   <div class="field">
     <div class="field-body">
       <div class="field">
-        <label class="label">ชื่อ</label>
+        <label class="label" i18n="@@fname">ชื่อ</label>
         <div class="control is-expanded">
-          <input type="text" class="input" placeholder="ชื่อ" formControlName="fname">
+          <input type="text" class="input" placeholder="ชื่อ" formControlName="fname" i18n-placeholder="@@fname">
         </div>
       </div>
       <div class="field">
-        <label class="label">นามสกุล</label>
+        <label class="label" i18n="@@lname">นามสกุล</label>
         <div class="control is-expanded">
-          <input type="text" class="input" placeholder="นามสกุล" formControlName="lname">
+          <input type="text" class="input" placeholder="นามสกุล" formControlName="lname" i18n-placeholder="@@lname">
         </div>
       </div>
     </div>
   </div>
   <div class="field">
-    <label class="label">ชื่อเล่น</label>
+    <label class="label" i18n="@@nname">ชื่อเล่น</label>
     <div class="control is-expanded">
-      <input type="text" class="input" placeholder="ชื่อเล่น" formControlName="nname">
+      <input type="text" class="input" placeholder="ชื่อเล่น" formControlName="nname" i18n-placeholder="@@nname">
     </div>
   </div>
   <div class="field">
-    <label class="label">Email</label>
+    <label class="label" i18n="@@email">Email</label>
     <div class="control is-expanded">
-      <input type="email" class="input" placeholder="Email" formControlName="email">
+      <input type="email" class="input" placeholder="Email" formControlName="email" i18n-placeholder="@@email">
     </div>
   </div>
   <div class="field">
-    <label class="label">Facebook</label>
+    <label class="label" i18n="@@facebook">Facebook</label>
     <div class="control is-expanded">
-      <input type="text" class="input" placeholder="Facebook" formControlName="facebook">
+      <input type="text" class="input" placeholder="Facebook" formControlName="facebook" i18n-placeholder="@@facebook">
     </div>
   </div>
   <div class="field">
-    <label class="label">หมายเลขโทรศัพท์มือถือ</label>
+    <label class="label" i18n="@@mobile">หมายเลขโทรศัพท์มือถือ</label>
     <div class="control is-expanded">
-      <input type="text" class="input" placeholder="หมายเลขโทรศัพท์มือถือ" formControlName="mobile">
+      <input type="text" class="input" placeholder="หมายเลขโทรศัพท์มือถือ" formControlName="mobile" i18n-placeholder="@@mobile">
     </div>
-    <p class="help">ไม่ต้องใส่ขีด</p>
+    <p class="help" i18n="@@mobileHint">ไม่ต้องใส่ขีด</p>
   </div>
   <div class="field">
-    <label class="label">คณะ</label>
+    <label class="label" i18n="@@facultyLabel">คณะ</label>
     <div class="control is-expanded">
       <div class="select is-fullwidth">
         <select formControlName="faculty">
-          <option value="" disabled selected hidden>เลือก</option>
-          <option *ngFor="let faculty of faculties$ | async" [ngValue]="faculty" [selected]="faculty.id === (currentFaculty$ | async)?.id">{{faculty.name}}</option>
+          <option value="" disabled selected hidden i18n="@@select">เลือก</option>
+          <option *ngFor="let faculty of faculties$ | async" [ngValue]="faculty" [selected]="faculty.id === (currentFaculty$ | async)?.id">{{faculty[facultyNameKey]}}</option>
         </select>
       </div>
     </div>
@@ -60,16 +60,16 @@
   </div>
   <div class="field">
     <div class="control">
-      <input type="submit" value="บันทึกข้อมูล" class="button is-primary" [disabled]="disableSubmit || profileForm.invalid">
+      <input type="submit" value="บันทึกข้อมูล" class="button is-primary" [disabled]="disableSubmit || profileForm.invalid" i18n-value="@@submit">
     </div>
   </div>
 </form>
 <div *ngIf="profileDone$ | async">
   <article class="message is-success" style="margin-top: 0.75rem;">
     <div class="message-header">
-      <p><strong>ขอแสดงความยินดี</strong></p>
+      <p><strong i18n="@@congrats">ขอแสดงความยินดี</strong></p>
     </div>
-    <div class="message-body">
+    <div class="message-body" i18n="@@profileNext">
       คุณได้กรอกข้อมูลพื้นฐานเรียบร้อยแล้ว <a [routerLink]="['../3_selectDay']">ไปขั้นตอนถัดไป</a>
     </div>
   </article>

@@ -17,12 +17,13 @@
           <a class="navbar-item" [routerLink]="['/']">Home</a>
         </div>
         <div class="navbar-end">
+          <a class="navbar-item" [href]="languageLinks[localeId].path">{{languageLinks[localeId].text}}</a>
           <span *ngIf="authState$ | async as user; then signedIn; else notSignedIn"></span>
           <ng-template #notSignedIn>
-            <a class="navbar-item" [routerLink]="['/login']">เข้าสู่ระบบ</a>
+            <a class="navbar-item" [routerLink]="['/login']" i18n="sign in|A text for sign in button@@signIn">เข้าสู่ระบบ</a>
           </ng-template>
           <ng-template #signedIn>
-            <a class="navbar-item" (click)="signOut()">ออกจากระบบ</a>
+            <a class="navbar-item" (click)="signOut()" i18n="sign out|A text for sign out button@@signOut">ออกจากระบบ</a>
           </ng-template>
         </div>
       </div>
@@ -33,8 +34,6 @@
 </div>
 <div class="footer">
   <div class="container has-text-centered">
-    <p>
-      สงวนลิขสิทธิ์ 2560 ฝ่ายเทคโนโลยีสารสนเทศ และฝ่ายดนตรีสากล สโมสรนิสิตคณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย
-    </p>
+    <p i18n="copyright|A copyright text at the footer@@copyright">สงวนลิขสิทธิ์ 2560 ฝ่ายเทคโนโลยีสารสนเทศ และฝ่ายดนตรีสากล สโมสรนิสิตคณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</p>
   </div>
 </div>

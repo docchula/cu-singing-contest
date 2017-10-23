@@ -1,4 +1,4 @@
-import { Component, forwardRef, OnInit } from '@angular/core';
+import { Component, forwardRef, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -24,12 +24,16 @@ export class EducationLevelComponent implements OnInit, ControlValueAccessor {
   _onTouch: () => void;
   onChange: (value: any) => void;
   stringEducationLevelPreset = ['ปริญญาตรี', 'ปริญญาโท', 'ปริญญาเอก'];
+  stringEducationLevelPresetEn = ['Bachelor Degree', 'Master Degree', 'Doctoral Degree'];
+  stringEducationLevelPresetShow: string[];
   stringEducationLevelWithNumber = 'ปริญญาตรี';
   stringOtherEducationLevel = 'อื่น ๆ';
+  stringOtherEducationLevelEn = 'Other';
+  stringOtherEducationLevelShow: string;
   modeYear$: Observable<boolean>;
   modeOther$: Observable<boolean>;
 
-  constructor() {}
+  constructor(@Inject(LOCALE_ID) private localeId: string) {}
 
   ngOnInit() {
     this.educationLevel = new FormControl();
@@ -87,6 +91,8 @@ export class EducationLevelComponent implements OnInit, ControlValueAccessor {
           }
         }
       });
+    this.stringEducationLevelPresetShow = this.localeId === 'th' ? this.stringEducationLevelPreset : this.stringEducationLevelPresetEn;
+    this.stringOtherEducationLevelShow = this.localeId === 'th' ? this.stringOtherEducationLevel : this.stringOtherEducationLevelEn;
   }
 
   writeValue(obj: any): void {

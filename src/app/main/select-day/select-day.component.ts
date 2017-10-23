@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { first, map } from 'rxjs/operators';
@@ -23,10 +23,12 @@ export class SelectDayComponent implements OnInit {
   daysDone$: Observable<boolean>;
   daysForm: FormGroup;
   disableSubmit = false;
+  daysTextKey: string;
 
   constructor(
     private configService: ConfigService,
-    private userService: UserService
+    private userService: UserService,
+    @Inject(LOCALE_ID) private localeId: string
   ) {}
 
   ngOnInit() {
@@ -48,6 +50,7 @@ export class SelectDayComponent implements OnInit {
         this.daysForm.setValue(days);
       }
     });
+    this.daysTextKey = this.localeId === 'th' ? 'text' : 'textEn';
   }
 
   validateDays(c: FormGroup) {

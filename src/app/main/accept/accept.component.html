@@ -1,13 +1,13 @@
-<h1 class="is-size-2">รับทราบระเบียบการแข่งขัน</h1>
+<h1 class="is-size-2" i18n="accept title@@acceptTitle">รับทราบระเบียบการแข่งขัน</h1>
 <article class="message is-danger">
   <div class="message-header">
-    <p><strong>โปรดทราบ</strong></p>
+    <p><strong i18n="accept notice title@@acceptNoticeTitle">โปรดทราบ</strong></p>
   </div>
   <div class="message-body">
-    กรุณาอ่านระเบียบการแข่งขันอย่างละเอียด <strong>หากไม่ปฏิบัติตาม คณะกรรมการอาจพิจารณาตัดสิทธิ์การแข่งขัน</strong>
+    <ng-container i18n="accept notice body@@acceptNoticeBody">กรุณาอ่านระเบียบการแข่งขันอย่างละเอียด <strong>หากไม่ปฏิบัติตาม คณะกรรมการอาจพิจารณาตัดสิทธิ์การแข่งขัน</strong></ng-container>
   </div>
 </article>
-<div>
+<div i18n="accept rule@@acceptRule">
   <p>การแข่งขันร้องเพลงแห่งจุฬาลงกรณ์มหาวิทยาลัย ครั้งที่ 25 ประกอบด้วยการแข่งขัน 3 รอบ ดังนี้</p>
   <ol>
     <li>รอบที่ 1 จัดแข่งขันทั้งสิ้น 5 วัน ระหว่างวันที่ 13-17 พฤศจิกายน 2560 ณ ห้องประชุม เฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยจะคัดผู้เข้าแข่งขันวันละ 10 คน รวม 50 คน เข้าแข่งขันในรอบถัดไป</li>
@@ -19,9 +19,9 @@
 <div *ngIf="accepted | async; else notAccepted">
   <article class="message is-success">
     <div class="message-header">
-      <p><strong>ขอแสดงความยินดี</strong></p>
+      <p><strong i18n="contrats@@congrats">ขอแสดงความยินดี</strong></p>
     </div>
-    <div class="message-body">
+    <div class="message-body" i18n="accept done@@acceptDone">
       คุณได้รับทราบและยอมรับระเบียบการแข่งขันเรียบร้อยแล้ว <a [routerLink]="['../2_profile']">ไปขั้นตอนถัดไป</a>
     </div>
   </article>
@@ -31,13 +31,13 @@
     <div class="control">
       <label class="checkbox">
         <input type="checkbox" [formControl]="acceptBox">
-        ข้าพเจ้ารับทราบและยอมรับระเบียบการแข่งขันข้างต้นนี้แล้ว และพร้อมจะปฏิบัติตาม
+        <ng-container i18n="@@acceptIAccept">ข้าพเจ้ารับทราบและยอมรับระเบียบการแข่งขันข้างต้นนี้แล้ว และพร้อมจะปฏิบัติตาม</ng-container>
         </label>
     </div>
   </div>
   <div class="field">
     <div class="control">
-      <button class="button is-primary" (click)="accept()" [disabled]="!acceptBox.value">ยอมรับ</button>
+      <button class="button is-primary" (click)="accept()" [disabled]="!acceptBox.value" i18n="@@acceptButton">ยอมรับ</button>
     </div>
   </div>
 </ng-template>

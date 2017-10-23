@@ -1,21 +1,21 @@
-<h2 class="is-size-3">คุณเลือกเพลง: {{selected | song}}</h2>
+<h2 class="is-size-3"><ng-container i18n="@@songSearcherYouSelected">คุณเลือกเพลง:</ng-container> {{selected | song}}</h2>
 <div class="field">
-  <label class="label">ค้นหาเพลงที่นี่</label>
+  <label class="label" i18n="@@songSearcherSearchHere">ค้นหาเพลงที่นี่</label>
   <div class="control">
-    <input type="text" [formControl]="searchBox" class="input" placeholder="ค้นหาโดยใช้ชื่อเพลง">
+    <input type="text" [formControl]="searchBox" class="input" placeholder="ค้นหาโดยใช้ชื่อเพลง" i18n-placeholder="@@songSearcherSearchBySongName">
   </div>
 </div>
 <table class="table is-fullwidth">
   <thead>
     <tr>
-      <th>ชื่อเพลง</th>
-      <th>ศิลปิน</th>
-      <th>เลือก</th>
+      <th i18n="@@songSearcherSongName">ชื่อเพลง</th>
+      <th i18n="@@songSearcherArtist">ศิลปิน</th>
+      <th i18n="@@songSearcherSelect">เลือก</th>
     </tr>
   </thead>
   <tr *ngFor="let song of searchResult$ | async">
     <td>{{song.name}}</td>
     <td>{{song.artist}}</td>
-    <td><a class="button is-primary" (click)="selectSong(song)">เลือก</a></td>
+    <td><a class="button is-primary" (click)="selectSong(song)" i18n="@@songSearcherSelect">เลือก</a></td>
   </tr>
 </table>

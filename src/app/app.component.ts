@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { ConnectableObservable } from 'rxjs/observable/ConnectableObservable';
@@ -15,8 +15,21 @@ export class AppComponent implements OnInit {
 
   authState$: Observable<firebase.User>;
   navOpen: boolean;
+  languageLinks: {[key: string]: {
+    text: string;
+    path: string;
+  }} = {
+    th: {
+      text: 'English',
+      path: '/en'
+    },
+    en: {
+      text: 'ภาษาไทย',
+      path: '/'
+    }
+  };
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, @Inject(LOCALE_ID) public localeId: string) { }
 
   ngOnInit() {
     this.authState$ = (this.userService.authState.pipe(

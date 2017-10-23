@@ -12,12 +12,12 @@
         </div>
         <div class="column">
           <ng-container [ngSwitch]="mode$ | async">
-            <div *ngSwitchCase="'pre-register'">ขณะนี้ยังไม่ถึงเวลาสมัครเข้าการแข่งขัน<br>เริ่มรับสมัครวันที่ 1 ตุลาคม 2560 เวลา 10.00 น.</div>
-            <div *ngSwitchCase="'post-register'">ขณะนี้หมดเวลาสมัครเข้าแข่งขันแล้ว</div>
+            <div *ngSwitchCase="'pre-register'" i18n="pre-registration text|A text to be shown before registration period begins@@preRegistration">ขณะนี้ยังไม่ถึงเวลาสมัครเข้าการแข่งขัน<br>เริ่มรับสมัครวันที่ 1 ตุลาคม 2560 เวลา 10.00 น.</div>
+            <div *ngSwitchCase="'post-register'" i18n="post-registration text|A text to be shown after registration period ends@@postRegistration">ขณะนี้หมดเวลาสมัครเข้าแข่งขันแล้ว</div>
             <ng-template [ngSwitchCase]="'register'">
               <div class="has-text-centered">
-                <div>เปิดรับสมัครตั้งแต่วันที่ 1 ตุลาคม 2560 - 31 ตุลาคม 2560</div>
-                <button class="button is-inverted is-outlined is-primary" [routerLink]="['main']">สมัครเลย</button>
+                <div i18n="registration text|A text to be shown during registration period@@duringRegistration">เปิดรับสมัครตั้งแต่วันที่ 1 ตุลาคม 2560 - 31 ตุลาคม 2560</div>
+                <button class="button is-inverted is-outlined is-primary" [routerLink]="['main']" i18n="registration button text|A text to be shown on the registration button@@registrationButton">สมัครเลย</button>
               </div>
             </ng-template>
           </ng-container>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { first, map } from 'rxjs/operators';
@@ -19,10 +19,12 @@ export class ProfileComponent implements OnInit {
   profile$: Observable<any>;
   profileDone$: Observable<boolean>;
   currentFaculty$: Observable<Faculty>;
+  facultyNameKey: string;
 
   constructor(
     private configService: ConfigService,
-    private userService: UserService
+    private userService: UserService,
+    @Inject(LOCALE_ID) private localeId: string
   ) {}
 
   ngOnInit() {
@@ -56,6 +58,7 @@ export class ProfileComponent implements OnInit {
         return null;
       }
     }));
+    this.facultyNameKey = this.localeId === 'th' ? 'name' : 'nameEn';
   }
 
   submit() {
