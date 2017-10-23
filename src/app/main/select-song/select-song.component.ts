@@ -1,9 +1,7 @@
-import 'rxjs/add/operator/first';
-import 'rxjs/add/operator/map';
-
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+import { first, map } from 'rxjs/operators';
 
 import { UserService } from '../../core/user/user.service';
 import { SelectedSong } from '../../shared/selected-song';
@@ -14,26 +12,30 @@ import { SelectedSong } from '../../shared/selected-song';
   styleUrls: ['./select-song.component.css']
 })
 export class SelectSongComponent implements OnInit {
-
   songForm: FormGroup;
   currentSelectedSong$: Observable<any>;
   disableSubmit = false;
   selected$: Observable<boolean>;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.songForm = new FormGroup({
-      mode: new FormControl('', Validators.required),
-      song: new FormControl({})
-    }, this.customValidate);
-    this.currentSelectedSong$ = this.userService.getUserObject<SelectedSong>('selectedSong');
-    this.currentSelectedSong$.first().subscribe((ss) => {
-      if (ss.$exists()) {
+    this.songForm = new FormGroup(
+      {
+        mode: new FormControl('', Validators.required),
+        song: new FormControl({})
+      },
+      this.customValidate
+    );
+    this.currentSelectedSong$ = this.userService.getUserObjectValue<SelectedSong>(
+      'selectedSong'
+    );
+    this.currentSelectedSong$.pipe(first()).subscribe(ss => {
+      if (ss) {
         this.songForm.setValue(ss);
       }
     });
-    this.selected$ = this.currentSelectedSong$.map((ss) => ss.$exists());
+    this.selected$ = this.currentSelectedSong$.pipe(map(ss => !!ss));
   }
 
   customValidate(c: FormGroup) {
@@ -53,12 +55,13 @@ export class SelectSongComponent implements OnInit {
   submit() {
     if (this.songForm.valid) {
       this.disableSubmit = true;
-      this.userService.setUserObject('selectedSong', this.songForm.value).subscribe(() => {
-        this.userService.setUserObject('songChecked', false).subscribe(() => {
-          this.disableSubmit = false;
+      this.userService
+        .setUserObject('selectedSong', this.songForm.value)
+        .subscribe(() => {
+          this.userService.setUserObject('songChecked', false).subscribe(() => {
+            this.disableSubmit = false;
+          });
         });
-      });
     }
   }
-
 }

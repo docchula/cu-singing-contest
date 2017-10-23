@@ -1,10 +1,11 @@
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/map';
-
 import { Component, forwardRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormControl,
+  NG_VALUE_ACCESSOR
+} from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+import { debounceTime, map, switchMap } from 'rxjs/operators';
 
 import { ConfigService } from '../../../core/config/config.service';
 import { Song } from '../../../shared/song';
@@ -22,7 +23,6 @@ import { Song } from '../../../shared/song';
   ]
 })
 export class SongSearcherComponent implements OnInit, ControlValueAccessor {
-
   selected: Song;
   _onChange: (value: Song) => void;
   _onTouch: () => void;
@@ -30,23 +30,23 @@ export class SongSearcherComponent implements OnInit, ControlValueAccessor {
   searchResult$: Observable<Song[]>;
   disabled = false;
 
-  constructor(private configService: ConfigService) { }
+  constructor(private configService: ConfigService) {}
 
   ngOnInit() {
     this.searchBox = new FormControl('');
-    this.searchResult$ = this.searchBox.valueChanges.debounceTime(1000).switchMap((v) => {
-      return this.configService.getConfigList<Song>('songs', {
-        query: {
-          orderByChild: 'name',
-          startAt: v,
-          limitToFirst: 20
-        }
-      });
-    }).map((songs) => {
-      return songs.filter((s) => {
-        return s.name.startsWith(this.searchBox.value);
-      });
-    });
+    this.searchResult$ = this.searchBox.valueChanges.pipe(
+      debounceTime(1000),
+      switchMap(v => {
+        return this.configService.getConfigListValue<Song>('songs', (ref) => {
+          return ref.orderByChild('name').startAt(v).limitToFirst(20);
+        });
+      }),
+      map(songs => {
+        return songs.filter(s => {
+          return s.name.startsWith(this.searchBox.value);
+        });
+      })
+    );
   }
 
   writeValue(obj: any): void {
@@ -78,5 +78,4 @@ export class SongSearcherComponent implements OnInit, ControlValueAccessor {
     this.selected = song;
     this.onChange(song);
   }
-
 }

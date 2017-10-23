@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { first, map, switchMap } from 'rxjs/operators';
+import { first, switchMap } from 'rxjs/operators';
 
 import { ConfigService } from '../../core/config/config.service';
 import { UserService } from '../../core/user/user.service';
@@ -20,9 +20,7 @@ export class AdminPagesComponent implements OnInit {
     this.token$ = this.userService.authState.pipe(
       first(),
       switchMap((u) => {
-        return this.configService.getConfigObject(`admins/${u.uid}`).pipe(
-          map(v => v.$value)
-        );
+        return this.configService.getConfigObjectValue<string>(`admins/${u.uid}`);
       })
     );
   }

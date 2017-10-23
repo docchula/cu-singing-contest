@@ -15,9 +15,9 @@ export class AdminGuard implements CanLoad, CanActivate {
     return this.userService.authState.pipe(
       first(),
       switchMap((u) => {
-        return this.configService.getConfigObject(`admins/${u.uid}`).pipe(
-          map((value) => {
-            if (value.$exists()) {
+        return this.configService.getConfigObjectSnapshot(`admins/${u.uid}`).pipe(
+          map((snapshot) => {
+            if (snapshot.payload.exists()) {
               return true;
             } else {
               this.router.navigate(['/']);
@@ -34,9 +34,9 @@ export class AdminGuard implements CanLoad, CanActivate {
     return this.userService.authState.pipe(
       first(),
       switchMap((u) => {
-        return this.configService.getConfigObject(`admins/${u.uid}`).pipe(
-          map((value) => {
-            if (value.$exists() && value.$value === route.params['token']) {
+        return this.configService.getConfigObjectSnapshot(`admins/${u.uid}`).pipe(
+          map((snapshot) => {
+            if (snapshot.payload.exists() && snapshot.payload.val() === route.params['token']) {
               return true;
             } else {
               this.router.navigate(['/']);
@@ -45,6 +45,6 @@ export class AdminGuard implements CanLoad, CanActivate {
           })
         );
       })
-    )
+    );
   }
 }

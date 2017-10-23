@@ -1,9 +1,10 @@
-import { map } from 'rxjs/operators';
-import { AdminService } from '../admin.service';
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAction } from 'angularfire2/database/interfaces';
+import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 
-import { User } from '../../shared/user';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'cusc-slip-check',
@@ -12,8 +13,8 @@ import { User } from '../../shared/user';
 })
 export class SlipCheckComponent implements OnInit {
 
-  notChecked$: Observable<User[]>;
-  checked$: Observable<User[]>;
+  notChecked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
+  checked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
 
   constructor(private adminService: AdminService) { }
 
@@ -21,7 +22,7 @@ export class SlipCheckComponent implements OnInit {
     this.notChecked$ = this.adminService.userList.pipe(
       map((users) => {
         return users.filter((user) => {
-          if (!!user.slipUrl && !user.slipChecked) {
+          if (!!user.payload.val().slipUrl && !user.payload.val().slipChecked) {
             return true;
           } else {
             return false;
@@ -32,7 +33,7 @@ export class SlipCheckComponent implements OnInit {
     this.checked$ = this.adminService.userList.pipe(
       map((users) => {
         return users.filter((user) => {
-          if (!!user.slipUrl && !!user.slipChecked) {
+          if (!!user.payload.val().slipUrl && !!user.payload.val().slipChecked) {
             return true;
           } else {
             return false;

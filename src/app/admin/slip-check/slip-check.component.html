@@ -13,12 +13,12 @@
       </tr>
     </thead>
     <tr *ngFor="let user of notChecked$ | async">
-      <td>{{user.$key}}</td>
-      <td>{{user.profile.title}}{{user.profile.fname}} {{user.profile.lname}} ({{user.profile.nname}})</td>
-      <td>{{user.profile.facebook}}</td>
-      <td><a [href]="user.slipUrl" target="_blank">ดูหลักฐาน</a></td>
-      <td>{{user.slipChecked | status}}</td>
-      <td><button class="button is-primary" (click)="toggleStatus(user.$key)">เปลี่ยนสถานะ</button></td>
+      <td>{{user.key}}</td>
+      <td>{{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})</td>
+      <td>{{user.payload.val().profile.facebook}}</td>
+      <td><a [href]="user.payload.val().slipUrl" target="_blank">ดูหลักฐาน</a></td>
+      <td>{{user.payload.val().slipChecked | status}}</td>
+      <td><button class="button is-primary" (click)="toggleStatus(user.key)">เปลี่ยนสถานะ</button></td>
     </tr>
   </table>
   <h2 class="is-size-4">ผู้เข้าแข่งขันที่ตรวจสอบหลักฐานแล้ว</h2>
@@ -34,12 +34,12 @@
       </tr>
     </thead>
     <tr *ngFor="let user of checked$ | async">
-      <td>{{user.$key}}</td>
-      <td>{{user.profile.title}}{{user.profile.fname}} {{user.profile.lname}} ({{user.profile.nname}})</td>
-      <td>{{user.profile.facebook}}</td>
-      <td><a [href]="user.slipUrl" target="_blank">ดูหลักฐาน</a></td>
-      <td>{{user.slipChecked | status}}</td>
-      <td><button class="button is-primary" (click)="toggleStatus(user.$key)">เปลี่ยนสถานะ</button></td>
+      <td>{{user.key}}</td>
+      <td>{{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})</td>
+      <td>{{user.payload.val().profile.facebook}}</td>
+      <td><a [href]="user.payload.val().slipUrl" target="_blank">ดูหลักฐาน</a></td>
+      <td>{{user.payload.val().slipChecked | status}}</td>
+      <td><button class="button is-primary" (click)="toggleStatus(user.key)">เปลี่ยนสถานะ</button></td>
     </tr>
   </table>
 </div>

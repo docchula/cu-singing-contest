@@ -1,12 +1,9 @@
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/combineAll';
-import 'rxjs/add/operator/concat';
-import 'rxjs/add/operator/map';
-
 import { Component, forwardRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { combineAll, concat, map } from 'rxjs/operators';
 
 @Component({
   selector: 'cusc-education-level',
@@ -21,8 +18,6 @@ import { Observable } from 'rxjs/Observable';
   ]
 })
 export class EducationLevelComponent implements OnInit, ControlValueAccessor {
-
-
   educationLevel: FormControl;
   otherEducationLevel: FormControl;
   year: FormControl;
@@ -34,57 +29,68 @@ export class EducationLevelComponent implements OnInit, ControlValueAccessor {
   modeYear$: Observable<boolean>;
   modeOther$: Observable<boolean>;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.educationLevel = new FormControl();
     this.otherEducationLevel = new FormControl();
     this.year = new FormControl();
-    this.modeYear$ = this.educationLevel.valueChanges.map((v) => {
-      if (v === this.stringEducationLevelWithNumber) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-    this.modeOther$ = this.educationLevel.valueChanges.map((v) => {
-      if (v === this.stringOtherEducationLevel) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-    Observable.of(
-      Observable.of('').concat(this.educationLevel.valueChanges),
-      Observable.of(0).concat(this.year.valueChanges),
-      Observable.of('').concat(this.otherEducationLevel.valueChanges)
-    ).combineAll().subscribe(([educationLevel, year, other]) => {
-      if (this.onChange) {
-        if (educationLevel === this.stringEducationLevelWithNumber) {
-          if (year >= 1 && year <= 6) {
+    this.modeYear$ = this.educationLevel.valueChanges.pipe(
+      map(v => {
+        if (v === this.stringEducationLevelWithNumber) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+    );
+    this.modeOther$ = this.educationLevel.valueChanges.pipe(
+      map(v => {
+        if (v === this.stringOtherEducationLevel) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+    );
+    of(
+      of('').pipe(concat(this.educationLevel.valueChanges)),
+      of(0).pipe(concat(this.year.valueChanges)),
+      of('').pipe(concat(this.otherEducationLevel.valueChanges))
+    )
+      .pipe(combineAll())
+      .subscribe(([educationLevel, year, other]) => {
+        if (this.onChange) {
+          if (educationLevel === this.stringEducationLevelWithNumber) {
+            if (year >= 1 && year <= 6) {
+              this.onChange({
+                educationLevel,
+                year
+              });
+            } else {
+              this.onChange(null);
+            }
+          } else if (this.stringEducationLevelPreset.includes(educationLevel)) {
             this.onChange({
-              educationLevel, year
+              educationLevel
+            });
+          } else if (
+            educationLevel === this.stringOtherEducationLevel &&
+            other &&
+            other.length > 0
+          ) {
+            this.onChange({
+              educationLevel: other
             });
           } else {
             this.onChange(null);
           }
-        } else if (this.stringEducationLevelPreset.includes(educationLevel)) {
-          this.onChange({
-            educationLevel
-          });
-        } else if (educationLevel === this.stringOtherEducationLevel && other && other.length > 0) {
-          this.onChange({
-            educationLevel: other
-          });
-        } else {
-          this.onChange(null);
         }
-      }
-    });
+      });
   }
 
   writeValue(obj: any): void {
-    if (!obj || !((obj as Object).hasOwnProperty('educationLevel'))) {
+    if (!obj || !(obj as Object).hasOwnProperty('educationLevel')) {
       this.educationLevel.setValue('');
       return;
     }
@@ -122,5 +128,4 @@ export class EducationLevelComponent implements OnInit, ControlValueAccessor {
       this._onTouch();
     }
   }
-
 }

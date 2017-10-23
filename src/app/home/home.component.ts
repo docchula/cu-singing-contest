@@ -1,9 +1,7 @@
-import { environment } from '../../environments/environment';
-import 'rxjs/add/operator/map';
-
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
+import { environment } from '../../environments/environment';
 import { ConfigService } from '../core/config/config.service';
 
 @Component({
@@ -18,7 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(private config: ConfigService) { }
 
   ngOnInit() {
-    this.mode$ = this.config.getConfigObject(environment.modeKey).map((v) => v.$value);
+    this.mode$ = this.config.getConfigObjectValue<string>(environment.modeKey);
   }
 
 }

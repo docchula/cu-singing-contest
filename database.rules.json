@@ -1,0 +1,33 @@
+{
+  "rules": {
+    "config": {
+      ".read": true,
+      ".write": false,
+      "songs": {
+        ".indexOn": "name"
+      }
+    },
+    "data": {
+      "users": {
+        ".read":
+          "root.child('config').child('admins').child(auth.uid).exists()",
+        "$uid": {
+          ".read": "auth.uid === $uid",
+          ".write": "auth.uid === $uid",
+          "slipChecked": {
+            ".read":
+              "root.child('config').child('admins').child(auth.uid).exists()",
+            ".write":
+              "root.child('config').child('admins').child(auth.uid).exists()"
+          },
+          "songChecked": {
+            ".read":
+              "root.child('config').child('admins').child(auth.uid).exists()",
+            ".write":
+              "root.child('config').child('admins').child(auth.uid).exists()"
+          }
+        }
+      }
+    }
+  }
+}

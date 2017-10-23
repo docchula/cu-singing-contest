@@ -1,7 +1,6 @@
-import 'rxjs/add/operator/map';
-
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 
 import { UserService } from '../../core/user/user.service';
 
@@ -11,27 +10,38 @@ import { UserService } from '../../core/user/user.service';
   styleUrls: ['./pay.component.css']
 })
 export class PayComponent implements OnInit {
-
   slipUrl$: Observable<string>;
   slipStatus$: Observable<string>;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.slipUrl$ = this.userService.getUserObject<string>('slipUrl').map((v) => {
-      if (v.$exists()) {
-        return v.$value;
-      } else {
-        return null;
-      }
-    });
-    this.slipStatus$ = this.userService.getUserObject<string>('slipChecked').map((v) => {
-      if (v.$exists()) {
-        return v.$value;
-      } else {
-        return null;
-      }
-    });
+    this.slipUrl$ = this.userService
+      .getUserObjectSnapshot<string>(
+        'slipUrl'
+      )
+      .pipe(
+        map(v => {
+          if (v.payload.exists()) {
+            return v.payload.val();
+          } else {
+            return null;
+          }
+        })
+      );
+    this.slipStatus$ = this.userService
+      .getUserObjectSnapshot<boolean>(
+        'slipChecked'
+      )
+      .pipe(
+        map(v => {
+          if (v.payload.exists()) {
+            return v.payload.val();
+          } else {
+            return null;
+          }
+        })
+      );
   }
 
   selectedFile(input: any) {
@@ -42,11 +52,10 @@ export class PayComponent implements OnInit {
         alert(`กรุณาอัพโหลดไฟล์ที่มีขนาดต่ำกว่า ${maxSize / 1024} กิโลไบต์`);
         input.value = '';
       } else {
-        this.userService.uploadSlip(file).subscribe((s) => {
+        this.userService.uploadSlip(file).subscribe(s => {
           this.userService.setUserObject('slipUrl', s.downloadURL).subscribe();
         });
       }
     }
   }
-
 }

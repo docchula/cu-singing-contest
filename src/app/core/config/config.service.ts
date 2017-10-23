@@ -1,22 +1,50 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
-import { FirebaseListFactoryOpts } from 'angularfire2/database/interfaces';
+import { AngularFireDatabase } from 'angularfire2/database';
+import {
+  AngularFireList,
+  AngularFireObject,
+  QueryFn
+} from 'angularfire2/database/interfaces';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ConfigService {
+  constructor(private afd: AngularFireDatabase) {}
 
-  constructor(private afd: AngularFireDatabase) { }
-
-  getConfigObject<T = any>(path: string | null = null): FirebaseObjectObservable<T> {
+  _getConfigObject<T = any>(path: string | null = null): AngularFireObject<T> {
     if (path) {
-      return this.afd.object(this.afd.database.ref('config').child(path));
+      return this.afd.object<T>(this.afd.database.ref('config').child(path));
     } else {
-      return this.afd.object('config');
+      return this.afd.object<T>('config');
     }
   }
 
-  getConfigList<T = any>(path: string, options: FirebaseListFactoryOpts = {}): FirebaseListObservable<T[]> {
-    return this.afd.list(this.afd.database.ref('config').child(path), options);
+  getConfigObjectValue<T = any>(path: string | null = null) {
+    return this._getConfigObject(path).valueChanges<T>();
   }
 
+  getConfigObjectSnapshot<T = any>(path: string | null = null) {
+    return this._getConfigObject<T>(path).snapshotChanges();
+  }
+
+  _getConfigList<T = any>(
+    path: string,
+    queryFn: QueryFn = ref => ref
+  ): AngularFireList<T> {
+    return this.afd.list<T>(
+      this.afd.database.ref('config').child(path),
+      queryFn
+    );
+  }
+
+  getConfigListValue<T = any>(
+    path: string,
+    queryFn: QueryFn = ref => ref
+  ): Observable<T[]> {
+    return this._getConfigList(path, queryFn).valueChanges<T>();
+  }
+
+  getConfigListSnapshot<T = any>(path: string, queryFn: QueryFn = ref => ref) {
+    return this._getConfigList(path, queryFn).snapshotChanges();
+  }
 }

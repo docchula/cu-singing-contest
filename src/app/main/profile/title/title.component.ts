@@ -1,11 +1,13 @@
-import 'rxjs/add/observable/combineLatest';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/concat';
-import 'rxjs/add/operator/map';
-
 import { Component, forwardRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormControl,
+  NG_VALUE_ACCESSOR
+} from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+import { combineLatest } from 'rxjs/observable/combineLatest';
+import { of } from 'rxjs/observable/of';
+import { concat, map } from 'rxjs/operators';
 
 @Component({
   selector: 'cusc-title',
@@ -20,7 +22,6 @@ import { Observable } from 'rxjs/Observable';
   ]
 })
 export class TitleComponent implements OnInit, ControlValueAccessor {
-
   title: FormControl;
   otherTitle: FormControl;
 
@@ -30,33 +31,35 @@ export class TitleComponent implements OnInit, ControlValueAccessor {
   onChange: (val: any) => void;
   onTouch: () => void;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.title = new FormControl('');
     this.otherTitle = new FormControl('');
-    this.modeOther$ = this.title.valueChanges.map((v, _) => {
-      if (v === this.stringOtherTitle) {
-        return true;
-      } else {
-        return false;
+    this.modeOther$ = this.title.valueChanges.pipe(
+      map((v, _) => {
+        if (v === this.stringOtherTitle) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+    );
+
+    combineLatest(
+      of('').pipe(concat(this.title.valueChanges)),
+      of('').pipe(concat(this.otherTitle.valueChanges))
+    ).subscribe(values => {
+      if (this.onChange) {
+        if (values[0] === this.stringOtherTitle) {
+          this.onChange(values[1]);
+        } else if (this.stringPresetTitle.includes(values[0])) {
+          this.onChange(values[0]);
+        } else {
+          this.onChange(null);
+        }
       }
     });
-
-    Observable.combineLatest(
-      Observable.of('').concat(this.title.valueChanges),
-      Observable.of('').concat(this.otherTitle.valueChanges))
-      .subscribe((values) => {
-        if (this.onChange) {
-          if (values[0] === this.stringOtherTitle) {
-            this.onChange(values[1]);
-          } else if (this.stringPresetTitle.includes(values[0])) {
-            this.onChange(values[0]);
-          } else {
-            this.onChange(null);
-          }
-        }
-      });
   }
 
   public writeValue(obj: any): void {
