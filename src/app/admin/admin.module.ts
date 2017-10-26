@@ -14,12 +14,17 @@ import { SongPipe } from './song.pipe';
 import { StatusPipe } from './status.pipe';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    SharedModule
+  imports: [CommonModule, AdminRoutingModule, SharedModule],
+  declarations: [
+    AdminComponent,
+    SlipCheckComponent,
+    SongCheckComponent,
+    ContestantListComponent,
+    ContestantDetailComponent,
+    AdminPagesComponent,
+    StatusPipe,
+    SongPipe
   ],
-  declarations: [AdminComponent, SlipCheckComponent, SongCheckComponent, ContestantListComponent, ContestantDetailComponent, AdminPagesComponent, StatusPipe, SongPipe],
   providers: [AdminService]
 })
-export class AdminModule { }
+export class AdminModule {}
