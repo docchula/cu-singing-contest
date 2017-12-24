@@ -2,7 +2,7 @@ import { SongPipe } from './song.pipe';
 
 describe('SongPipe', () => {
   it('create an instance', () => {
-    const pipe = new SongPipe();
-    expect(pipe).toBeTruthy();
+    const pipeTH = new SongPipe('th');
+    expect(pipeTH).toBeTruthy();
   });
 });
