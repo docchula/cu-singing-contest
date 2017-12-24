@@ -8,10 +8,14 @@ import { SongPipe as UserSongPipe } from '../shared/song.pipe';
 export class SongPipe implements PipeTransform {
 
   transform(value: SelectedSong, args?: any): any {
-    if (value.mode === 'standard') {
-      return new UserSongPipe('th').transform(value.song);
+    if (value) {
+      if (value.mode === 'standard') {
+        return new UserSongPipe('th').transform(value.song);
+      } else {
+        return 'ผู้เข้าแข่งขันเตรียมเพลงเอง';
+      }
     } else {
-      return 'ผู้เข้าแข่งขันเตรียมเพลงเอง';
+      return 'ยังไม่ได้เลือกเพลง';
     }
   }
 

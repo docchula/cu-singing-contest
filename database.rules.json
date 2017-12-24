@@ -11,6 +11,8 @@
       "users": {
         ".read":
           "root.child('config').child('admins').child(auth.uid).exists()",
+        ".write":
+          "root.child('config').child('admins').child(auth.uid).exists()",
         "$uid": {
           ".read": "auth.uid === $uid",
           ".write": "auth.uid === $uid",
@@ -23,6 +25,16 @@
           "songChecked": {
             ".read":
               "root.child('config').child('admins').child(auth.uid).exists()",
+            ".write":
+              "root.child('config').child('admins').child(auth.uid).exists()"
+          }
+        }
+      },
+      "live": {
+        "$dayId": {
+          "users": {
+            ".indexOn": "uid",
+            ".read": true,
             ".write":
               "root.child('config').child('admins').child(auth.uid).exists()"
           }

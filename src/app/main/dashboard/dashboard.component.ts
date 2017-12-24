@@ -56,6 +56,5 @@ export class DashboardComponent implements OnInit {
         }
       })
     );
-    this.step5Done = of(false); // TODO: fix this
   }
 }

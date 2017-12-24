@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 class="is-size-2">หน้าควบคุมระบบ : {{positions[mode.value]?.name}}</h1>
+  <div class="field">
+    <label class="label">เลือกตำแหน่ง</label>
+    <div class="control is-expanded">
+      <div class="select is-fullwidth">
+        <select [formControl]="mode">
+          <option value="" disabled selected hidden>เลือก</option>
+          <option *ngFor="let mode of positions; let i = index" [value]="i">{{mode.name}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ชื่อ-นามสกุล</th>
+        <th>โทรศัพท์มือถือ</th>
+        <th>ประเภท</th>
+        <th>เพลง</th>
+        <th>สถานะ</th>
+        <th>Smoke</th>
+        <th>Follow</th>
+        <th>การดำเนินการ</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let user of filteredUserList$ | async">
+      <td>{{user.key}}</td>
+      <td [ngClass]="{'is-info': user.payload.val().liveStatus === 3}">
+        {{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})<br>
+        <small>{{user.payload.val().profile.nameReading}}</small>
+      </td>
+      <td>{{user.payload.val().profile.mobile}}</td>
+        <td>{{user.payload.val().selectedSong2.mode | songMode}}</td>
+        <td>{{user.payload.val().selectedSong2.song.artist}} - {{user.payload.val().selectedSong2.song.name}}</td>
+
+      <td>{{status[user.payload.val().liveStatus].name}}</td>
+      <td [ngClass]="{'is-primary': !!user.payload.val().smoke}">{{!!user.payload.val().smoke}}</td>
+      <td [ngClass]="{'is-primary': !!user.payload.val().follow}">{{!!user.payload.val().follow}}</td>
+      <td>
+        <button class="button is-primary" *ngIf="positions[mode.value]?.canNext.includes(user.payload.val().liveStatus)" (click)="next(user.key)">{{status[user.payload.val().liveStatus].next}}</button>
+        <button class="button is-danger" *ngIf="positions[mode.value]?.canReverse.includes(user.payload.val().liveStatus)" (click)="back(user.key)">ย้อนกลับ</button>
+        <button class="button is-info" *ngIf="positions[mode.value]?.canTrigger && status[user.payload.val().liveStatus].hasTrigger" (click)="trigger(user.key, 'smoke')">เปลี่ยน Smoke</button>
+        <button class="button is-info" *ngIf="positions[mode.value]?.canTrigger && status[user.payload.val().liveStatus].hasTrigger" (click)="trigger(user.key, 'follow')">เปลี่ยน Follow</button>
+      </td>
+    </tr>
+  </table>
+</div>

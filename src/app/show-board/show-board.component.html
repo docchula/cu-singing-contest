@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="is-size-1">CU Singing Contest 25
+    <sup>th</sup>
+  </h1>
+
+  <ng-container *ngIf="singing$ | async as user">
+    <h2 class="is-size-2">กำลังร้อง</h2>
+    <h3 class="is-size-3">{{user.key}} - {{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}}
+      ({{user.payload.val().profile.nname}})</h3>
+    <h4 class="is-size-4">{{user.payload.val().profile.faculty.name}}</h4>
+      <h4 class="is-size-4">{{user.payload.val().selectedSong2.song.artist}} - {{user.payload.val().selectedSong2.song.name}}</h4>
+  </ng-container>
+  <h2 class="is-size-2">ลำดับต่อไป</h2>
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ชื่อ-นามสกุล</th>
+        <th>คณะ</th>
+        <th>เพลง</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let user of contestantList$ | async">
+      <td>{{user.key}}</td>
+      <td>
+        {{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})
+      </td>
+      <td>{{user.payload.val().profile.faculty.name}}</td>
+        <td>{{user.payload.val().selectedSong2.song.artist}} - {{user.payload.val().selectedSong2.song.name}}</td>
+    </tr>
+  </table>
+</div>

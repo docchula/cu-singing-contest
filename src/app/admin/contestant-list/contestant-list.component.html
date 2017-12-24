@@ -1,3 +1,33 @@
-<p>
-  contestant-list works!
-</p>
+<div class="container content">
+  <h1 class="is-size-2">สรุปจำนวนผู้เข้าแข่งขัน</h1>
+  <ul *ngIf="days | async as _days">
+    <li *ngFor="let dayList of usersByDay; let i = index">{{_days[i].text}} มีผู้เข้าแข่งขันทั้งสิ้น {{(dayList | async)?.length}} คน</li>
+  </ul>
+  <ng-container *ngFor="let day of days | async; let i = index">
+    <h1 class="is-size-3">{{day.text}}</h1>
+    <table class="table is-full-width">
+      <thead>
+        <tr>
+          <th>เลขประจำตัวนิสิต</th>
+          <th>ชื่อ-นามสกุล</th>
+          <th>Facebook</th>
+          <th>โทรศัพท์มือถือ</th>
+          <th>คณะ</th>
+          <th>เพลง</th>
+          <th>รับทราบวันแข่งขัน</th>
+          <th>ลงทะเบียน</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let user of usersByDay[i] | async">
+        <td>{{user.key}}</td>
+        <td>{{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})</td>
+        <td>{{user.payload.val().profile.facebook}}</td>
+        <td>{{user.payload.val().profile.mobile}}</td>
+        <td>{{user.payload.val().profile.faculty.name}}</td>
+        <td>{{user.payload.val().selectedSong | admin_song}}</td>
+        <td>{{user.payload.val().viewedDay}}</td>
+        <td>{{!!user.payload.val().registered}}</td>
+      </tr>
+    </table>
+  </ng-container>
+</div>

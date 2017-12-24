@@ -1,0 +1,61 @@
+<h1 class="is-size-2" i18n="@@viewDayTitle">ดูวันแข่งขันรอบที่ 1</h1>
+<article class="message is-success">
+  <div class="message-header">
+    <p><strong i18n="@@viewDayDayTitle">วันแข่งขันรอบที่ 1</strong></p>
+  </div>
+  <div class="message-body">
+    <ng-container i18n="@@viewDayDayBody">ท่านได้รับการจัดสรรให้มาแข่งขันรอบที่ 1 ในวันที่ <strong>{{firstDay | async}}</strong></ng-container>
+  </div>
+</article>
+
+<article class="message is-danger">
+  <div class="message-header">
+    <p><strong i18n="@@viewDayNoticeTitle">โปรดทราบ</strong></p>
+  </div>
+  <div class="message-body">
+    <ng-container i18n="@@viewDayNoticeBody">กรุณาอ่านสิ่งที่ควรทราบข้างใต้นี้อย่างละเอียด</ng-container>
+  </div>
+</article>
+<div i18n="@@viewDayMessage">
+  <p>ในการแข่งขันรอบที่ 1 ผู้เข้าแข่งขันมีสิ่งที่ควรทราบ ดังต่อไปนี้</p>
+  <ol>
+    <li>
+      การแข่งขันในรอบที่ 1 และรอบที่ 2 จะจัดขึ้น ณ ห้องประชุม เฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยท่านสามารถเดินทางมายังสถานที่จัดงานได้ ดังนี้
+      <ul>
+        <li>รถโดยสารภายในจุฬาลงกรณ์มหาวิทยาลัย สาย 3</li>
+        <li>รถไฟฟ้า BTS สถานีศาลาแดง</li>
+        <li>รถไฟฟ้าใต้ดิน MRT สายสีน้ำเงิน สถานีสีลม</li>
+      </ul>
+    </li>
+    <li>สิ่งที่ผู้เข้าแข่งขันต้องเตรียมมาในวันแข่งขัน ได้แก่ <strong>บัตรประจำตัวนิสิต</strong> และ<strong>เครื่องดนตรีส่วนตัว</strong> (ในกรณีที่ท่านได้แจ้งความประสงค์จะใช้เครื่องดนตรีแทน backing track)</li>
+    <li>การลงทะเบียนการแข่งขันจะเริ่มขึ้นตั้งแต่เวลา 16.30 น.-18.30 น. <strong>หากผู้เข้าแข่งขันไม่มาลงทะเบียนในช่วงเวลาดังกล่าว จะถือว่าสละสิทธิ์</strong> ในกรณีมีเหตุฉุกเฉิน หรือมีปัญหาใด ๆ ในการเดินทางมาสถานที่แข่งขัน (เช่น หลงทาง) สามารถติดต่อคณะกรรมการจัดการแข่งขันได้ที่หมายเลขโทรศัพท์ 08-5377-6999</li>
+    <li>ท่านสามารถรับทราบเกณฑ์การให้คะแนนในรอบที่ 1 และรอบที่ 2 ได้<a href="https://goo.gl/asocgN">ที่นี่</a></li>
+    <li>ในระหว่างการแข่งขัน จะมีการอัดเสียงการแสดง เพื่อเป็นประโยชน์ในการให้คะแนนของกรรมการในกรณีที่จำเป็น ท่านจะได้รับไฟล์เสียงการแสดงของตน ผ่านทาง email ที่ผู้เข้าแข่งขันใช้สมัคร ภายในวันที่ 30 พฤศจิกายน 2560</li>
+    <li>หากผู้เข้าแข่งขันมีปัญหาเกี่ยวกับวันแข่งขันรอบที่ 1 ของตนเอง ให้ส่งข้อความมาที่ <a href="https://m.me/cusinging"><i class="fa fa-facebook-official" aria-hidden="true"></i> CU Singing Contest</a> ภายในวันที่ 5 พฤศจิกายน 2560 เวลา 23.59 น.</li>
+  </ol>
+</div>
+<div *ngIf="accepted | async; else notAccepted">
+  <article class="message is-success">
+    <div class="message-header">
+      <p><strong i18n="contrats@@congrats">ขอแสดงความยินดี</strong></p>
+    </div>
+    <div class="message-body" i18n="@@viewDayDone">
+      คุณได้รับทราบวันแข่งขันรอบที่ 1 และสิ่งที่ควรทราบต่าง ๆ แล้ว
+    </div>
+  </article>
+</div>
+<ng-template #notAccepted>
+  <div class="field">
+    <div class="control">
+      <label class="checkbox">
+        <input type="checkbox" [formControl]="acceptBox">
+        <ng-container i18n="@@viewDayAccept">ข้าพเจ้ารับทราบวันแข่งขันในรอบที่ 1 และสิ่งที่ควรทราบต่าง ๆ แล้ว</ng-container>
+        </label>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <button class="button is-primary" (click)="accept()" [disabled]="!acceptBox.value" i18n="@@viewDayButton">รับทราบ</button>
+    </div>
+  </div>
+</ng-template>

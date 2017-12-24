@@ -9,6 +9,7 @@ import { environment } from '../../environments/environment';
 import { ConfigService } from './config/config.service';
 import { CunetService } from './cunet/cunet.service';
 import { UserService } from './user/user.service';
+import { LiveService } from './live.service';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { UserService } from './user/user.service';
     HttpClientModule
   ],
   declarations: [],
-  providers: [ConfigService, UserService, CunetService]
+  providers: [ConfigService, UserService, CunetService, LiveService]
 })
 export class CoreModule { }

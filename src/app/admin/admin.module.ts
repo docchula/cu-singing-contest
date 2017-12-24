@@ -1,3 +1,4 @@
+import { LiveModule } from './live/live.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -14,7 +15,7 @@ import { SongPipe } from './song.pipe';
 import { StatusPipe } from './status.pipe';
 
 @NgModule({
-  imports: [CommonModule, AdminRoutingModule, SharedModule],
+  imports: [CommonModule, AdminRoutingModule, SharedModule, LiveModule],
   declarations: [
     AdminComponent,
     SlipCheckComponent,

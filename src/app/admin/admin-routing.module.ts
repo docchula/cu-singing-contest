@@ -1,3 +1,4 @@
+import { ContestantListComponent } from './contestant-list/contestant-list.component';
 import { AdminPagesComponent } from './admin-pages/admin-pages.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -28,6 +29,10 @@ const routes: Routes = [
           {
             path: 'song_check',
             component: SongCheckComponent
+          },
+          {
+            path: 'contestant_list',
+            component: ContestantListComponent
           }
         ]
       }

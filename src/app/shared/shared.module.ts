@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { SongPipe } from './song.pipe';
+import { SongModePipe } from './song-mode.pipe';
 
 @NgModule({
   imports: [
@@ -12,8 +13,9 @@ import { SongPipe } from './song.pipe';
   exports: [
     ReactiveFormsModule,
     CheckboxComponent,
-    SongPipe
+    SongPipe,
+    SongModePipe
   ],
-  declarations: [CheckboxComponent, SongPipe]
+  declarations: [CheckboxComponent, SongPipe, SongModePipe]
 })
 export class SharedModule { }

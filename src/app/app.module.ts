@@ -10,12 +10,16 @@ import { LoginComponent } from './login/login.component';
 import { ModeGuard } from './mode.guard';
 import { SharedModule } from './shared/shared.module';
 import { UserGuard } from './user.guard';
+import { WrapperComponent } from './wrapper/wrapper.component';
+import { ShowBoardComponent } from './show-board/show-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    WrapperComponent,
+    ShowBoardComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +28,6 @@ import { UserGuard } from './user.guard';
     SharedModule
   ],
   providers: [UserGuard, ModeGuard, AdminGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [WrapperComponent]
 })
 export class AppModule { }

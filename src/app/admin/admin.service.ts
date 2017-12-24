@@ -13,9 +13,7 @@ export class AdminService {
   constructor(private afd: AngularFireDatabase) { }
 
   toggleSlipStatus(uid: string) {
-    console.log('asdf');
     return fromPromise(this.afd.database.ref(`data/users/${uid}/slipChecked`).transaction((value) => {
-      console.log('compare');
       return !(value || false);
     }));
   }
@@ -24,6 +22,10 @@ export class AdminService {
     return fromPromise(this.afd.database.ref(`data/users/${uid}/songChecked`).transaction((value) => {
       return !(value || false);
     }));
+  }
+
+  getUser(uid: string) {
+    return this.afd.object(`data/users/${uid}`).valueChanges<User>();
   }
 
 }

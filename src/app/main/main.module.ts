@@ -16,6 +16,8 @@ import { TitleComponent } from './profile/title/title.component';
 import { SelectDayComponent } from './select-day/select-day.component';
 import { SelectSongComponent } from './select-song/select-song.component';
 import { SongSearcherComponent } from './select-song/song-searcher/song-searcher.component';
+import { PostRegisterGuard } from './post-register.guard';
+import { ViewDayComponent } from './view-day/view-day.component';
 
 @NgModule({
   imports: [CommonModule, MainRoutingModule, SharedModule],
@@ -28,8 +30,9 @@ import { SongSearcherComponent } from './select-song/song-searcher/song-searcher
     SelectDayComponent,
     PayComponent,
     SelectSongComponent,
-    SongSearcherComponent
+    SongSearcherComponent,
+    ViewDayComponent
   ],
-  providers: [AcceptGuard, ProfileGuard, DayGuard, PayGuard]
+  providers: [AcceptGuard, ProfileGuard, DayGuard, PayGuard, PostRegisterGuard]
 })
 export class MainModule {}

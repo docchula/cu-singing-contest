@@ -1,0 +1,47 @@
+<div class="container" *ngIf="userData$ | async as user">
+  <h1 class="is-size-2">
+    {{user.profile.title}}{{user.profile.fname}} {{user.profile.lname}} ({{user.profile.nname}})
+  </h1>
+  <h2 class="is-size-3">
+    {{user.profile.faculty.name}}
+  </h2>
+  <div class="content">
+    <ul>
+      <li>Email: {{user.profile.email}}</li>
+      <li>Facebook: {{user.profile.facebook}}</li>
+      <li>หมายเลขโทรศัพท์มือถือ: {{user.profile.mobile}}</li>
+    </ul>
+  </div>
+  <form [formGroup]="form">
+    <div class="field">
+      <label class="label">คำอ่านชื่อ</label>
+      <div class="control">
+        <input type="text" class="input" formControlName="nameReading">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">ประเภทเพลง</label>
+      <div class="control is-expanded">
+        <div class="select is-fullwidth">
+          <select formControlName="songMode">
+            <option value="" disabled selected hidden>เลือก</option>
+            <option *ngFor="let mode of stringMode" [value]="mode">{{mode | songMode}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">ชื่อเพลง</label>
+      <div class="control">
+        <input type="text" class="input" formControlName="songName">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">ศิลปิน</label>
+      <div class="control">
+        <input type="text" class="input" formControlName="songArtist">
+      </div>
+    </div>
+  </form>
+  <button class="is-primary button" (click)="register()">ลงทะเบียน</button>
+</div>
