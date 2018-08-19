@@ -2,7 +2,7 @@ import { first } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { decode } from 'jsonwebtoken';
+import * as jwtDecode from 'jwt-decode';
 
 import { CunetService } from '../core/cunet/cunet.service';
 import { UserService } from '../core/user/user.service';
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         if (v.success) {
           this.userService.signIn(v.token).subscribe(
             _ => {
-              const uid = (decode(v.token) as object)['uid'];
+              const uid = (jwtDecode(v.token) as object)['uid'];
               this.configService.getConfigObjectSnapshot(`admins/${uid}`).pipe(
                 first()
               ).subscribe((snap) => {

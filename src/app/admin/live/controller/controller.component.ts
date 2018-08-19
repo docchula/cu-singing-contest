@@ -98,7 +98,7 @@ export class ControllerComponent implements OnInit {
           }),
           map(users => {
             return users.filter(user => {
-              if (this.positions[mode].canSee.includes(user.payload.val().liveStatus)) {
+              if (this.positions[mode].canSee.includes((user.payload.val() as any).liveStatus)) {
                 return true;
               } else {
                 return false;
