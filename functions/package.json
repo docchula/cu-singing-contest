@@ -2,17 +2,17 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "dependencies": {
-    "axios": "^0.16.2",
-    "bcrypt": "^1.0.3",
-    "cors": "^2.8.4",
-    "firebase-admin": "^5.2.1",
-    "firebase-functions": "^0.7.2",
-    "googleapis": "^22.2.0"
+    "axios": "0.16.2",
+    "bcrypt": "1.0.3",
+    "cors": "2.8.4",
+    "firebase-admin": "5.2.1",
+    "firebase-functions": "0.7.2",
+    "googleapis": "22.2.0"
   },
   "private": true,
   "devDependencies": {
-    "@types/bcrypt": "^1.0.0",
-    "@types/cors": "^2.8.1",
+    "@types/bcrypt": "1.0.0",
+    "@types/cors": "2.8.1",
     "typescript": "^2.5.3"
   },
   "scripts": {
