@@ -1,6 +1,6 @@
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 
 import { ConfigService } from '../../core/config/config.service';

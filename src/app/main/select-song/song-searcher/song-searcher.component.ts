@@ -4,7 +4,7 @@ import {
   FormControl,
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { debounceTime, map, switchMap } from 'rxjs/operators';
 
 import { ConfigService } from '../../../core/config/config.service';

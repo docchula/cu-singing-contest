@@ -4,12 +4,11 @@ import { LiveService } from '../../../core/live.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { User } from '../../../shared/user';
 import { AdminService } from '../../admin.service';
-import { map, switchMap } from 'rxjs/operators';
-import { first } from 'rxjs/operators';
+import { map, switchMap ,  first } from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
 
 @Component({

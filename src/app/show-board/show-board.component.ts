@@ -1,7 +1,7 @@
 import { map, switchMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../core/config/config.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { LiveService } from '../core/live.service';
 
 @Component({
@@ -29,7 +29,7 @@ export class ShowBoardComponent implements OnInit {
       }),
       map((users) => {
         return users.filter((user) => {
-          if (user.payload.val().liveStatus > 3) {
+          if ((user.payload.val() as any).liveStatus > 3) {
             return false;
           } else {
             return true;

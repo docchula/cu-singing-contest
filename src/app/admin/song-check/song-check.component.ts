@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAction } from 'angularfire2/database/interfaces';
 import * as firebase from 'firebase/app';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { AdminService } from '../admin.service';

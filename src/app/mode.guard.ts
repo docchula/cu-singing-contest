@@ -7,7 +7,7 @@ import {
   Router,
   RouterStateSnapshot
 } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 
 import { environment } from '../environments/environment';

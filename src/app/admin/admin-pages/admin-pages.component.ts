@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { first, switchMap } from 'rxjs/operators';
 
 import { ConfigService } from '../../core/config/config.service';

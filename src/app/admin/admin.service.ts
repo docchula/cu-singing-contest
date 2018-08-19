@@ -1,7 +1,6 @@
-import { fromPromise } from 'rxjs/observable/fromPromise';
+import { from as fromPromise ,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
 
 import { User } from '../shared/user';
 
@@ -25,7 +24,7 @@ export class AdminService {
   }
 
   getUser(uid: string) {
-    return this.afd.object(`data/users/${uid}`).valueChanges<User>();
+    return this.afd.object<User>(`data/users/${uid}`).valueChanges();
   }
 
 }

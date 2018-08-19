@@ -5,8 +5,7 @@ import { FirebaseApp } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
-import { Observable } from 'rxjs/Observable';
-import { fromPromise } from 'rxjs/observable/fromPromise';
+import { Observable ,  from as fromPromise } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
 
 @Injectable()
@@ -40,8 +39,8 @@ export class UserService {
   }
 
   getUserObjectValue<T = any>(path: string | null = null) {
-    return this._getUserObject(path).pipe(
-      switchMap((s) => s.valueChanges<T>())
+    return this._getUserObject<T>(path).pipe(
+      switchMap((s) => s.valueChanges())
     );
   }
 
@@ -70,8 +69,8 @@ export class UserService {
   }
 
   getUserListValue<T = any>(path: string) {
-    return this._getUserList(path).pipe(
-      switchMap((s) => s.valueChanges<T>())
+    return this._getUserList<T>(path).pipe(
+      switchMap((s) => s.valueChanges())
     );
   }
 

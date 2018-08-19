@@ -1,4 +1,4 @@
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 import { ConfigService } from '../../core/config/config.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';

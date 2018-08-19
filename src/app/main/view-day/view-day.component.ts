@@ -2,7 +2,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { UserService } from '../../core/user/user.service';
 import { Day } from '../../shared/day';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 
 @Component({

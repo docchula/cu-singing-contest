@@ -4,9 +4,7 @@ import {
   FormControl,
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
-import { combineLatest } from 'rxjs/observable/combineLatest';
-import { of } from 'rxjs/observable/of';
+import { Observable ,  combineLatest ,  of } from 'rxjs';
 import { concat, map } from 'rxjs/operators';
 
 @Component({

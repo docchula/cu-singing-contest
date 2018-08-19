@@ -1,6 +1,6 @@
 import { ConfigService } from '../../core/config/config.service';
 import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { AdminService } from '../admin.service';
 import { Component, OnInit } from '@angular/core';
 import { Day } from '../../shared/day';

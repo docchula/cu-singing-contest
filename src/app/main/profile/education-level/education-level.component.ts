@@ -1,8 +1,7 @@
 import { Component, forwardRef, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+import { Observable ,  of } from 'rxjs';
 import { combineAll, concat, map } from 'rxjs/operators';
 
 @Component({

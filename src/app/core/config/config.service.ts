@@ -5,7 +5,7 @@ import {
   AngularFireObject,
   QueryFn
 } from 'angularfire2/database/interfaces';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ConfigService {
@@ -20,7 +20,7 @@ export class ConfigService {
   }
 
   getConfigObjectValue<T = any>(path: string | null = null) {
-    return this._getConfigObject(path).valueChanges<T>();
+    return this._getConfigObject<T>(path).valueChanges();
   }
 
   getConfigObjectSnapshot<T = any>(path: string | null = null) {
@@ -41,7 +41,7 @@ export class ConfigService {
     path: string,
     queryFn: QueryFn = ref => ref
   ): Observable<T[]> {
-    return this._getConfigList(path, queryFn).valueChanges<T>();
+    return this._getConfigList<T>(path, queryFn).valueChanges();
   }
 
   getConfigListSnapshot<T = any>(path: string, queryFn: QueryFn = ref => ref) {

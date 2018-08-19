@@ -2,8 +2,10 @@ import { switchMap, map, first } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { LiveService } from '../../../core/live.service';
 import { ConfigService } from '../../../core/config/config.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
+
+// TODO: Fix errors
 
 @Component({
   selector: 'cusc-controller',

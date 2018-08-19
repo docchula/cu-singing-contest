@@ -1,8 +1,8 @@
+
+import {refCount,  publishReplay } from 'rxjs/operators';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import * as firebase from 'firebase/app';
-import { Observable } from 'rxjs/Observable';
-import { ConnectableObservable } from 'rxjs/observable/ConnectableObservable';
-import { publishReplay } from 'rxjs/operators';
+import { Observable ,  ConnectableObservable } from 'rxjs';
 
 import { UserService } from './core/user/user.service';
 
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.authState$ = (this.userService.authState.pipe(
       publishReplay(1)
-    ) as ConnectableObservable<firebase.User>).refCount();
+    ) as ConnectableObservable<firebase.User>).pipe(refCount());
     this.navOpen = false;
   }
 

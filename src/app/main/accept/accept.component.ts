@@ -1,8 +1,8 @@
+
+import {refCount,  map, publishReplay } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
-import { ConnectableObservable } from 'rxjs/observable/ConnectableObservable';
-import { map, publishReplay } from 'rxjs/operators';
+import { Observable ,  ConnectableObservable } from 'rxjs';
 
 import { UserService } from '../../core/user/user.service';
 
@@ -23,7 +23,7 @@ export class AcceptComponent implements OnInit {
       .pipe(
         map(a => !!a),
         publishReplay(1)
-      ) as ConnectableObservable<boolean>).refCount();
+      ) as ConnectableObservable<boolean>).pipe(refCount());
     this.acceptBox = new FormControl(false);
   }
 
