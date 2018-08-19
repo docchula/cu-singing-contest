@@ -1,0 +1,26 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "packageNames": ["typescript"],
+      "enabled": false
+    },
+    {
+      "packageNames": [
+        "@angular/cli",
+        "@angular-devkit/build-angular"
+      ],
+      "groupName": "Angular CLI monorepo"
+    },
+    {
+      "packageNames": [
+        "jasmine",
+        "jasmine-core"
+      ],
+      "groupName": "Jasmine packages"
+    }
+  ],
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0,
+  "rebaseStalePrs": true
+}
