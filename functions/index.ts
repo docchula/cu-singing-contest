@@ -5,6 +5,7 @@ import * as functions from 'firebase-functions';
 import { readFileSync } from 'fs';
 import * as https from 'https';
 import * as bcrypt from 'bcrypt';
+import { google } from 'googleapis';
 
 const cors = _cors({ origin: true });
 
@@ -103,7 +104,6 @@ export const resetDay = functions.https.onRequest((req, resp) => {
           .remove();
         console.log(`${keys[i]} resetted!`);
       }
-      const google = require('googleapis');
       const privKeyString =
         // tslint:disable-next-line:max-line-length
         '';
@@ -113,7 +113,7 @@ export const resetDay = functions.https.onRequest((req, resp) => {
       const scope = ['https://www.googleapis.com/auth/drive'];
       const jwtClient = new google.auth.JWT(
         issuer,
-        null,
+        undefined,
         privKeyString,
         scope,
         sub
@@ -148,11 +148,10 @@ export const resetDay = functions.https.onRequest((req, resp) => {
                 drive.files.create(
                   {
                     auth: jwtClient,
-                    fields: 'id',
-                    resource: {
+                    requestBody: {
                       name: `Day${dayToReset}`,
                       mimeType: 'application/vnd.google-apps.folder',
-                      parents: ['1P16EdwLc4aV_Q9MbHzGpRJhQt6ufu6Tq']
+                      parents: ['1P16EdwLc4aV_Q9MbHzGpRJhQt6ufu6Tq'],
                     }
                   },
                   async (err3: any, folder: any) => {
@@ -265,7 +264,6 @@ export const registerContestant = functions.https.onRequest((req, resp) => {
                 .child(uid)
                 .once('value')).val();
               // get JWT
-              const google = require('googleapis');
               const privKeyString =
                 // tslint:disable-next-line:max-line-length
                 '';
@@ -275,7 +273,7 @@ export const registerContestant = functions.https.onRequest((req, resp) => {
               const scope = ['https://www.googleapis.com/auth/drive'];
               const jwtClient = new google.auth.JWT(
                 issuer,
-                null,
+                undefined,
                 privKeyString,
                 scope,
                 sub
@@ -299,9 +297,8 @@ export const registerContestant = functions.https.onRequest((req, resp) => {
                   // Create folder
                   drive.files.create(
                     {
-                      fields: 'id',
                       auth: jwtClient,
-                      resource: {
+                      requestBody: {
                         name: contestantId,
                         mimeType: 'application/vnd.google-apps.folder',
                         parents: [dayFolderId]
@@ -321,8 +318,7 @@ export const registerContestant = functions.https.onRequest((req, resp) => {
                           {
                             auth: jwtClient,
                             fileId,
-                            fields: 'id',
-                            resource: {
+                            requestBody: {
                               parents: [folderId]
                             }
                           },
