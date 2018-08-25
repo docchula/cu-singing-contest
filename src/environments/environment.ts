@@ -6,13 +6,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: '',
-    authDomain: '',
-    databaseURL: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: ''
+    apiKey: 'AIzaSyD9-yNpDKnv-c_hwj2Kyxltya75hoTAPi4',
+    authDomain: 'cu-singing-contest.firebaseapp.com',
+    databaseURL: 'https://cu-singing-contest.firebaseio.com',
+    projectId: 'cu-singing-contest',
+    storageBucket: 'cu-singing-contest.appspot.com',
+    messagingSenderId: '365913577805'
   },
   modeKey: 'dev-mode',
-  functionsBase: ''
+  functionsBase: 'https://us-central1-cu-singing-contest.cloudfunctions.net'
 };
