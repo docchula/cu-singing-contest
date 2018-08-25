@@ -6,7 +6,7 @@
     "bcrypt": "3.0.0",
     "cors": "2.8.4",
     "firebase-admin": "5.2.1",
-    "firebase-functions": "0.7.2",
+    "firebase-functions": "2.0.5",
     "googleapis": "33.0.0"
   },
   "private": true,
