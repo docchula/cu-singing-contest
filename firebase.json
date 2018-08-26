@@ -19,5 +19,8 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "functions": {
+    "predeploy": "nom --prefix functions run build"
   }
 }

@@ -16,6 +16,7 @@
     "typescript": "^2.5.3"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json"
-  }
+    "build": "tsc"
+  },
+  "main": "lib/index.js"
 }

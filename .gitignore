@@ -42,4 +42,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-/functions/*.js
+# Build artifacts
+/functions/lib
