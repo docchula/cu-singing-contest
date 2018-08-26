@@ -21,6 +21,6 @@
     ]
   },
   "functions": {
-    "predeploy": "nom --prefix functions run build"
+    "predeploy": "npm --prefix functions run build"
   }
 }
