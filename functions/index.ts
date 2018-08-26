@@ -96,12 +96,9 @@ export const resetDay = functions.https.onRequest((req, resp) => {
           .remove();
         console.log(`${keys[i]} resetted!`);
       }
-      const privKeyString =
-        // tslint:disable-next-line:max-line-length
-        '';
-      const issuer =
-        '';
-      const sub = '';
+      const privKeyString = functions.config().oauth2.priv_key_string;
+      const issuer = functions.config().oauth2.issuer;
+      const sub = functions.config().oauth2.sub;
       const scope = ['https://www.googleapis.com/auth/drive'];
       const jwtClient = new google.auth.JWT(
         issuer,
@@ -256,12 +253,9 @@ export const registerContestant = functions.https.onRequest((req, resp) => {
                 .child(uid)
                 .once('value')).val();
               // get JWT
-              const privKeyString =
-                // tslint:disable-next-line:max-line-length
-                '';
-              const issuer =
-                '';
-              const sub = '';
+              const privKeyString = functions.config().oauth2.priv_key_string;
+              const issuer = functions.config().oauth2.issuer;
+              const sub = functions.config().oauth2.sub;
               const scope = ['https://www.googleapis.com/auth/drive'];
               const jwtClient = new google.auth.JWT(
                 issuer,
