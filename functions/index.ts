@@ -13,7 +13,7 @@ const config = {
   credential: admin.credential.cert(
     JSON.parse(readFileSync('cunet-cert.json').toString())
   ),
-  databaseURL: ''
+  databaseURL: 'https://cu-singing-contest.firebaseio.com'
 };
 
 admin.initializeApp(config);
