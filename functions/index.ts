@@ -2,21 +2,13 @@ import axios from 'axios';
 import * as _cors from 'cors';
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
-import { readFileSync } from 'fs';
 import * as https from 'https';
 import * as bcrypt from 'bcrypt';
 import { google } from 'googleapis';
 
 const cors = _cors({ origin: true });
 
-const config = {
-  credential: admin.credential.cert(
-    JSON.parse(readFileSync('cunet-cert.json').toString())
-  ),
-  databaseURL: 'https://cu-singing-contest.firebaseio.com'
-};
-
-admin.initializeApp(config);
+admin.initializeApp();
 
 export const authenticate = functions.https.onRequest((req, resp) => {
   cors(req, resp, async () => {
