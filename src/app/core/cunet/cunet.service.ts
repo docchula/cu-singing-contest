@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-import { environment } from '../../../environments/environment';
+import { FirebaseApp } from 'angularfire2';
+import { from } from 'rxjs';
+import { map } from 'rxjs/operators';
+import 'firebase/functions';
 
 interface CunetResult {
   success: boolean;
@@ -10,13 +12,10 @@ interface CunetResult {
 
 @Injectable()
 export class CunetService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private fba: FirebaseApp) {}
 
   getToken(username: string, password: string) {
-    return this.http.post<CunetResult>(`${environment.functionsBase}/authenticate`, {
-      username, password
-    });
+    const fn = this.fba.functions().httpsCallable('authenticate');
+    return from(fn({ username, password })).pipe(map(r => r.data as CunetResult));
   }
-
 }

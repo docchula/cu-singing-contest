@@ -14,57 +14,50 @@ const sub = functions.config().oauth2.sub;
 
 admin.initializeApp();
 
-export const authenticate = functions.https.onRequest((req, resp) => {
-  cors(req, resp, async () => {
-    if (req.method.toLowerCase() !== 'post') {
-      resp.status(405).end();
+export const authenticate = functions.https.onCall(async (data, context) => {
+  const username: string = data.username;
+  const password: string = data.password;
+  const out: any = {};
+  if (username.startsWith('cusc-temp-')) {
+    const hash = (await admin
+      .database()
+      .ref('config/temp-user')
+      .child(username)
+      .once('value')).val();
+    if (bcrypt.compareSync(password, hash)) {
+      out.success = true;
+      out.token = await admin.auth().createCustomToken(username);
     } else {
-      const data = req.body;
-      const username: string = data.username;
-      const password: string = data.password;
-      const out: any = {};
-      if (username.startsWith('cusc-temp-')) {
-        const hash = (await admin
-          .database()
-          .ref('config/temp-user')
-          .child(username)
-          .once('value')).val();
-        if (bcrypt.compareSync(password, hash)) {
-          out.success = true;
-          out.token = await admin.auth().createCustomToken(username);
-        } else {
-          out.success = false;
-        }
-      } else {
-        const result = axios
-          .get('https://www.it.chula.ac.th/downloads', {
-            auth: {
-              username,
-              password
-            },
-            httpsAgent: new https.Agent({
-              rejectUnauthorized: false
-            })
-          })
-          .then(response => {})
-          .catch(error => {
-            switch (error.response.status) {
-              case 403:
-                return true;
-              default:
-                return false;
-            }
-          });
-        if (await result) {
-          out.success = true;
-          out.token = await admin.auth().createCustomToken(`cunet-${username}`);
-        } else {
-          out.success = false;
-        }
-      }
-      resp.status(200).send(out);
+      out.success = false;
     }
-  });
+  } else {
+    const result = axios
+      .get('https://www.it.chula.ac.th/downloads', {
+        auth: {
+          username,
+          password
+        },
+        httpsAgent: new https.Agent({
+          rejectUnauthorized: false
+        })
+      })
+      .then(response => {})
+      .catch(error => {
+        switch (error.response.status) {
+          case 403:
+            return true;
+          default:
+            return false;
+        }
+      });
+    if (await result) {
+      out.success = true;
+      out.token = await admin.auth().createCustomToken(`cunet-${username}`);
+    } else {
+      out.success = false;
+    }
+  }
+  return out;
 });
 
 export const resetDay = functions.https.onRequest((req, resp) => {
@@ -141,7 +134,7 @@ export const resetDay = functions.https.onRequest((req, resp) => {
                     requestBody: {
                       name: `Day${dayToReset}`,
                       mimeType: 'application/vnd.google-apps.folder',
-                      parents: ['1P16EdwLc4aV_Q9MbHzGpRJhQt6ufu6Tq'],
+                      parents: ['1P16EdwLc4aV_Q9MbHzGpRJhQt6ufu6Tq']
                     }
                   },
                   async (err3: any, folder: any) => {
