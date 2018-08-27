@@ -25,6 +25,6 @@
   "rebaseStalePrs": true,
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": "between 5pm and 10pm"
+    "schedule": "after 5pm also before 10pm"
   }
 }
