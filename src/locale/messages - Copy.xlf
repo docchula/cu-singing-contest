@@ -263,7 +263,7 @@
       </trans-unit>
       <trans-unit id="acceptRule" datatype="html">
         <source>
-  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>การแข่งขันร้องเพลงแห่งจุฬาลงกรณ์มหาวิทยาลัย ครั้งที่ 25 ประกอบด้วยการแข่งขัน 3 รอบ ดังนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>การแข่งขันร้องเพลงแห่งจุฬาลงกรณ์มหาวิทยาลัย ครั้งที่ 26 ประกอบด้วยการแข่งขัน 3 รอบ ดังนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
   <x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol&gt;"/>
     <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>รอบที่ 1 จัดแข่งขันทั้งสิ้น 5 วัน ระหว่างวันที่ 13-17 พฤศจิกายน 2560 ณ ห้องประชุม เฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยจะคัดผู้เข้าแข่งขันวันละ 10 คน รวม 50 คน เข้าแข่งขันในรอบถัดไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
     <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>รอบที่ 2 จัดขึ้นในวันที่ 20 พฤศจิกายน 2560 ณ ห้องประชุม เฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยจะคัดผู้เข้าแข่งขันให้เหลือ 10 คน<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
