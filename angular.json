@@ -46,7 +46,7 @@
             },
             "en": {
               "aot": true,
-              "i18nFile": "src/locale/messeages.en.2.xlf",
+              "i18nFile": "src/locale/messeages.en.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "en",
               "i18nMissingTranslation": "error"
@@ -72,7 +72,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "i18nFile": "src/locale/messages.en.2.xlf",
+              "i18nFile": "src/locale/messages.en.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "en",
               "i18nMissingTranslation": "error",
