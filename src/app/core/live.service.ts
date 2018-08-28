@@ -5,8 +5,7 @@ import { from as fromPromise } from 'rxjs';
 
 @Injectable()
 export class LiveService {
-  constructor(private afd: AngularFireDatabase) {
-  }
+  constructor(private afd: AngularFireDatabase) {}
 
   getDayList(day: number) {
     return this.afd
