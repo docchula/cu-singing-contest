@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {AngularFireDatabase} from 'angularfire2/database';
+import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
-import {from as fromPromise} from 'rxjs';
+import { from as fromPromise } from 'rxjs';
 
 @Injectable()
 export class LiveService {
