@@ -19,25 +19,10 @@ export class SongCheckComponent implements OnInit {
   constructor(private adminService: AdminService) { }
 
   ngOnInit() {
-    this.notChecked$ = this.adminService.userList.pipe(
-      map((users) => {
-        return users.filter((user) => {
-          if (!!user.payload.val().selectedSong && !user.payload.val().songChecked) {
-            return true;
-          } else {
-            return false;
-          }
-        });
-      })
-    );
     this.checked$ = this.adminService.userList.pipe(
       map((users) => {
         return users.filter((user) => {
-          if (!!user.payload.val().selectedSong && !!user.payload.val().songChecked) {
-            return true;
-          } else {
-            return false;
-          }
+          return !!user.payload.val().selectedSong;
         });
       })
     );

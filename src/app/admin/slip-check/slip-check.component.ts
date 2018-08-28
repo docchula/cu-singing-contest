@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireAction } from 'angularfire2/database/interfaces';
+import {Component, OnInit} from '@angular/core';
+import {AngularFireAction} from 'angularfire2/database/interfaces';
 import * as firebase from 'firebase/app';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 
-import { AdminService } from '../admin.service';
+import {AdminService} from '../admin.service';
 
 @Component({
   selector: 'cusc-slip-check',
@@ -19,25 +19,10 @@ export class SlipCheckComponent implements OnInit {
   constructor(private adminService: AdminService) { }
 
   ngOnInit() {
-    this.notChecked$ = this.adminService.userList.pipe(
-      map((users) => {
-        return users.filter((user) => {
-          if (!!user.payload.val().slipUrl && !user.payload.val().slipChecked) {
-            return true;
-          } else {
-            return false;
-          }
-        });
-      })
-    );
     this.checked$ = this.adminService.userList.pipe(
       map((users) => {
         return users.filter((user) => {
-          if (!!user.payload.val().slipUrl && !!user.payload.val().slipChecked) {
-            return true;
-          } else {
-            return false;
-          }
+          return !!user.payload.val().slipUrl;
         });
       })
     );
