@@ -39,14 +39,12 @@ export class SelectSongComponent implements OnInit {
   }
 
   customValidate(c: FormGroup) {
-    if (c.get('mode').value === 'standard') {
+    if (c.get('mode').value) {
       if ((c.get('song').value as Object).hasOwnProperty('name')) {
         return {};
       } else {
         return { song: 'missing' };
       }
-    } else if (c.get('mode').value === 'custom') {
-      return {};
     } else {
       return { mode: 'missing' };
     }

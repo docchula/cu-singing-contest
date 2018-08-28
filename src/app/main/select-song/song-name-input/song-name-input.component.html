@@ -1,0 +1,15 @@
+<strong i18n="@@songNameInputPleaseEnterSongDetails">กรุณากรอกรายละเอียดเพลง</strong>
+<form [formGroup]="songForm">
+  <div class="field">
+    <label class="label" i18n="@@songNameInputName">ชื่อเพลง</label>
+    <div class="control">
+      <input type="text" formControlName="name" class="input" placeholder="ชื่อเพลง" i18n-placeholder="@@songNameInputName">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" i18n="@@songNameInputArtist">ศิลปิน</label>
+    <div class="control">
+      <input type="text" formControlName="artist" class="input" placeholder="ศิลปิน" i18n-placeholder="@@songNameInputArtist">
+    </div>
+  </div>
+</form>

@@ -18,6 +18,7 @@ import { SelectSongComponent } from './select-song/select-song.component';
 import { SongSearcherComponent } from './select-song/song-searcher/song-searcher.component';
 import { PostRegisterGuard } from './post-register.guard';
 import { ViewDayComponent } from './view-day/view-day.component';
+import { SongNameInputComponent } from './select-song/song-name-input/song-name-input.component';
 
 @NgModule({
   imports: [CommonModule, MainRoutingModule, SharedModule],
@@ -31,7 +32,8 @@ import { ViewDayComponent } from './view-day/view-day.component';
     PayComponent,
     SelectSongComponent,
     SongSearcherComponent,
-    ViewDayComponent
+    ViewDayComponent,
+    SongNameInputComponent
   ],
   providers: [AcceptGuard, ProfileGuard, DayGuard, PayGuard, PostRegisterGuard]
 })
