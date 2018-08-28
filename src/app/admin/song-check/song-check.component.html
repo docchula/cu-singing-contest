@@ -1,27 +1,6 @@
 <div class="container">
   <h1 class="is-size-3">ตรวจสอบเพลง</h1>
-  <h2 class="is-size-4">ผู้เข้าแข่งขันที่ยังไม่ได้รับการตรวจสอบเพลง</h2>
-  <table class="table is-fullwidth">
-    <thead>
-      <tr>
-        <th>เลขประจำตัวนิสิต</th>
-        <th>ชื่อ-นามสกุล</th>
-        <th>Facebook</th>
-        <th>เพลง</th>
-        <th>สถานะ</th>
-        <th>เปลี่ยนสถานะ</th>
-      </tr>
-    </thead>
-    <tr *ngFor="let user of notChecked$ | async">
-      <td>{{user.key}}</td>
-      <td>{{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})</td>
-      <td>{{user.payload.val().profile.facebook}}</td>
-      <td>{{user.payload.val().selectedSong | admin_song}}</td>
-      <td>{{user.payload.val().songChecked | status}}</td>
-      <td><button class="button is-primary" (click)="toggleStatus(user.key)">เปลี่ยนสถานะ</button></td>
-    </tr>
-  </table>
-  <h2 class="is-size-4">ผู้เข้าแข่งขันที่ตรวจสอบเพลงแล้ว</h2>
+  <h2 class="is-size-4">ผู้เข้าแข่งขัน</h2>
   <table class="table is-fullwidth">
     <thead>
       <tr>
@@ -38,7 +17,7 @@
       <td>{{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})</td>
       <td>{{user.payload.val().profile.facebook}}</td>
       <td>{{user.payload.val().selectedSong | admin_song}}</td>
-      <td>{{user.payload.val().songChecked | status}}</td>
+      <td [ngClass]="{'is-primary': !!user.payload.val().songChecked}">{{user.payload.val().songChecked | status}}</td>
       <td><button class="button is-primary" (click)="toggleStatus(user.key)">เปลี่ยนสถานะ</button></td>
     </tr>
   </table>

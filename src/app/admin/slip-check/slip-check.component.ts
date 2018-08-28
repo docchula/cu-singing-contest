@@ -12,32 +12,15 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./slip-check.component.css']
 })
 export class SlipCheckComponent implements OnInit {
-
-  notChecked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
   checked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
 
   constructor(private adminService: AdminService) { }
 
   ngOnInit() {
-    this.notChecked$ = this.adminService.userList.pipe(
-      map((users) => {
-        return users.filter((user) => {
-          if (!!user.payload.val().slipUrl && !user.payload.val().slipChecked) {
-            return true;
-          } else {
-            return false;
-          }
-        });
-      })
-    );
     this.checked$ = this.adminService.userList.pipe(
       map((users) => {
         return users.filter((user) => {
-          if (!!user.payload.val().slipUrl && !!user.payload.val().slipChecked) {
-            return true;
-          } else {
-            return false;
-          }
+          return !!user.payload.val().slipUrl;
         });
       })
     );
