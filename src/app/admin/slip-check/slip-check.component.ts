@@ -4,7 +4,7 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import {AdminService} from '../admin.service';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'cusc-slip-check',
