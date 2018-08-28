@@ -34,6 +34,7 @@ export class ProfileComponent implements OnInit {
       lname: new FormControl('', Validators.required),
       nname: new FormControl('', Validators.required),
       facebook: new FormControl('', Validators.required),
+      line: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       mobile: new FormControl('', [
         Validators.required,
