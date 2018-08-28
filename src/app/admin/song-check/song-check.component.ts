@@ -13,7 +13,6 @@ import { AdminService } from '../admin.service';
 })
 export class SongCheckComponent implements OnInit {
 
-  notChecked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
   checked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
 
   constructor(private adminService: AdminService) { }
