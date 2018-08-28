@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
         }
       })
     );
-    this.step3Done = this.userService.getUserObjectSnapshot<any>('days').pipe(
+    this.step3Done = this.userService.getUserObjectSnapshot<any>('slipChecked').pipe(
       map(v => {
         if (v.payload.exists()) {
           return true;
@@ -46,7 +46,7 @@ export class DashboardComponent implements OnInit {
         }
       })
     );
-    this.step4Done = this.userService.getUserObjectSnapshot<boolean>('slipChecked').pipe(
+    this.step4Done = this.userService.getUserObjectSnapshot<boolean>('days').pipe(
       map(v => {
         if (v.payload.exists()) {
           return v.payload.val();
