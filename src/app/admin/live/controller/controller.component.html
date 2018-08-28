@@ -21,7 +21,6 @@
         <th>เพลง</th>
         <th>สถานะ</th>
         <th>Smoke</th>
-        <th>Follow</th>
         <th>การดำเนินการ</th>
       </tr>
     </thead>
@@ -37,12 +36,10 @@
 
       <td>{{status[user.payload.val().liveStatus].name}}</td>
       <td [ngClass]="{'is-primary': !!user.payload.val().smoke}">{{!!user.payload.val().smoke}}</td>
-      <td [ngClass]="{'is-primary': !!user.payload.val().follow}">{{!!user.payload.val().follow}}</td>
       <td>
         <button class="button is-primary" *ngIf="positions[mode.value]?.canNext.includes(user.payload.val().liveStatus)" (click)="next(user.key)">{{status[user.payload.val().liveStatus].next}}</button>
         <button class="button is-danger" *ngIf="positions[mode.value]?.canReverse.includes(user.payload.val().liveStatus)" (click)="back(user.key)">ย้อนกลับ</button>
         <button class="button is-info" *ngIf="positions[mode.value]?.canTrigger && status[user.payload.val().liveStatus].hasTrigger" (click)="trigger(user.key, 'smoke')">เปลี่ยน Smoke</button>
-        <button class="button is-info" *ngIf="positions[mode.value]?.canTrigger && status[user.payload.val().liveStatus].hasTrigger" (click)="trigger(user.key, 'follow')">เปลี่ยน Follow</button>
       </td>
     </tr>
   </table>
