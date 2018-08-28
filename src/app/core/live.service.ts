@@ -22,7 +22,7 @@ export class LiveService {
 
   registerDetails(
     details: {
-      mobile: string,
+      mobile: string;
       nameReading: string;
       songMode: string;
       songName: string;
