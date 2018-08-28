@@ -9,10 +9,15 @@
     <ul>
       <li>Email: {{user.profile.email}}</li>
       <li>Facebook: {{user.profile.facebook}}</li>
-      <li>หมายเลขโทรศัพท์มือถือ: {{user.profile.mobile}}</li>
     </ul>
   </div>
-  <form [formGroup]="form">
+    <form [formGroup]="form">
+    <div class="field">
+      <label class="label">หมายเลขโทรศัพท์มือถือ</label>
+      <div class="control">
+        <input type="text" class="input" formControlName="mobile">
+      </div>
+    </div>
     <div class="field">
       <label class="label">คำอ่านชื่อ</label>
       <div class="control">

@@ -44,6 +44,7 @@ export class RegisterCheckComponent implements OnInit {
       })
     );
     this.form = new FormGroup({
+      mobile: new FormControl(''),
       nameReading: new FormControl(''),
       songMode: new FormControl(''),
       songName: new FormControl(''),
@@ -57,6 +58,7 @@ export class RegisterCheckComponent implements OnInit {
         this.userData$.pipe(first()).subscribe(data => {
           const selectedSong = liveDay === 6 ? data.selectedSong2 : data.selectedSong;
           console.log(selectedSong);
+          this.form.get('mobile').setValue(data.profile.mobile);
           this.form.get('songMode').setValue(selectedSong.mode);
           if (selectedSong.song) {
             this.form.get('songName').setValue(selectedSong.song.name);

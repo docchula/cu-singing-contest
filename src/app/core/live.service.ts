@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import {Injectable} from '@angular/core';
+import {AngularFireDatabase} from 'angularfire2/database';
 import * as firebase from 'firebase/app';
-import { from as fromPromise } from 'rxjs';
+import {from as fromPromise} from 'rxjs';
 
 @Injectable()
 export class LiveService {
-  constructor(private afd: AngularFireDatabase) {}
+  constructor(private afd: AngularFireDatabase) {
+  }
 
   getDayList(day: number) {
     return this.afd
@@ -22,6 +23,7 @@ export class LiveService {
 
   registerDetails(
     details: {
+      mobile: string,
       nameReading: string;
       songMode: string;
       songName: string;
@@ -33,6 +35,10 @@ export class LiveService {
     const selectedSongKey = day === 6 ? 'selectedSong2' : 'selectedSong';
     return fromPromise(
       Promise.all([
+        firebase
+          .database()
+          .ref(`data/users/${uid}/profile/mobile`)
+          .set(details.mobile),
         firebase
           .database()
           .ref(`data/users/${uid}/profile/nameReading`)
