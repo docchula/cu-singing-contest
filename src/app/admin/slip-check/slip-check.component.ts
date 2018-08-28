@@ -12,8 +12,6 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./slip-check.component.css']
 })
 export class SlipCheckComponent implements OnInit {
-
-  notChecked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
   checked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
 
   constructor(private adminService: AdminService) { }
