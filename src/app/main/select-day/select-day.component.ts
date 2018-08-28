@@ -41,7 +41,9 @@ export class SelectDayComponent implements OnInit {
       {
         d1: new FormControl('', Validators.required),
         d2: new FormControl('', Validators.required),
-        d3: new FormControl('', Validators.required)
+        d3: new FormControl('', Validators.required),
+        d4: new FormControl('', Validators.required),
+        d5: new FormControl('', Validators.required)
       },
       this.validateDays
     );
@@ -55,10 +57,10 @@ export class SelectDayComponent implements OnInit {
 
   validateDays(c: FormGroup) {
     if (
-      [c.get('d1'), c.get('d2'), c.get('d3')]
+      [c.get('d1'), c.get('d2'), c.get('d3'), c.get('d4'), c.get('d5')]
         .map(_c => _c.value)
         .map((v: Day) => v.id)
-        .filter((v, pos, a) => a.indexOf(v) === pos).length === 3
+        .filter((v, pos, a) => a.indexOf(v) === pos).length === 5
     ) {
       return {};
     } else {

@@ -34,6 +34,28 @@
     </div>
   </div>
   <div class="field">
+    <label class="label" i18n="@@day4">อันดับที่ 4</label>
+    <div class="control is-expanded">
+      <div class="select is-fullwidth">
+        <select formControlName="d4">
+          <option value="" disabled selected hidden i18n="@@select">เลือก</option>
+          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d4)?.id">{{day[daysTextKey]}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" i18n="@@day5">อันดับที่ 5</label>
+    <div class="control is-expanded">
+      <div class="select is-fullwidth">
+        <select formControlName="d5">
+          <option value="" disabled selected hidden i18n="@@select">เลือก</option>
+          <option [ngValue]="day" *ngFor="let day of days$ | async" [selected]="day.id === ((currentDays$ | async)?.d5)?.id">{{day[daysTextKey]}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="field">
     <div class="control">
       <input type="submit" value="บันทึกข้อมูล" class="button is-primary" [disabled]="disableSubmit || daysForm.invalid">
     </div>
