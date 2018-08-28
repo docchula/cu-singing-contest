@@ -38,24 +38,24 @@ const routes: Routes = [
         canActivate: [AcceptGuard, PostRegisterGuard]
       },
       {
-        path: '3_selectDay',
-        component: SelectDayComponent,
+        path: '3_pay',
+        component: PayComponent,
         canActivate: [ProfileGuard, PostRegisterGuard]
       },
       {
-        path: '4_pay',
-        component: PayComponent,
-        canActivate: [DayGuard]
+        path: '4_selectDay',
+        component: SelectDayComponent,
+        canActivate: [PayGuard]
       },
       {
         path: '5_selectSong',
         component: SelectSongComponent,
-        canActivate: [PayGuard]
+        canActivate: [DayGuard]
       },
       {
         path: '6_viewDay',
         component: ViewDayComponent,
-        canActivate: [PayGuard]
+        canActivate: [DayGuard]
       }
     ]
   }
