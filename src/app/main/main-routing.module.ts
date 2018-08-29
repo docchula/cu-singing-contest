@@ -40,7 +40,7 @@ const routes: Routes = [
       {
         path: '3_pay',
         component: PayComponent,
-        canActivate: [ProfileGuard, PostRegisterGuard]
+        canActivate: [ProfileGuard]
       },
       {
         path: '4_selectDay',
