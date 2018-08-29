@@ -36,7 +36,7 @@ export class PostRegisterGuard implements CanActivate {
                 first(),
                 map(snap => {
                   if (snap.payload.exists()) {
-                    this.router.navigate(['/main', '4_pay']);
+                    this.router.navigate(['/main', '3_pay']);
                   } else {
                     this.userService.signOut().subscribe();
                     this.router.navigate(['/']);

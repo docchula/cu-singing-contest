@@ -23,7 +23,7 @@ export class PayGuard implements CanActivate {
         if (slipChecked) {
           return true;
         } else {
-          this.router.navigate(['/main', '4_pay']);
+          this.router.navigate(['/main', '3_pay']);
           return false;
         }
       })

@@ -23,7 +23,7 @@ export class DayGuard implements CanActivate {
         if (days.payload.exists()) {
           return true;
         } else {
-          this.router.navigate(['/main', '3_selectDay']);
+          this.router.navigate(['/main', '4_selectDay']);
           return false;
         }
       })
