@@ -11,6 +11,7 @@ export interface User {
     nname: string;
     email: string;
     facebook: string;
+    line: string;
     mobile: string;
     education: {
       educationLevel: string;
@@ -22,6 +23,8 @@ export interface User {
     d1: Day;
     d2: Day;
     d3: Day;
+    d4: Day;
+    d5: Day;
   };
   slipUrl: string;
   slipChecked: boolean;
