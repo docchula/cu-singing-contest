@@ -10,7 +10,7 @@
         <tr>
           <th>เลขประจำตัวนิสิต</th>
           <th>ชื่อ-นามสกุล</th>
-          <th>Facebook</th>
+          <th>Facebook / LINE</th>
           <th>โทรศัพท์มือถือ</th>
           <th>คณะ</th>
           <th>เพลง</th>
@@ -21,7 +21,7 @@
       <tr *ngFor="let user of usersByDay[i] | async">
         <td>{{user.key}}</td>
         <td>{{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})</td>
-        <td>{{user.payload.val().profile.facebook}}</td>
+        <td>{{user.payload.val().profile.facebook}} / {{ user.payload.val().profile.line}}</td>
         <td>{{user.payload.val().profile.mobile}}</td>
         <td>{{user.payload.val().profile.faculty.name}}</td>
         <td>{{user.payload.val().selectedSong | admin_song}}</td>
