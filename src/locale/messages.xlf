@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="ng2.template">
+  <file source-language="th" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="signIn" datatype="html">
         <source>เข้าสู่ระบบ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="sourcefile">app/app.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description">A text for sign in button</note>
@@ -14,7 +14,7 @@
       <trans-unit id="signOut" datatype="html">
         <source>ออกจากระบบ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="sourcefile">app/app.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
         <note priority="1" from="description">A text for sign out button</note>
@@ -23,7 +23,7 @@
       <trans-unit id="copyright" datatype="html">
         <source>สงวนลิขสิทธิ์ 2560 ฝ่ายเทคโนโลยีสารสนเทศ และฝ่ายดนตรีสากล สโมสรนิสิตคณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="sourcefile">app/app.component.html</context>
           <context context-type="linenumber">37</context>
         </context-group>
         <note priority="1" from="description">A copyright text at the footer</note>
@@ -32,7 +32,7 @@
       <trans-unit id="preRegistration" datatype="html">
         <source>ขณะนี้ยังไม่ถึงเวลาสมัครเข้าการแข่งขัน<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>เริ่มรับสมัครวันที่ 1 ตุลาคม 2560 เวลา 10.00 น.</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="sourcefile">app/home/home.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
         <note priority="1" from="description">A text to be shown before registration period begins</note>
@@ -44,7 +44,7 @@
               <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>เข้าสู่ระบบ<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
             </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="sourcefile">app/home/home.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="description">A text to be shown after registration period ends</note>
@@ -53,7 +53,7 @@
       <trans-unit id="duringRegistration" datatype="html">
         <source>เปิดรับสมัครตั้งแต่วันที่ 1 ตุลาคม 2560 - 31 ตุลาคม 2560</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="sourcefile">app/home/home.component.html</context>
           <context context-type="linenumber">22</context>
         </context-group>
         <note priority="1" from="description">A text to be shown during registration period</note>
@@ -62,7 +62,7 @@
       <trans-unit id="registrationButton" datatype="html">
         <source>สมัครเลย</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="sourcefile">app/home/home.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description">A text to be shown on the registration button</note>
@@ -71,7 +71,7 @@
       <trans-unit id="signInTitle" datatype="html">
         <source>เข้าสู่ระบบ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.ts</context>
+          <context context-type="sourcefile">app/login/login.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
         <note priority="1" from="description">A text to be shown as the title of sign in page</note>
@@ -80,7 +80,7 @@
       <trans-unit id="cunetNotice" datatype="html">
         <source>โปรดใช้บัญชี CUNET ในการเข้าสู่ระบบ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.ts</context>
+          <context context-type="sourcefile">app/login/login.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description">A text to tell users that they need to use CUNET account</note>
@@ -89,7 +89,7 @@
       <trans-unit id="signInStudentIdLabel" datatype="html">
         <source>เลขประจำตัวนิสิต</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.ts</context>
+          <context context-type="sourcefile">app/login/login.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
         <note priority="1" from="description">A text at student id label of sign in form</note>
@@ -98,7 +98,7 @@
       <trans-unit id="signInStudentIdPlaceholder" datatype="html">
         <source>รหัสประจำตัวนิสิต 8 หลัก</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.ts</context>
+          <context context-type="sourcefile">app/login/login.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
         <note priority="1" from="description">A text at student id placeholder of sign in form</note>
@@ -107,7 +107,7 @@
       <trans-unit id="signInPasswordLabel" datatype="html">
         <source>รหัสผ่าน</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.ts</context>
+          <context context-type="sourcefile">app/login/login.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
         <note priority="1" from="description">A text at password label of sign in form</note>
@@ -116,7 +116,7 @@
       <trans-unit id="signInPasswordPlaceholder" datatype="html">
         <source>รหัสผ่าน</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.ts</context>
+          <context context-type="sourcefile">app/login/login.component.html</context>
           <context context-type="linenumber">30</context>
         </context-group>
         <note priority="1" from="description">A text at password placeholder of sign in form</note>
@@ -125,7 +125,7 @@
       <trans-unit id="signInButton" datatype="html">
         <source>เข้าสู่ระบบ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.ts</context>
+          <context context-type="sourcefile">app/login/login.component.html</context>
           <context context-type="linenumber">40</context>
         </context-group>
         <note priority="1" from="description">A text to be shown on sign in button</note>
@@ -134,7 +134,7 @@
       <trans-unit id="acceptTitle" datatype="html">
         <source>รับทราบระเบียบการแข่งขัน</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.ts</context>
+          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
         <note priority="1" from="description">accept title</note>
@@ -142,7 +142,7 @@
       <trans-unit id="acceptNoticeTitle" datatype="html">
         <source>โปรดทราบ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.ts</context>
+          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
         <note priority="1" from="description">accept notice title</note>
@@ -150,23 +150,29 @@
       <trans-unit id="acceptNoticeBody" datatype="html">
         <source>กรุณาอ่านระเบียบการแข่งขันอย่างละเอียด <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>หากไม่ปฏิบัติตาม คณะกรรมการอาจพิจารณาตัดสิทธิ์การแข่งขัน<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.ts</context>
+          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description">accept notice body</note>
       </trans-unit>
       <trans-unit id="acceptRule" datatype="html">
         <source>
-  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>การแข่งขันร้องเพลงแห่งจุฬาลงกรณ์มหาวิทยาลัย ครั้งที่ 25 ประกอบด้วยการแข่งขัน 3 รอบ ดังนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>การแข่งขัน CU Singing Contest ครั้งที่ 26 ประกอบด้วยการแข่งขัน 3 รอบ ดังนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
   <x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol&gt;"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>รอบที่ 1 จัดแข่งขันทั้งสิ้น 5 วัน ระหว่างวันที่ 13-17 พฤศจิกายน 2560 ณ ห้องประชุม เฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยจะคัดผู้เข้าแข่งขันวันละ 10 คน รวม 50 คน เข้าแข่งขันในรอบถัดไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>รอบที่ 2 จัดขึ้นในวันที่ 20 พฤศจิกายน 2560 ณ ห้องประชุม เฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยจะคัดผู้เข้าแข่งขันให้เหลือ 10 คน<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>รอบชิงชนะเลิศ จัดขึ้นในวันที่ 17 มกราคม 2561 ณ หอประชุมใหญ่ จุฬาลงกรณ์มหาวิทยาลัย<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>การแข่งขันในรอบที่ 1 : วันที่ 29 ตุลาคม - 2 พฤศจิกายน 2561 ณ หอประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยจะคัดผู้เข้าแข่งขันวันละ 10 คน รวม 50 คน เข้าสู่รอบถัดไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>การแข่งขันในรอบที่ 2 : วันที่ 7 พฤศจิกายน 2561 ณ หอประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยคัดเหลือผู้เข้ารอบสุดท้าย 10 คน<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>รอบชิงชนะเลิศ : วันที่ 24 มกราคม 2562 ณ หอประชุมใหญ่ จุฬาลงกรณ์มหาวิทยาลัย<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
   <x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol&gt;"/>
-  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>ผู้สมัคร จะต้องดำเนินการสมัครผ่านทางเว็บไซต์ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> โดยทำตามขั้นตอนให้ครบถ้วน พร้อมชำระค่าสมัคร 160 บาท และเลือกเพลงที่จะใช้ในการแข่งขันรอบที่ 1 ให้เรียบร้อย ภายในวันที่ 31 ตุลาคม 2560 เวลา 23.59 น. หากเลยกำหนด จะไม่มีสิทธิ์เข้าแข่งขัน ไม่ว่ากรณีใด ๆ<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>ผู้สมัคร จะต้องดำเนินการสมัครผ่านทางเว็บไซต์ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> โดยทำตามขั้นตอนให้ครบถ้วน พร้อมชำระค่าสมัคร 180 บาท ภายในกำหนดเวลาต่อไปนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+  <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>กรอกข้อมูลพื้นฐาน ภายในวันที่ 30 กันยายน 2561 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>ชำระค่าสมัคร พร้อม upload หลักฐาน ภายในวันที่ 1 ตุลาคม 2561 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>เลือกวันแข่งขัน และเพลงที่ใช้ ภายในวันที่ 15 ตุลาคม 2561 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>รับทราบวันแข่งขัน และยืนยันการสมัคร ตั้งแต่วันที่ 19 ตุลาคม 2561 เป็นต้นไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+  <x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/>
 </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.ts</context>
+          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
         <note priority="1" from="description">accept rule</note>
@@ -174,23 +180,23 @@
       <trans-unit id="congrats" datatype="html">
         <source>ขอแสดงความยินดี</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
+          <context context-type="linenumber">28</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/pay/pay.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
+          <context context-type="linenumber">76</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
+          <context context-type="linenumber">67</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.ts</context>
+          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
           <context context-type="linenumber">40</context>
         </context-group>
         <note priority="1" from="description">contrats</note>
@@ -200,112 +206,114 @@
       คุณได้รับทราบและยอมรับระเบียบการแข่งขันเรียบร้อยแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
     </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
+          <context context-type="linenumber">30</context>
         </context-group>
         <note priority="1" from="description">accept done</note>
       </trans-unit>
       <trans-unit id="acceptIAccept" datatype="html">
         <source>ข้าพเจ้ารับทราบและยอมรับระเบียบการแข่งขันข้างต้นนี้แล้ว และพร้อมจะปฏิบัติตาม</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="acceptButton" datatype="html">
         <source>ยอมรับ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dashboardAccept" datatype="html">
         <source>รับทราบขั้นตอนการสมัคร</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/dashboard/dashboard.component.ts</context>
+          <context context-type="sourcefile">app/main/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dashboardProfile" datatype="html">
         <source>กรอกข้อมูลพื้นฐานของผู้สมัคร</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/dashboard/dashboard.component.ts</context>
+          <context context-type="sourcefile">app/main/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="dashboardDay" datatype="html">
-        <source>เลือกวันที่ต้องการจะมาแข่งขัน</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/dashboard/dashboard.component.ts</context>
-          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dashboardPay" datatype="html">
         <source>ชำระเงิน</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/dashboard/dashboard.component.ts</context>
+          <context context-type="sourcefile">app/main/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dashboardDay" datatype="html">
+        <source>เลือกวันที่ต้องการจะมาแข่งขัน</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dashboardSong" datatype="html">
         <source>เลือกเพลง</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/dashboard/dashboard.component.ts</context>
+          <context context-type="sourcefile">app/main/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dashboardViewDay" datatype="html">
         <source>ดูวันแข่งขันรอบแรก</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/dashboard/dashboard.component.ts</context>
+          <context context-type="sourcefile">app/main/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="dashboardSong2" datatype="html">
-        <source>เลือกเพลงรอบที่ 2</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/dashboard/dashboard.component.ts</context>
-          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="payInstruction" datatype="html">
         <source>
-  ให้ผู้เข้าแข่งขันชำระค่าสมัคร 160 บาท (หนึ่งร้อยหกสิบบาทถ้วน) โดยโอนเงินเข้าบัญชีธนาคารไทยพาณิชย์ สาขาสภากาชาดไทย ชื่อบัญชี
-  <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>นายพันธกานต์ อุไพศิลป์สถาพร และ/หรือ นายจิรภัทร ลัทธิธรรม<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> เลขที่บัญชี <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>408-031455-4<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>
+  ให้ผู้เข้าแข่งขันชำระค่าสมัคร 180 บาท (หนึ่งร้อยแปดสิบบาทถ้วน) โดยโอนเงินเข้าบัญชีธนาคารไทยพาณิชย์ สาขาสภากาชาดไทย ชื่อบัญชี
+  <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>นายภัชภูมิ เลิศจารุเกตุ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> เลขที่บัญชี <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>407-239026-5<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>
 </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/pay/pay.component.ts</context>
+          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="paySlipInstruction" datatype="html">
         <source>
-  หลังจากโอนเงินเรียบร้อยแล้ว ให้ทำการ Upload หลักฐานการโอนเงินด้านล่างนี้
+  หลังจากโอนเงินเรียบร้อยแล้ว ให้ทำการ Upload หลักฐานการโอนเงินด้านล่างนี้ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>ภายในวันที่ 1 ตุลาคม 2561 เวลา 22.00 น.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>
 </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/pay/pay.component.ts</context>
+          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
           <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="paySelectSongAndDay" datatype="html">
+        <source>
+  ผู้เข้าแข่งขันจะมีสิทธิ์เลือกวันแข่งขัน และเลือกเพลงหลังจากที่อัพโหลดหลักฐานการโอนเงิน และได้รับการตรวจสอบเรียบร้อย
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="payStatus" datatype="html">
         <source>สถานะการตรวจสอบ:</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/pay/pay.component.ts</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="payStatusDone" datatype="html">
         <source>ตรวจสอบเรียบร้อย</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/pay/pay.component.ts</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="payStatusNotDone" datatype="html">
         <source>ยังไม่ได้รับการตรวจสอบ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/pay/pay.component.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="payNext" datatype="html">
@@ -313,15 +321,15 @@
       หลักฐานการโอนเงินของคุณได้รับการตรวจสอบแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
     </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/pay/pay.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="payWaitTitle" datatype="html">
         <source>กรุณารอสักครู่</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/pay/pay.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="payWaitBody" datatype="html">
@@ -330,137 +338,152 @@
         24 ชั่วโมง สถานะการตรวจสอบยังไม่เปลี่ยนแปลง ให้ส่งข้อความมาที่ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> พร้อมแจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร
       </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/pay/pay.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="titleLabel" datatype="html">
         <source>คำนำหน้าชื่อ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fname" datatype="html">
         <source>ชื่อ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="lname" datatype="html">
         <source>นามสกุล</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="nname" datatype="html">
         <source>ชื่อเล่น</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="email" datatype="html">
         <source>Email</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">29</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="facebook" datatype="html">
         <source>Facebook</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">35</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
           <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="line" datatype="html">
+        <source>LINE ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="mobile" datatype="html">
         <source>หมายเลขโทรศัพท์มือถือ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
+          <context context-type="linenumber">47</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="mobileHint" datatype="html">
         <source>ไม่ต้องใส่ขีด</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="facultyLabel" datatype="html">
         <source>คณะ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="select" datatype="html">
         <source>เลือก</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
+          <context context-type="linenumber">58</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.ts</context>
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.ts</context>
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.ts</context>
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
           <context context-type="linenumber">30</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/title/title.component.ts</context>
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/profile/title/title.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="submit" datatype="html">
         <source>บันทึกข้อมูล</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
+          <context context-type="linenumber">69</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song-2/select-song-2.component.ts</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="profileNext" datatype="html">
@@ -468,36 +491,50 @@
       คุณได้กรอกข้อมูลพื้นฐานเรียบร้อยแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
     </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.ts</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
+          <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dayInstruction" datatype="html">
-        <source>คุณสามารถเลือกวันที่ท่านจะมาเข้าแข่งขัน<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>ในรอบแรก<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> ได้ 3 อันดับ โดยไม่ซ้ำกัน</source>
+        <source>ให้ผู้เข้าแข่งขันเรียงลำดับความต้องการของวันแข่งขันในรอบที่ 1 โดยคุณสามารถแก้ไขได้จนถึงวันที่ 15 ตุลาคม 2561 เวลา 23.59 น.</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.ts</context>
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="day1" datatype="html">
         <source>อันดับที่ 1</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.ts</context>
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="day2" datatype="html">
         <source>อันดับที่ 2</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.ts</context>
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="day3" datatype="html">
         <source>อันดับที่ 3</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.ts</context>
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
           <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="day4" datatype="html">
+        <source>อันดับที่ 4</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="day5" datatype="html">
+        <source>อันดับที่ 5</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dayNext" datatype="html">
@@ -505,156 +542,125 @@
       คุณได้เลือกวันในการแข่งขันรอบแรกเรียบร้อยแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
     </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
+          <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songInstruction" datatype="html">
-        <source>คุณสามารถเลือกใช้เพลง Backing Track ของคณะกรรมการ หรือคุณอาจเตรียม Backing Track ของคุณมาใช้ในวันแข่งขันก็ได้ หรือคุณจะเล่นดนตรีสดก็ได้</source>
+        <source>คุณสามารถเลือกใช้เพลง Backing Track ของคณะกรรมการ หรือคุณอาจเตรียม Backing Track ของคุณมาใช้ในวันแข่งขัน หรือคุณอาจเล่นดนตรีสดก็ได้</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song-2/select-song-2.component.ts</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songWhichMode" datatype="html">
         <source>คุณต้องการใช้ Backing Track จากไหน?</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song-2/select-song-2.component.ts</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songModeNormal" datatype="html">
-        <source>ใช้ Backing Track ของคณะกรรมการ</source>
+        <source>ใช้ Backing Track
+          ของคณะกรรมการ
+        </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song-2/select-song-2.component.ts</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songModeCustom" datatype="html">
-        <source>ใช้ Backing Track ที่เตรียมมาเอง</source>
+        <source>ใช้ Backing Track
+          ที่เตรียมมาเอง
+        </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song-2/select-song-2.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
           <context context-type="linenumber">14</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.ts</context>
-          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songModeLive" datatype="html">
-        <source>เล่นดนตรีสด</source>
+        <source>ต้องการเล่นดนตรีสด</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song-2/select-song-2.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songNearlyFinish" datatype="html">
         <source>ใกล้เสร็จแล้ว</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song-2/select-song-2.component.ts</context>
-          <context context-type="linenumber">39</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songNormalInstruction" datatype="html">
         <source>
-          คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> โดยใช้ Backing Track ของคณะกรรมการ
-          <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> ให้คุณส่งข้อความมาที่
-          <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>
-            <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> พร้อมกับ
-          <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> และแจ้งว่าจะขอรับ Backing Track เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/>
-          <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
+          คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> โดยใช้ Backing Track ของคณะกรรมการ<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> ให้คุณส่งข้อความมาที่
+          <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+          พร้อมกับ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> และแจ้งว่าจะขอรับ Backing Track เพลง <x id="INTERPOLATION_1" equiv-text="{{currentSelectedSong.song
+          | song}}"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
         </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song-2/select-song-2.component.ts</context>
-          <context context-type="linenumber">44</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songCustomInstruction" datatype="html">
         <source>
-            คุณได้เลือกที่จะใช้ Backing Track ของคุณเองในการแข่งขัน
-            <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> ให้คุณส่งข้อความมาที่
-            <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>
-              <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> พร้อมกับ
-            <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> พร้อมแนบไฟล์ Backing Track ที่คุณจะใช้ พร้อมแจ้งรายละเอียดของเพลง
-            (ชื่อเพลง, ศิลปิน)
-            <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
+            คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> โดยใช้ Backing Track ของคุณเองในการแข่งขัน<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> ให้คุณส่งข้อความมาที่
+            <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+            พร้อมกับ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>
+            พร้อมแนบไฟล์ Backing Track ที่คุณจะใช้ พร้อมแจ้งรายละเอียดของเพลง (ชื่อเพลง, ศิลปิน)<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> หลังจากนั้น ไปฝึกซ้อมให้มาก
+            ๆ แล้วพบกันในวันแข่งขัน!
           </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song-2/select-song-2.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
           <context context-type="linenumber">56</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.ts</context>
-          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songLiveInstruction" datatype="html">
         <source>
-            คุณได้เลือกที่เล่นดนตรีสดในการแข่งขัน
-            <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> ให้คุณส่งข้อความมาที่
-            <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>
-              <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> พร้อมกับ
-            <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> พร้อมแจ้งรายละเอียดของเพลง
-            (ชื่อเพลง, ศิลปิน)
-            <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
+            คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> โดยคุณจะเป็นผู้เล่นดนตรีสด<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> ให้คุณส่งข้อความมาที่
+            <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+            พร้อมกับ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>
+            พร้อมแจ้งรายละเอียดของเครื่องดนตรีที่จะใช้<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
           </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song-2/select-song-2.component.ts</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="viewDayTitle" datatype="html">
         <source>ดูวันแข่งขันรอบที่ 1</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.ts</context>
+          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="viewDayDayTitle" datatype="html">
         <source>วันแข่งขันรอบที่ 1</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.ts</context>
+          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="viewDayDayBody" datatype="html">
         <source>ท่านได้รับการจัดสรรให้มาแข่งขันรอบที่ 1 ในวันที่ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/><x id="INTERPOLATION" equiv-text="{{firstDay | async}}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.ts</context>
+          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="viewDayNoticeTitle" datatype="html">
         <source>โปรดทราบ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.ts</context>
+          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="viewDayNoticeBody" datatype="html">
         <source>กรุณาอ่านสิ่งที่ควรทราบข้างใต้นี้อย่างละเอียด</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.ts</context>
+          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
@@ -678,7 +684,7 @@
   <x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol&gt;"/>
 </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.ts</context>
+          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
@@ -687,100 +693,129 @@
       คุณได้รับทราบวันแข่งขันรอบที่ 1 และสิ่งที่ควรทราบต่าง ๆ แล้ว
     </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.ts</context>
+          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="viewDayAccept" datatype="html">
         <source>ข้าพเจ้ารับทราบวันแข่งขันในรอบที่ 1 และสิ่งที่ควรทราบต่าง ๆ แล้ว</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.ts</context>
+          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="viewDayButton" datatype="html">
         <source>รับทราบ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.ts</context>
+          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
           <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="titleOtherPlaceholder" datatype="html">
         <source>คำนำหน้าชื่ออื่น ๆ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/title/title.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/title/title.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="educationLevelLabel" datatype="html">
         <source>ระดับการศึกษา</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="educationLevelYear" datatype="html">
         <source>ชั้นปี</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="educationLevelOtherPlaceholder" datatype="html">
         <source>ระดับการศึกษา</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.ts</context>
+          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songSearcherYouSelected" datatype="html">
         <source>คุณเลือกเพลง:</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songSearcherSearchHere" datatype="html">
         <source>ค้นหาเพลงที่นี่</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songSearcherSearchBySongName" datatype="html">
         <source>ค้นหาโดยใช้ชื่อเพลง</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songSearcherSongName" datatype="html">
         <source>ชื่อเพลง</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songSearcherArtist" datatype="html">
         <source>ศิลปิน</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="songSearcherSelect" datatype="html">
         <source>เลือก</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.ts</context>
+          <context context-type="sourcefile">app/main/select-song/song-searcher/song-searcher.component.html</context>
           <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="songNameInputPleaseEnterSongDetails" datatype="html">
+        <source>กรุณากรอกรายละเอียดเพลง</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="songNameInputName" datatype="html">
+        <source>ชื่อเพลง</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="songNameInputArtist" datatype="html">
+        <source>ศิลปิน</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
     </body>

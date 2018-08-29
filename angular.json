@@ -46,7 +46,7 @@
             },
             "en": {
               "aot": true,
-              "i18nFile": "src/locale/messeages.en.xlf",
+              "i18nFile": "src/locale/messages.en.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "en",
               "i18nMissingTranslation": "error"
@@ -118,7 +118,11 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cu-singing-contest:build"
+            "browserTarget": "cu-singing-contest:build",
+            "i18nFormat": "xlf",
+            "i18nLocale": "th",
+            "outFile": "messages.xlf",
+            "outputPath": "locale"
           }
         },
         "test": {
