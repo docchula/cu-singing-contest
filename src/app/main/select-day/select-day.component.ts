@@ -18,6 +18,8 @@ export class SelectDayComponent implements OnInit {
     d1: Day;
     d2: Day;
     d3: Day;
+    d4: Day;
+    d5: Day;
     $exists: () => boolean;
   }>;
   daysDone$: Observable<boolean>;
