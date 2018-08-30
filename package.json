@@ -38,7 +38,7 @@
     "@types/jasmine": "2.8.8",
     "@types/jasminewd2": "2.0.3",
     "@types/jwt-decode": "2.2.1",
-    "@types/node": "6.0.116",
+    "@types/node": "6.0.117",
     "codelyzer": "4.4.4",
     "jasmine-core": "3.2.1",
     "jasmine-spec-reporter": "4.2.1",
