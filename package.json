@@ -27,7 +27,7 @@
     "font-awesome": "4.7.0",
     "hammerjs": "2.0.8",
     "jwt-decode": "2.2.0",
-    "rxjs": "6.2.2",
+    "rxjs": "6.3.0",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
