@@ -14,13 +14,21 @@ import { AdminService } from '../admin.service';
 export class SlipCheckComponent implements OnInit {
   checked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
 
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService) {}
 
   ngOnInit() {
     this.checked$ = this.adminService.userList.pipe(
-      map((users) => {
-        return users.filter((user) => {
+      map(users => {
+        return users.filter(user => {
           return !!user.payload.val().slipUrl;
+        });
+      }),
+      map(users => {
+        return users.sort((userA, userB) => {
+          return (
+            userA.payload.val().slipTimestamp -
+            userB.payload.val().slipTimestamp
+          );
         });
       })
     );
@@ -29,5 +37,4 @@ export class SlipCheckComponent implements OnInit {
   toggleStatus(uid: string) {
     this.adminService.toggleSlipStatus(uid).subscribe();
   }
-
 }

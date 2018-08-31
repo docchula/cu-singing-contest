@@ -37,4 +37,5 @@ export interface User {
   };
   allowRound2: boolean;
   selectedSong2: SelectedSong;
+  slipTimestamp: number;
 }
