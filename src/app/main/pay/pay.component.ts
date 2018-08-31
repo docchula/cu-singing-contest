@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { UserService } from '../../core/user/user.service';
+
 
 @Component({
   selector: 'cusc-pay',
@@ -17,9 +18,7 @@ export class PayComponent implements OnInit {
 
   ngOnInit() {
     this.slipUrl$ = this.userService
-      .getUserObjectSnapshot<string>(
-        'slipUrl'
-      )
+      .getUserObjectSnapshot<string>('slipUrl')
       .pipe(
         map(v => {
           if (v.payload.exists()) {
@@ -30,9 +29,7 @@ export class PayComponent implements OnInit {
         })
       );
     this.slipStatus$ = this.userService
-      .getUserObjectSnapshot<boolean>(
-        'slipChecked'
-      )
+      .getUserObjectSnapshot<boolean>('slipChecked')
       .pipe(
         map(v => {
           if (v.payload.exists()) {
@@ -54,6 +51,10 @@ export class PayComponent implements OnInit {
       } else {
         this.userService.uploadSlip(file).subscribe(s => {
           this.userService.setUserObject('slipUrl', s.downloadURL).subscribe();
+          this.userService.setUserObject(
+            'slipTimestamp',
+            firebase.database.ServerValue.TIMESTAMP
+          );
         });
       }
     }
