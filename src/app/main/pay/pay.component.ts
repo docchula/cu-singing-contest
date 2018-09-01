@@ -50,7 +50,7 @@ export class PayComponent implements OnInit {
         input.value = '';
       } else {
         this.userService.uploadSlip(file).subscribe(s => {
-          this.userService.setUserObject('slipUrl', s.downloadURL).subscribe();
+          this.userService.setUserObject('slipUrl', s).subscribe();
           this.userService.setUserObject(
             'slipTimestamp',
             firebase.database.ServerValue.TIMESTAMP

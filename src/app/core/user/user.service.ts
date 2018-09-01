@@ -85,6 +85,9 @@ export class UserService {
       first(),
       switchMap((u) => {
         return fromPromise(this.fba.storage().ref('slip').child(u.uid).put(file));
+      }),
+      switchMap((ut) => {
+        return fromPromise(ut.ref.getDownloadURL() as Promise<string>);
       })
     );
   }
