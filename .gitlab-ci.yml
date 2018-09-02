@@ -1,0 +1,20 @@
+build:
+  image: node:10-alpine
+  stage: build
+  script:
+    - npm ci
+    - npx ng build -c production-th
+    - npx ng build -c production-en
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 24 hours
+  cache:
+    key: build
+    paths:
+      - node_modules/
+  only:
+   - master
+
+stages:
+  - build
