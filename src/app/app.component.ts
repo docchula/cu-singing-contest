@@ -5,6 +5,7 @@ import * as firebase from 'firebase/app';
 import { Observable ,  ConnectableObservable } from 'rxjs';
 
 import { UserService } from './core/user/user.service';
+import appInfo from '../environments/version';
 
 @Component({
   selector: 'cusc-root',
@@ -28,6 +29,8 @@ export class AppComponent implements OnInit {
       path: '/'
     }
   };
+
+  appInfo = appInfo;
 
   constructor(private userService: UserService, @Inject(LOCALE_ID) public localeId: string) { }
 
