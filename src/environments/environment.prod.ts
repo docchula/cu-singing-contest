@@ -9,5 +9,6 @@ export const environment = {
     messagingSenderId: '365913577805'
   },
   modeKey: 'mode',
-  functionsBase: 'https://us-central1-cu-singing-contest.cloudfunctions.net'
+  functionsBase: 'https://us-central1-cu-singing-contest.cloudfunctions.net',
+  redirectUrl: 'https://cusc.docchula.com/login'
 };

@@ -14,5 +14,6 @@ export const environment = {
     messagingSenderId: '365913577805'
   },
   modeKey: 'dev-mode',
-  functionsBase: 'https://us-central1-cu-singing-contest.cloudfunctions.net'
+  functionsBase: 'https://us-central1-cu-singing-contest.cloudfunctions.net',
+  redirectUrl: 'http://localhost:4200/login'
 };

@@ -14,8 +14,8 @@ interface CunetResult {
 export class CunetService {
   constructor(private http: HttpClient, private fba: FirebaseApp) {}
 
-  getToken(username: string, password: string) {
-    const fn = this.fba.functions().httpsCallable('authenticate');
-    return from(fn({ username, password })).pipe(map(r => r.data as CunetResult));
+  getTokenFromTicket(ticket: string) {
+    const fn = this.fba.functions().httpsCallable('chulaSso');
+    return from(fn({ ticket })).pipe(map(r => r.data as CunetResult));
   }
 }

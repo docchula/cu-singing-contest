@@ -11,6 +11,8 @@ const cors = _cors({ origin: true });
 const privKeyString = functions.config().oauth2.priv_key_string;
 const issuer = functions.config().oauth2.issuer;
 const sub = functions.config().oauth2.sub;
+const appId = functions.config().chula_sso.app_id;
+const appSecret = functions.config().chula_sso.app_secret;
 
 admin.initializeApp();
 
@@ -58,6 +60,37 @@ export const authenticate = functions.https.onCall(async (data, context) => {
     }
   }
   return out;
+});
+
+export const chulaSso = functions.https.onCall(async (data, context) => {
+  const ticket = data.ticket;
+  try {
+    const response = JSON.parse((await axios.get(
+      'https://account.it.chula.ac.th/serviceValidation', {
+        headers: {
+          'DeeAppId': appId,
+          'DeeAppSecret': appSecret,
+          'DeeTicket': ticket
+        }
+      }
+    )).data);
+    if (response.type === 'error') {
+      return {
+        success: false
+      };
+    } else {
+      const studentId = (response.ouid as string).substr(0, 8);
+      const token = await admin.auth().createCustomToken(`cunet-${studentId}`);
+      return {
+        success: true,
+        token
+      };
+    }
+  } catch (e) {
+    return {
+      success: false
+    };
+  }
 });
 
 export const resetDay = functions.https.onRequest((req, resp) => {
