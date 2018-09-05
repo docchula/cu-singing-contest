@@ -65,7 +65,7 @@ export const authenticate = functions.https.onCall(async (data, context) => {
 export const chulaSso = functions.https.onCall(async (data, context) => {
   const ticket = data.ticket;
   try {
-    const response = JSON.parse((await axios.get(
+    const response = (await axios.get(
       'https://account.it.chula.ac.th/serviceValidation', {
         headers: {
           'DeeAppId': appId,
@@ -73,7 +73,7 @@ export const chulaSso = functions.https.onCall(async (data, context) => {
           'DeeTicket': ticket
         }
       }
-    )).data);
+    )).data;
     if (response.type === 'error') {
       return {
         success: false
