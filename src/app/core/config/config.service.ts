@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
 import {
+  AngularFireDatabase,
   AngularFireList,
   AngularFireObject,
   QueryFn
-} from 'angularfire2/database/interfaces';
+} from '@angular/fire/database';
 import { Observable } from 'rxjs';
 
 @Injectable()

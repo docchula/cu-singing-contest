@@ -1,9 +1,9 @@
 import 'firebase/storage';
 
 import { Injectable } from '@angular/core';
-import { FirebaseApp } from 'angularfire2';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { FirebaseApp } from '@angular/fire';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireDatabase } from '@angular/fire/database';
 import * as firebase from 'firebase/app';
 import { Observable ,  from as fromPromise } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FirebaseApp } from 'angularfire2';
+import { FirebaseApp } from '@angular/fire';
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import 'firebase/functions';

@@ -1,6 +1,6 @@
 import { from as fromPromise ,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 import { User } from '../shared/user';
 
