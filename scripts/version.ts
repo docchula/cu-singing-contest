@@ -3,7 +3,10 @@ import { resolve, relative } from 'path';
 import { writeFileSync } from 'fs';
 
 const builtAt = new Date().toISOString();
-const sha = execSync('git rev-parse HEAD')
+const sha = (process.env['CI']
+  ? process.env['CI_COMMIT_SHA']
+  : execSync('git rev-parse HEAD')
+)
   .toString()
   .trim()
   .slice(0, 7);
