@@ -10,8 +10,10 @@ build:
     paths:
       - dist/
     expire_in: 24 hours
-  only:
-   - master
+  cache:
+    key: build
+    paths:
+      - $HOME/.npm
 
 deploy:
   stage: deploy
