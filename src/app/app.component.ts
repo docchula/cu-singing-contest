@@ -1,11 +1,11 @@
-
-import {refCount,  publishReplay } from 'rxjs/operators';
+import { refCount, publishReplay } from 'rxjs/operators';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import * as firebase from 'firebase/app';
-import { Observable ,  ConnectableObservable } from 'rxjs';
+import { Observable, ConnectableObservable } from 'rxjs';
 
 import { UserService } from './core/user/user.service';
 import appInfo from '../environments/version';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cusc-root',
@@ -13,13 +13,14 @@ import appInfo from '../environments/version';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
   authState$: Observable<firebase.User>;
   navOpen: boolean;
-  languageLinks: {[key: string]: {
-    text: string;
-    path: string;
-  }} = {
+  languageLinks: {
+    [key: string]: {
+      text: string;
+      path: string;
+    };
+  } = {
     th: {
       text: 'English',
       path: '/en'
@@ -32,7 +33,11 @@ export class AppComponent implements OnInit {
 
   appInfo = appInfo;
 
-  constructor(private userService: UserService, @Inject(LOCALE_ID) public localeId: string) { }
+  constructor(
+    private userService: UserService,
+    @Inject(LOCALE_ID) private localeId: string,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.authState$ = (this.userService.authState.pipe(
@@ -46,6 +51,8 @@ export class AppComponent implements OnInit {
   }
 
   signOut() {
-    this.userService.signOut().subscribe();
+    this.userService.signOut().subscribe(_ => {
+      this.router.navigate(['/']);
+    });
   }
 }
