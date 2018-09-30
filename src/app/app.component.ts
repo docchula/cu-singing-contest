@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    @Inject(LOCALE_ID) private localeId: string,
+    @Inject(LOCALE_ID) public localeId: string,
     private router: Router
   ) {}
 
