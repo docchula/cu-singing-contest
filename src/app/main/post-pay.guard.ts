@@ -31,7 +31,7 @@ export class PostPayGuard implements CanActivate {
         if (allow) {
           return of(true);
         } else {
-          return this.userService.getUserObjectSnapshot('slipChecked').pipe(
+          return this.userService.getUserObjectSnapshot('slipUrl').pipe(
             first(),
             map(snap => {
               if (snap.payload.exists()) {
