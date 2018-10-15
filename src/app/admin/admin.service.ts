@@ -17,6 +17,10 @@ export class AdminService {
     }));
   }
 
+  saveSongUrl(uid: string, url: string) {
+    return fromPromise(this.afd.object(`data/users/${uid}/songUrl`).set(url));
+  }
+
   toggleSongStatus(uid: string) {
     return fromPromise(this.afd.database.ref(`data/users/${uid}/songChecked`).transaction((value) => {
       return !(value || false);
