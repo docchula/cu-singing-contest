@@ -14,6 +14,7 @@ import { SongCheckComponent } from './song-check/song-check.component';
 import { SongPipe } from './song.pipe';
 import { StatusPipe } from './status.pipe';
 import { SetDayBatchComponent } from './set-day-batch/set-day-batch.component';
+import { ChangeDayComponent } from './change-day/change-day.component';
 
 @NgModule({
   imports: [CommonModule, AdminRoutingModule, SharedModule, LiveModule, SharedModule],
@@ -26,7 +27,8 @@ import { SetDayBatchComponent } from './set-day-batch/set-day-batch.component';
     AdminPagesComponent,
     StatusPipe,
     SongPipe,
-    SetDayBatchComponent
+    SetDayBatchComponent,
+    ChangeDayComponent
   ],
   providers: [AdminService]
 })
