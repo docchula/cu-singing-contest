@@ -4,6 +4,7 @@ import { UserService } from '../../core/user/user.service';
 import { Day } from '../../shared/day';
 import { Observable } from 'rxjs';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { ConfigService } from 'src/app/core/config/config.service';
 
 @Component({
   selector: 'cusc-view-day',
@@ -15,8 +16,13 @@ export class ViewDayComponent implements OnInit {
   textKey: string;
   acceptBox: FormControl;
   accepted: Observable<boolean>;
+  allowViewDay: Observable<boolean>;
 
-  constructor(private userService: UserService, @Inject(LOCALE_ID) private localeId: string) {}
+  constructor(
+    private userService: UserService,
+    @Inject(LOCALE_ID) private localeId: string,
+    private configService: ConfigService
+  ) {}
 
   ngOnInit() {
     this.textKey = this.localeId === 'th' ? 'text' : 'textEn';
@@ -29,9 +35,8 @@ export class ViewDayComponent implements OnInit {
     this.acceptBox = new FormControl(false, Validators.requiredTrue);
     this.accepted = this.userService
       .getUserObjectValue<boolean>('viewedDay')
-      .pipe(
-        map(a => !!a)
-      );
+      .pipe(map(a => !!a));
+    this.allowViewDay = this.configService.getConfigObjectValue('allowViewDay');
   }
 
   accept() {
