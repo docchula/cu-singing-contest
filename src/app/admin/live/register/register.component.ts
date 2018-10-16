@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
           switchMap(day => {
             return this.adminService.getUser(this.uid.value).pipe(
               map(user => {
-                if (day === user.firstDay.day.id || (day === 6 && user.allowRound2)) {
+                if (day === user.firstDay.id || (day === 6 && user.allowRound2)) {
                   return true;
                 } else {
                   return false;

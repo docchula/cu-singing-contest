@@ -31,10 +31,7 @@ export interface User {
   selectedSong: SelectedSong;
   songChecked: boolean;
   $key?: string;
-  firstDay: {
-    preference: any;
-    day: Day;
-  };
+  firstDay: Day;
   allowRound2: boolean;
   selectedSong2: SelectedSong;
   slipTimestamp: number;
