@@ -115,7 +115,7 @@ export const resetDay = functions.https.onRequest((req, resp) => {
         .set(1);
       const usersRef = admin.database().ref('data/users');
       const todayUsersRef = usersRef
-        .orderByChild('firstDay/day/id')
+        .orderByChild('firstDay/id')
         .equalTo(dayToReset);
       const todayUsers = (await todayUsersRef.once('value')).val();
       const keys = Object.keys(todayUsers);
@@ -212,7 +212,7 @@ export const registerContestant = functions.https.onRequest((req, resp) => {
         .ref('config/liveDay')
         .once('value')).val();
       if (
-        currentDay !== contestantData.firstDay.day.id &&
+        currentDay !== contestantData.firstDay.id &&
         (currentDay !== 6 || !contestantData.allowRound2)
       ) {
         out.success = false;
