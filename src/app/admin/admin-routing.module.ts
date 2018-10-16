@@ -7,6 +7,7 @@ import { AdminGuard } from '../admin.guard';
 import { AdminComponent } from './admin/admin.component';
 import { SlipCheckComponent } from './slip-check/slip-check.component';
 import { SongCheckComponent } from './song-check/song-check.component';
+import { SetDayBatchComponent } from './set-day-batch/set-day-batch.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
           {
             path: 'contestant_list',
             component: ContestantListComponent
+          },
+          {
+            path: 'set_day_batch',
+            component: SetDayBatchComponent
           }
         ]
       }

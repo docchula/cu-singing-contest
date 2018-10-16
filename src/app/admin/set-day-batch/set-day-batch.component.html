@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="is-size-3">นำเข้าข้อมูลวันแข่งขันรอบแรก</h1>
+  <h2 class="is-size-4">กรอกรหัสผู้แข่งขัน (cunet-รหัสนิสิต 8 หลัก) บรรทัดละ 1 รหัส</h2>
+  <textarea class="textarea" rows="10" [formControl]="userListInput"></textarea>
+  <ng-container *ngIf="userListInput.status === 'VALID'; else notValid">
+    <h2 class="is-size-4">กรุณาเลือกวัน</h2>
+    <div class="select is-fullwidth">
+      <select [formControl]="daySelect">
+        <option value="" disabled selected hidden>เลือก</option>
+        <option [ngValue]="day" *ngFor="let day of days$ | async">{{day.text}}</option>
+      </select>
+      <button class="button is-success" (click)="saveData()">กำหนดวัน</button>
+    </div>
+  </ng-container>
+  <ng-template #notValid>
+    <ng-container *ngIf="userListInput.status === 'INVALID'; else pending">
+      <h2 class="is-size-4">รหัสต่อไปนี้ยังไม่ได้รับการยืนยันเพลง ไม่สามารถกำหนดวันให้ได้</h2>
+      <ol>
+        <li *ngFor="let uid of userListInput.errors['song']">{{uid}}</li>
+      </ol>
+    </ng-container>
+    <ng-template #pending>
+      <h2 class="is-size-4">กรุณารอสักครู่</h2>
+    </ng-template>
+  </ng-template>
+</div>
