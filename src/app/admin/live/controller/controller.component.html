@@ -31,8 +31,8 @@
         <small>{{user.payload.val().profile.nameReading}}</small>
       </td>
       <td>{{user.payload.val().profile.mobile}}</td>
-        <td>{{user.payload.val().selectedSong2.mode | songMode}}</td>
-        <td>{{user.payload.val().selectedSong2.song.artist}} - {{user.payload.val().selectedSong2.song.name}}</td>
+        <td>{{user.payload.val().selectedSong.mode | songMode}}</td>
+        <td>{{user.payload.val().selectedSong.song.artist}} - {{user.payload.val().selectedSong.song.name}}</td>
 
       <td>{{status[user.payload.val().liveStatus].name}}</td>
       <td [ngClass]="{'is-primary': !!user.payload.val().smoke}">{{!!user.payload.val().smoke}}</td>
