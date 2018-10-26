@@ -1,10 +1,10 @@
 import axios from 'axios';
+import * as bcrypt from 'bcrypt';
 import * as _cors from 'cors';
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
-import * as https from 'https';
-import * as bcrypt from 'bcrypt';
 import { google } from 'googleapis';
+import * as https from 'https';
 
 const cors = _cors({ origin: true });
 
@@ -43,7 +43,7 @@ export const authenticate = functions.https.onCall(async (data, context) => {
           rejectUnauthorized: false
         })
       })
-      .then(response => {})
+      .then(response => { })
       .catch(error => {
         switch (error.response.status) {
           case 403:
@@ -135,59 +135,55 @@ export const resetDay = functions.https.onRequest((req, resp) => {
         sub
       );
       const drive = google.drive('v3');
-      jwtClient.authorize(async (err: any, tokens: any) => {
-        if (err) {
-          console.log(err);
-          out.success = false;
-          out.reason = 'Google API JWT failed';
-          resp.status(200).send(out);
-          return;
-        } else {
-          // Find folder
-          const dayRef = admin
-            .database()
-            .ref('config/dayFolders')
-            .child(`day${dayToReset}`);
-          const dayFolderId = (await dayRef.once('value')).val();
-          drive.files.delete(
+      try {
+        await jwtClient.authorize();
+        const dayRef = admin
+          .database()
+          .ref('config/dayFolders')
+          .child(`day${dayToReset}`);
+        const dayFolderId = (await dayRef.once('value')).val();
+        try {
+          await drive.files.delete(
             {
               auth: jwtClient,
               fileId: dayFolderId
-            },
-            (err2: any, res: any) => {
-              if (err2) {
-                console.log(err2);
-                out.success = false;
-                out.reason = 'Cannot delete folder';
-                resp.status(200).send(out);
-              } else {
-                drive.files.create(
-                  {
-                    auth: jwtClient,
-                    requestBody: {
-                      name: `Day${dayToReset}`,
-                      mimeType: 'application/vnd.google-apps.folder',
-                      parents: ['1P16EdwLc4aV_Q9MbHzGpRJhQt6ufu6Tq']
-                    }
-                  },
-                  async (err3: any, folder: any) => {
-                    if (err3) {
-                      console.log(err3);
-                      out.success = false;
-                      out.reason = 'Cannot create folder';
-                      resp.status(200).send(out);
-                    } else {
-                      await dayRef.set(folder.id);
-                      out.success = true;
-                      resp.status(200).send(out);
-                    }
-                  }
-                );
-              }
             }
           );
+          const parentFolderIdRef = admin.database().ref('config/dayParentFolder').once('value');
+          const parentFolderId = (await parentFolderIdRef).val();
+          try {
+            const createResult = await drive.files.create(
+              {
+                auth: jwtClient,
+                requestBody: {
+                  name: `Day${dayToReset}`,
+                  mimeType: 'application/vnd.google-apps.folder',
+                  parents: [parentFolderId]
+                }
+              }
+            );
+            await dayRef.set(createResult.data.id);
+            out.success = true;
+            resp.status(200).send(out);
+          } catch (e) {
+            console.log(e);
+            out.success = false;
+            out.reason = 'Cannot create folder';
+            resp.status(200).send(out);
+          }
+        } catch (e) {
+          console.log(e);
+          out.success = false;
+          out.reason = 'Cannot delete folder';
+          resp.status(200).send(out);
         }
-      });
+      } catch (e) {
+        console.log(e);
+        out.success = false;
+        out.reason = 'Google API JWT failed';
+        resp.status(200).send(out);
+        return;
+      }
     }
   });
 });
@@ -271,14 +267,11 @@ export const registerContestant = functions.https.onRequest((req, resp) => {
               out.contestantId = contestantId;
               resp.status(200).send(out);
             } else {
-              const filenamePath: string | undefined =
-                currentDay === 6 ? 'data/userFilename2' : 'data/userFilename';
+              const filenamePath: string =
+                currentDay === 6 ? 'songUrl2' : 'songUrl';
               // Get song filename
-              const filename = (await admin
-                .database()
-                .ref(filenamePath)
-                .child(uid)
-                .once('value')).val();
+              const fullFilename = contestantData[filenamePath] as string;
+              const filename = fullFilename.replace('https://drive.google.com/open?id=', '');
               // get JWT
               const scope = ['https://www.googleapis.com/auth/drive'];
               const jwtClient = new google.auth.JWT(
@@ -289,23 +282,17 @@ export const registerContestant = functions.https.onRequest((req, resp) => {
                 sub
               );
               const drive = google.drive('v3');
-              jwtClient.authorize(async (err: any, tokens: any) => {
-                if (err) {
-                  console.log(err);
-                  out.success = true;
-                  out.contestantId = contestantId;
-                  out.fileId = 'Google API JWT failed';
-                  resp.status(200).send(out);
-                  return;
-                } else {
-                  const fileId = filename;
-                  const dayFolderId = (await admin
-                    .database()
-                    .ref('config/dayFolders')
-                    .child(`day${currentDay}`)
-                    .once('value')).val();
-                  // Create folder
-                  drive.files.create(
+              try {
+                jwtClient.authorize();
+                const fileId = filename;
+                const dayFolderId = (await admin
+                  .database()
+                  .ref('config/dayFolders')
+                  .child(`day${currentDay}`)
+                  .once('value')).val();
+                // Create folder
+                try {
+                  const createResult = await drive.files.create(
                     {
                       auth: jwtClient,
                       requestBody: {
@@ -313,45 +300,43 @@ export const registerContestant = functions.https.onRequest((req, resp) => {
                         mimeType: 'application/vnd.google-apps.folder',
                         parents: [dayFolderId]
                       }
-                    },
-                    (err3: any, folder: any) => {
-                      if (err3) {
-                        console.log(err3);
-                        out.success = true;
-                        out.contestantId = contestantId;
-                        out.fileId = 'Cannot create folder';
-                        resp.status(200).send(out);
-                      } else {
-                        const folderId = folder.id;
-                        // Copy file to folder
-                        drive.files.copy(
-                          {
-                            auth: jwtClient,
-                            fileId,
-                            requestBody: {
-                              parents: [folderId]
-                            }
-                          },
-                          (err4: any, file: any) => {
-                            if (err4) {
-                              console.log(err4);
-                              out.success = true;
-                              out.contestantId = contestantId;
-                              out.fileId = 'Cannot copy file';
-                              resp.status(200).send(out);
-                            } else {
-                              out.success = true;
-                              out.contestantId = contestantId;
-                              out.fileId = file.id;
-                              resp.status(200).send(out);
-                            }
-                          }
-                        );
-                      }
                     }
                   );
+                  try {
+                    const copyResult = await drive.files.copy(
+                      {
+                        auth: jwtClient,
+                        fileId,
+                        requestBody: {
+                          parents: [createResult.data.id!]
+                        }
+                      }
+                    );
+                    out.success = true;
+                    out.contestantId = contestantId;
+                    out.fileId = copyResult.data.id;
+                    resp.status(200).send(out);
+                  } catch (e) {
+                    console.log(e);
+                    out.success = true;
+                    out.contestantId = contestantId;
+                    out.fileId = 'Cannot copy file';
+                    resp.status(200).send(out);
+                  }
+                } catch (e) {
+                  console.log(e);
+                  out.success = true;
+                  out.contestantId = contestantId;
+                  out.fileId = 'Cannot create folder';
+                  resp.status(200).send(out);
                 }
-              });
+              } catch (e) {
+                console.log(e);
+                out.success = true;
+                out.contestantId = contestantId;
+                out.fileId = 'Google API JWT failed';
+                resp.status(200).send(out);
+              }
             }
           } else {
             out.success = false;
