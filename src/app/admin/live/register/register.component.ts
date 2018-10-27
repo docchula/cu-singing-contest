@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.uid = new FormControl('', Validators.required);
+    this.uid = new FormControl('cunet-', Validators.required);
   }
 
   register() {
