@@ -19,18 +19,20 @@ export class ResetComponent implements OnInit {
 
   reset() {
     if (this.dayInput.valid) {
-      const fn = this.fba.functions().httpsCallable('resetDay');
-      this.btnDisabled = true;
-      fn({
-        day: this.dayInput.value
-      }).then(res => {
-        if (res.data.success) {
-          alert('Reset เรียบร้อย');
-        } else {
-          alert(`Reset ไม่ได้ เนื่องจาก ${res.data.reason}`);
-        }
-        this.btnDisabled = false;
-      });
+      if (confirm('แน่ใจจริง ๆ หรอ มันจะลบหมดเลยนะะะะ?')) {
+        const fn = this.fba.functions().httpsCallable('resetDay');
+        this.btnDisabled = true;
+        fn({
+          day: this.dayInput.value
+        }).then(res => {
+          if (res.data.success) {
+            alert('Reset เรียบร้อย');
+          } else {
+            alert(`Reset ไม่ได้ เนื่องจาก ${res.data.reason}`);
+          }
+          this.btnDisabled = false;
+        });
+      }
     }
   }
 
