@@ -20,6 +20,7 @@ export class RegisterCheckComponent implements OnInit {
   form: FormGroup;
   stringMode = ['standard', 'custom', 'live'];
   day: number;
+  btnEnabled = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -67,6 +68,7 @@ export class RegisterCheckComponent implements OnInit {
   }
 
   register() {
+    this.btnEnabled = false;
     this.uid$
       .pipe(
         first(),
@@ -94,6 +96,7 @@ export class RegisterCheckComponent implements OnInit {
             } else {
               alert(`เกิดข้อผิดพลาด ${result.reason}`);
             }
+            this.btnEnabled = true;
           });
       });
   }
