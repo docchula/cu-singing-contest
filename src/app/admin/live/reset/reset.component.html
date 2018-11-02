@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="is-size-2">Reset วัน</h1>
+  <div class="field is-grouped">
+    <div class="control">
+      <input class="input" type="number" max="6" min="1" [formControl]="dayInput">
+    </div>
+    <div class="control">
+      <button class="button is-danger" (click)="reset()" [disabled]="btnDisabled">Reset</button>
+    </div>
+  </div>
+</div>

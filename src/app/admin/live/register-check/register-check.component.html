@@ -49,5 +49,5 @@
       </div>
     </div>
   </form>
-  <button class="is-primary button" (click)="register()">ลงทะเบียน</button>
+  <button class="is-primary button" (click)="register()" [disabled]="!btnEnabled">ลงทะเบียน</button>
 </div>

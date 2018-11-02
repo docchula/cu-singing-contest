@@ -8,17 +8,32 @@
         <th>ชื่อ-นามสกุล</th>
         <th>Facebook</th>
         <th>เพลง</th>
-        <th>สถานะ</th>
+        <th>URL เพลง</th>
         <th>เปลี่ยนสถานะ</th>
       </tr>
     </thead>
     <tr *ngFor="let user of checked$ | async">
       <td>{{user.key}}</td>
-      <td>{{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})</td>
+      <td>{{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}}
+        ({{user.payload.val().profile.nname}})</td>
       <td>{{user.payload.val().profile.facebook}}</td>
       <td>{{user.payload.val().selectedSong | admin_song}}</td>
-      <td [ngClass]="{'is-primary': !!user.payload.val().songChecked}">{{user.payload.val().songChecked | status}}</td>
-      <td><button class="button is-primary" (click)="toggleStatus(user.key)">เปลี่ยนสถานะ</button></td>
+      <td>
+        <ng-container *ngIf="!!user.payload.val().songChecked; else notChecked">
+          {{ user.payload.val().songUrl }}
+        </ng-container>
+        <ng-template #notChecked>
+          <input type="text" class="input" placeholder="https://drive.google.com/open?id=...." size="200" [formControl]="urlInputs[user.key]">
+        </ng-template>
+      </td>
+      <td>
+        <ng-container *ngIf="!!user.payload.val().songChecked; else notCheckedButton">
+          <button class="button is-danger" (click)="deleteStatus(user.key)">ลบ URL เพลง</button>
+        </ng-container>
+        <ng-template #notCheckedButton>
+          <button class="button is-primary" (click)="saveStatus(user.key)">บันทึก</button>
+        </ng-template>
+      </td>
     </tr>
   </table>
 </div>

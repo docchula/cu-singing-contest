@@ -13,7 +13,7 @@ build:
   cache:
     key: build
     paths:
-      - $HOME/.npm
+      - $HOME/.npm/
 
 deploy:
   stage: deploy

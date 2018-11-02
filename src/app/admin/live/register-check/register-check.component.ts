@@ -1,15 +1,13 @@
-import { ConfigService } from '../../../core/config/config.service';
-import { HttpClient } from '@angular/common/http';
-import { LiveService } from '../../../core/live.service';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { FirebaseApp } from '@angular/fire';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-
+import { first, map, switchMap } from 'rxjs/operators';
+import { ConfigService } from '../../../core/config/config.service';
+import { LiveService } from '../../../core/live.service';
 import { User } from '../../../shared/user';
 import { AdminService } from '../../admin.service';
-import { map, switchMap ,  first } from 'rxjs/operators';
-import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'cusc-register-check',
@@ -22,15 +20,16 @@ export class RegisterCheckComponent implements OnInit {
   form: FormGroup;
   stringMode = ['standard', 'custom', 'live'];
   day: number;
+  btnEnabled = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private adminService: AdminService,
     private liveService: LiveService,
-    private http: HttpClient,
-    private configService: ConfigService
-  ) {}
+    private configService: ConfigService,
+    private fba: FirebaseApp
+  ) { }
 
   ngOnInit() {
     this.uid$ = this.userData$ = this.activatedRoute.params.pipe(
@@ -69,6 +68,7 @@ export class RegisterCheckComponent implements OnInit {
   }
 
   register() {
+    this.btnEnabled = false;
     this.uid$
       .pipe(
         first(),
@@ -77,19 +77,15 @@ export class RegisterCheckComponent implements OnInit {
         })
       )
       .subscribe(() => {
+        const fn = this.fba.functions().httpsCallable('registerContestant');
         this.uid$
           .pipe(
             first(),
             switchMap(uid => {
-              return this.http.post(
-                `${environment.functionsBase}/registerContestant`,
-                {
-                  uid
-                }
-              );
+              return fn({ uid });
             })
           )
-          .subscribe((result: any) => {
+          .subscribe(({ data: result }) => {
             if (result.success) {
               alert(
                 `ลงทะเบียนเรียบร้อย หมายเลขผู้เข้าแข่งขัน ${result.contestantId} รหัสไฟล์ ${result.fileId}`
@@ -100,6 +96,7 @@ export class RegisterCheckComponent implements OnInit {
             } else {
               alert(`เกิดข้อผิดพลาด ${result.reason}`);
             }
+            this.btnEnabled = true;
           });
       });
   }

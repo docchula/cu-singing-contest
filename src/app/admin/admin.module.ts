@@ -13,9 +13,11 @@ import { SlipCheckComponent } from './slip-check/slip-check.component';
 import { SongCheckComponent } from './song-check/song-check.component';
 import { SongPipe } from './song.pipe';
 import { StatusPipe } from './status.pipe';
+import { SetDayBatchComponent } from './set-day-batch/set-day-batch.component';
+import { ChangeDayComponent } from './change-day/change-day.component';
 
 @NgModule({
-  imports: [CommonModule, AdminRoutingModule, SharedModule, LiveModule],
+  imports: [CommonModule, AdminRoutingModule, SharedModule, LiveModule, SharedModule],
   declarations: [
     AdminComponent,
     SlipCheckComponent,
@@ -24,7 +26,9 @@ import { StatusPipe } from './status.pipe';
     ContestantDetailComponent,
     AdminPagesComponent,
     StatusPipe,
-    SongPipe
+    SongPipe,
+    SetDayBatchComponent,
+    ChangeDayComponent
   ],
   providers: [AdminService]
 })

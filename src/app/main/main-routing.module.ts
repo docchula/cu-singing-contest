@@ -15,6 +15,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { SelectDayComponent } from './select-day/select-day.component';
 import { SelectSongComponent } from './select-song/select-song.component';
 import { ViewDayComponent } from './view-day/view-day.component';
+import { PostPayGuard } from './post-pay.guard';
+import { PostSelectDayAndSongGuard } from './post-select-day-and-song.guard';
 
 const routes: Routes = [
   {
@@ -40,17 +42,17 @@ const routes: Routes = [
       {
         path: '3_pay',
         component: PayComponent,
-        canActivate: [ProfileGuard]
+        canActivate: [ProfileGuard, PostPayGuard]
       },
       {
         path: '4_selectDay',
         component: SelectDayComponent,
-        canActivate: [PayGuard]
+        canActivate: [PayGuard, PostSelectDayAndSongGuard]
       },
       {
         path: '5_selectSong',
         component: SelectSongComponent,
-        canActivate: [DayGuard]
+        canActivate: [DayGuard, PostSelectDayAndSongGuard]
       },
       {
         path: '6_viewDay',

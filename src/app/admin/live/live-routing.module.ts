@@ -7,6 +7,7 @@ import { AdminPagesComponent } from '../admin-pages/admin-pages.component';
 import { LiveComponent } from './live/live.component';
 import { RegisterCheckComponent } from './register-check/register-check.component';
 import { RegisterComponent } from './register/register.component';
+import { ResetComponent } from './reset/reset.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
       {
         path: 'controller',
         component: ControllerComponent
+      },
+      {
+        path: 'reset_day',
+        component: ResetComponent
       }
     ]
   }

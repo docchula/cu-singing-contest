@@ -38,7 +38,7 @@ export class ContestantListComponent implements OnInit {
         map((snaps) => {
           return snaps.filter((snap) => {
             const val = snap.payload.val();
-            if (val.firstDay && val.firstDay.day.id === i + 1) {
+            if (val.firstDay && val.firstDay.id === i + 1) {
               return true;
             } else {
               return false;

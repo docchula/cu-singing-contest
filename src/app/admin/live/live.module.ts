@@ -8,6 +8,7 @@ import { LiveComponent } from './live/live.component';
 import { RegisterCheckComponent } from './register-check/register-check.component';
 import { RegisterComponent } from './register/register.component';
 import { ControllerComponent } from './controller/controller.component';
+import { ResetComponent } from './reset/reset.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { ControllerComponent } from './controller/controller.component';
     ReactiveFormsModule,
     SharedModule
   ],
-  declarations: [LiveComponent, RegisterComponent, RegisterCheckComponent, ControllerComponent]
+  declarations: [LiveComponent, RegisterComponent, RegisterCheckComponent, ControllerComponent, ResetComponent]
 })
 export class LiveModule { }
