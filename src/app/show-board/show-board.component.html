@@ -1,24 +1,30 @@
+<nav class="navbar hero is-info">
+  <div class="navbar-brand">
+    <h1 class="navbar-item is-size-2">
+      CU Singing Contest 26<sup>th</sup>
+    </h1>
+  </div>
+</nav>
 <div class="container">
-  <h1 class="is-size-1">CU Singing Contest 26
-    <sup>th</sup>
-  </h1>
 
   <ng-container *ngIf="singing$ | async as user">
     <h2 class="is-size-2">กำลังร้อง</h2>
-    <h3 class="is-size-3">{{user.key}} - {{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}}
-      ({{user.payload.val().profile.nname}})</h3>
-    <h4 class="is-size-4">{{user.payload.val().profile.faculty.name}}</h4>
-      <h4 class="is-size-4">{{user.payload.val().selectedSong.song.artist}} - {{user.payload.val().selectedSong.song.name}}</h4>
+    <div class="box">
+      <h3 class="is-size-3">{{user.key}} - {{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}}
+        ({{user.payload.val().profile.nname}})</h3>
+      <h4 class="is-size-4">{{user.payload.val().profile.faculty.name}}</h4>
+      <h4 class="is-size-4"><span class="icon has-text-info"><i class="material-icons">music_note</i></span> {{user.payload.val().selectedSong.song.artist}} - {{user.payload.val().selectedSong.song.name}}</h4>
+    </div>
   </ng-container>
   <h2 class="is-size-2">ลำดับต่อไป</h2>
   <table class="table is-fullwidth">
     <thead>
-      <tr>
-        <th>ID</th>
-        <th>ชื่อ-นามสกุล</th>
-        <th>คณะ</th>
-        <th>เพลง</th>
-      </tr>
+    <tr>
+      <th>ID</th>
+      <th>ชื่อ-นามสกุล</th>
+      <th>คณะ</th>
+      <th>เพลง</th>
+    </tr>
     </thead>
     <tr *ngFor="let user of contestantList$ | async">
       <td>{{user.key}}</td>
@@ -26,7 +32,10 @@
         {{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})
       </td>
       <td>{{user.payload.val().profile.faculty.name}}</td>
-        <td>{{user.payload.val().selectedSong.song.artist}} - {{user.payload.val().selectedSong.song.name}}</td>
+      <td>{{user.payload.val().selectedSong.song.artist}} - {{user.payload.val().selectedSong.song.name}}</td>
     </tr>
   </table>
+
+  <br />
+  <p class="has-text-centered has-text-grey-light has-text-small">สโมสรนิสิตคณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</p>
 </div>

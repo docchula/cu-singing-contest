@@ -1,0 +1,11 @@
+nav {
+  margin-bottom: 1rem;
+}
+
+h1.navbar-item {
+  margin: auto;
+}
+
+.has-text-small {
+  font-size: 0.85rem;
+}
