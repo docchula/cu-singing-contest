@@ -9,6 +9,7 @@ import { SlipCheckComponent } from './slip-check/slip-check.component';
 import { SongCheckComponent } from './song-check/song-check.component';
 import { SetDayBatchComponent } from './set-day-batch/set-day-batch.component';
 import { ChangeDayComponent } from './change-day/change-day.component';
+import { SetSongSecondRoundComponent } from './set-song-second-round/set-song-second-round.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
           {
             path: 'change_day',
             component: ChangeDayComponent
+          },
+          {
+            path: 'set_second_round',
+            component: SetSongSecondRoundComponent
           }
         ]
       }

@@ -1,0 +1,55 @@
+<div class="container">
+  <h1 class="is-size-3">กำหนดผู้เข้าแข่งขันรอบที่สอง</h1>
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>เลขประจำตัวนิสิต</th>
+        <th>ชื่อ-นามสกุล</th>
+        <th>Facebook</th>
+        <th>เพลง</th>
+        <th>URL เพลง</th>
+        <th>เปลี่ยนสถานะ</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let user of checked$ | async">
+      <td>{{user.key}}</td>
+      <td>{{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}}
+        ({{user.payload.val().profile.nname}})</td>
+      <td>{{user.payload.val().profile.facebook}}</td>
+      <td>
+        <ng-container *ngIf="!!user.payload.val().allowRound2; else song2NotChecked">
+          {{user.payload.val().selectedSong2 | admin_song}}
+        </ng-container>
+        <ng-template #song2NotChecked>
+          <div class="select">
+            <select [formControl]="songModeInputs[user.key]">
+              <option value="" disabled selected hidden>เลือก</option>
+              <option value="standard">Backing track ของคณะกรรมการ</option>
+              <option value="custom">Backing track ของผู้เข้าแข่งขัน</option>
+              <option value="live">เล่นดนตรีสด</option>
+            </select>
+          </div>
+          <input type="text" class="input" placeholder="ชื่อศิลปิน" size="200" [formControl]="artistInputs[user.key]">
+          -
+          <input type="text" class="input" placeholder="ชื่อเพลง" size="200" [formControl]="songNameInputs[user.key]">
+        </ng-template>
+      </td>
+      <td>
+        <ng-container *ngIf="!!user.payload.val().allowRound2; else notChecked">
+          {{ user.payload.val().songUrl2 }}
+        </ng-container>
+        <ng-template #notChecked>
+          <input type="text" class="input" placeholder="https://drive.google.com/open?id=...." size="200" [formControl]="urlInputs[user.key]">
+        </ng-template>
+      </td>
+      <td>
+        <ng-container *ngIf="!!user.payload.val().allowRound2; else notCheckedButton">
+          <button class="button is-danger" (click)="deleteStatus(user.key)">ลบ URL เพลง</button>
+        </ng-container>
+        <ng-template #notCheckedButton>
+          <button class="button is-primary" (click)="saveStatus(user.key)">บันทึก</button>
+        </ng-template>
+      </td>
+    </tr>
+  </table>
+</div>
