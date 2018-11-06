@@ -3,6 +3,7 @@ import { Faculty } from './faculty';
 import { SelectedSong } from './selected-song';
 
 export interface User {
+  registered: boolean;
   accepted: boolean;
   profile: {
     title: string;
