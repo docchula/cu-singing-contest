@@ -20,18 +20,47 @@ export class AdminService {
     );
   }
 
+  saveUserField<T = any>(
+    uid: string,
+    pathFn: (ref: firebase.database.Reference) => firebase.database.Reference,
+    value: T
+  ) {
+    return fromPromise(
+      this.afd
+        .object<T>(
+          pathFn(
+            this.afd.database
+              .ref('data')
+              .child('users')
+              .child(uid)
+          )
+        )
+        .set(value)
+    );
+  }
+
+  toggleUserField(
+    uid: string,
+    pathFn: (ref: firebase.database.Reference) => firebase.database.Reference
+  ) {
+    return fromPromise(
+      pathFn(
+        this.afd.database
+          .ref('data')
+          .child('users')
+          .child(uid)
+      ).transaction(value => {
+        return !(value || false);
+      })
+    );
+  }
+
   saveSongUrl(uid: string, url: string) {
-    return fromPromise(this.afd.object(`data/users/${uid}/songUrl`).set(url));
+    return this.saveUserField(uid, ref => ref.child('songUrl'), url);
   }
 
   toggleSongStatus(uid: string) {
-    return fromPromise(
-      this.afd.database
-        .ref(`data/users/${uid}/songChecked`)
-        .transaction(value => {
-          return !(value || false);
-        })
-    );
+    return this.toggleUserField(uid, ref => ref.child('songChecked'));
   }
 
   getUser(uid: string) {
