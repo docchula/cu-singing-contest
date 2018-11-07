@@ -111,10 +111,12 @@ export const resetDay = functions.https.onCall(async (data, context) => {
     .equalTo(dayToReset);
   const todayUsers = (await todayUsersRef.once('value')).val();
   const keys = Object.keys(todayUsers);
+  const registeredKey = dayToReset === 6 ? 'registered2' : 'registered';
   for (let i = 0; i <= keys.length - 1; i++) {
     await admin
       .database()
-      .ref(`data/users/${keys[i]}/registered`)
+      .ref(`data/users/${keys[i]}`)
+      .child(registeredKey)
       .remove();
     console.log(`${keys[i]} resetted!`);
   }
