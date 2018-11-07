@@ -123,7 +123,7 @@ const checkUrlFormat = (c: AbstractControl) => {
 };
 
 const checkModeFormat = (c: AbstractControl) => {
-  if (c.value === 'normal' || c.value === 'custom' || c.value === 'live') {
+  if (c.value === 'standard' || c.value === 'custom' || c.value === 'live') {
     return null;
   } else {
     return { mode: true };
