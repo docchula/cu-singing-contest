@@ -40,7 +40,7 @@ export const authenticate = functions.https.onCall(async (data, context) => {
           rejectUnauthorized: false
         })
       })
-      .then(response => { })
+      .then(response => {})
       .catch(error => {
         switch (error.response.status) {
           case 403:
@@ -63,11 +63,12 @@ export const chulaSso = functions.https.onCall(async (data, context) => {
   const ticket = data.ticket;
   try {
     const response = (await axios.get(
-      'https://account.it.chula.ac.th/serviceValidation', {
+      'https://account.it.chula.ac.th/serviceValidation',
+      {
         headers: {
-          'DeeAppId': appId,
-          'DeeAppSecret': appSecret,
-          'DeeTicket': ticket
+          DeeAppId: appId,
+          DeeAppSecret: appSecret,
+          DeeTicket: ticket
         }
       }
     )).data;
@@ -106,9 +107,10 @@ export const resetDay = functions.https.onCall(async (data, context) => {
     .child('nextSeq')
     .set(1);
   const usersRef = admin.database().ref('data/users');
-  const todayUsersRef = usersRef
-    .orderByChild('firstDay/id')
-    .equalTo(dayToReset);
+  const todayUsersRef =
+    dayToReset === 6
+      ? usersRef.orderByChild('allowRound2').equalTo(true)
+      : usersRef.orderByChild('firstDay/id').equalTo(dayToReset);
   const todayUsers = (await todayUsersRef.once('value')).val();
   const keys = Object.keys(todayUsers);
   const registeredKey = dayToReset === 6 ? 'registered2' : 'registered';
@@ -137,25 +139,24 @@ export const resetDay = functions.https.onCall(async (data, context) => {
       .child(`day${dayToReset}`);
     const dayFolderId = (await dayRef.once('value')).val();
     try {
-      await drive.files.delete(
-        {
-          auth: jwtClient,
-          fileId: dayFolderId
-        }
-      );
-      const parentFolderIdRef = admin.database().ref('config/dayParentFolder').once('value');
+      await drive.files.delete({
+        auth: jwtClient,
+        fileId: dayFolderId
+      });
+      const parentFolderIdRef = admin
+        .database()
+        .ref('config/dayParentFolder')
+        .once('value');
       const parentFolderId = (await parentFolderIdRef).val();
       try {
-        const createResult = await drive.files.create(
-          {
-            auth: jwtClient,
-            requestBody: {
-              name: `Day${dayToReset}`,
-              mimeType: 'application/vnd.google-apps.folder',
-              parents: [parentFolderId]
-            }
+        const createResult = await drive.files.create({
+          auth: jwtClient,
+          requestBody: {
+            name: `Day${dayToReset}`,
+            mimeType: 'application/vnd.google-apps.folder',
+            parents: [parentFolderId]
           }
-        );
+        });
         await dayRef.set(createResult.data.id);
         out.success = true;
         return out;
@@ -177,159 +178,157 @@ export const resetDay = functions.https.onCall(async (data, context) => {
     out.reason = 'Google API JWT failed';
     return out;
   }
-
 });
 
-export const registerContestant = functions.https.onCall(async (data, context) => {
-  const uid: string = data.uid;
-  const out: any = {};
-  // Get Contestant Information
-  const contestantData = (await admin
-    .database()
-    .ref('data/users')
-    .child(uid)
-    .once('value')).val();
-  // Get Current day
-  const currentDay: number = (await admin
-    .database()
-    .ref('config/liveDay')
-    .once('value')).val();
-  if (
-    currentDay !== contestantData.firstDay.id &&
-    (currentDay !== 6 || !contestantData.allowRound2)
-  ) {
-    out.success = false;
-    out.reason = 'Not this day';
-    return out;
-  } else {
-    const dayKey = `day${currentDay}`;
-    // Check if already registered
-    const checkIfRegistered: any = (await admin
+export const registerContestant = functions.https.onCall(
+  async (data, context) => {
+    const uid: string = data.uid;
+    const out: any = {};
+    // Get Contestant Information
+    const contestantData = (await admin
       .database()
-      .ref('data/live')
-      .child(dayKey)
-      .child('users')
-      .orderByChild('uid')
-      .equalTo(uid)
+      .ref('data/users')
+      .child(uid)
       .once('value')).val();
-    if (checkIfRegistered) {
+    // Get Current day
+    const currentDay: number = (await admin
+      .database()
+      .ref('config/liveDay')
+      .once('value')).val();
+    if (
+      currentDay !== contestantData.firstDay.id &&
+      (currentDay !== 6 || !contestantData.allowRound2)
+    ) {
       out.success = false;
-      out.reason = 'Already registered';
+      out.reason = 'Not this day';
       return out;
     } else {
-      // Get sequence
-      let seq = -1;
-      await admin
+      const dayKey = `day${currentDay}`;
+      // Check if already registered
+      const checkIfRegistered: any = (await admin
         .database()
         .ref('data/live')
         .child(dayKey)
-        .child('nextSeq')
-        .transaction(nextSeq => {
-          if (nextSeq) {
-            seq = nextSeq;
-            return nextSeq + 1;
-          } else {
-            return -1;
-          }
-        });
-      if (seq !== -1) {
-        // Copy the data to liveData
-        const pad = '00' + seq.toString();
-        const contestantId = `CUSC${currentDay}${pad.substr(
-          pad.length - 2
-        )}`;
+        .child('users')
+        .orderByChild('uid')
+        .equalTo(uid)
+        .once('value')).val();
+      if (checkIfRegistered) {
+        out.success = false;
+        out.reason = 'Already registered';
+        return out;
+      } else {
+        // Get sequence
+        let seq = -1;
         await admin
           .database()
           .ref('data/live')
           .child(dayKey)
-          .child('users')
-          .child(contestantId)
-          .set({
-            uid,
-            ...contestantData,
-            liveStatus: 0
+          .child('nextSeq')
+          .transaction(nextSeq => {
+            if (nextSeq) {
+              seq = nextSeq;
+              return nextSeq + 1;
+            } else {
+              return -1;
+            }
           });
-        if (contestantData.selectedSong.mode === 'live') {
-          out.success = true;
-          out.contestantId = contestantId;
-          return out;
-        } else {
-          const filenamePath: string =
-            currentDay === 6 ? 'songUrl2' : 'songUrl';
-          // Get song filename
-          const fullFilename = contestantData[filenamePath] as string;
-          const filename = fullFilename.replace('https://drive.google.com/open?id=', '');
-          // get JWT
-          const scope = ['https://www.googleapis.com/auth/drive'];
-          const jwtClient = new google.auth.JWT(
-            issuer,
-            undefined,
-            privKeyString,
-            scope,
-            sub
-          );
-          const drive = google.drive('v3');
-          try {
-            jwtClient.authorize();
-            const fileId = filename;
-            const dayFolderId = (await admin
-              .database()
-              .ref('config/dayFolders')
-              .child(`day${currentDay}`)
-              .once('value')).val();
-            // Create folder
+        if (seq !== -1) {
+          // Copy the data to liveData
+          const pad = '00' + seq.toString();
+          const contestantId = `CUSC${currentDay}${pad.substr(pad.length - 2)}`;
+          await admin
+            .database()
+            .ref('data/live')
+            .child(dayKey)
+            .child('users')
+            .child(contestantId)
+            .set({
+              uid,
+              ...contestantData,
+              liveStatus: 0
+            });
+          if (contestantData.selectedSong.mode === 'live') {
+            out.success = true;
+            out.contestantId = contestantId;
+            return out;
+          } else {
+            const filenamePath: string =
+              currentDay === 6 ? 'songUrl2' : 'songUrl';
+            // Get song filename
+            const fullFilename = contestantData[filenamePath] as string;
+            const filename = fullFilename.replace(
+              'https://drive.google.com/open?id=',
+              ''
+            );
+            // get JWT
+            const scope = ['https://www.googleapis.com/auth/drive'];
+            const jwtClient = new google.auth.JWT(
+              issuer,
+              undefined,
+              privKeyString,
+              scope,
+              sub
+            );
+            const drive = google.drive('v3');
             try {
-              const createResult = await drive.files.create(
-                {
+              jwtClient.authorize();
+              const fileId = filename;
+              const dayFolderId = (await admin
+                .database()
+                .ref('config/dayFolders')
+                .child(`day${currentDay}`)
+                .once('value')).val();
+              // Create folder
+              try {
+                const createResult = await drive.files.create({
                   auth: jwtClient,
                   requestBody: {
                     name: contestantId,
                     mimeType: 'application/vnd.google-apps.folder',
                     parents: [dayFolderId]
                   }
-                }
-              );
-              try {
-                const copyResult = await drive.files.copy(
-                  {
+                });
+                try {
+                  const copyResult = await drive.files.copy({
                     auth: jwtClient,
                     fileId,
                     requestBody: {
                       parents: [createResult.data.id!]
                     }
-                  }
-                );
-                out.success = true;
-                out.contestantId = contestantId;
-                out.fileId = copyResult.data.id;
-                return out;
+                  });
+                  out.success = true;
+                  out.contestantId = contestantId;
+                  out.fileId = copyResult.data.id;
+                  return out;
+                } catch (e) {
+                  console.log(e);
+                  out.success = true;
+                  out.contestantId = contestantId;
+                  out.fileId = 'Cannot copy file';
+                  return out;
+                }
               } catch (e) {
                 console.log(e);
                 out.success = true;
                 out.contestantId = contestantId;
-                out.fileId = 'Cannot copy file';
+                out.fileId = 'Cannot create folder';
                 return out;
               }
             } catch (e) {
               console.log(e);
               out.success = true;
               out.contestantId = contestantId;
-              out.fileId = 'Cannot create folder';
+              out.fileId = 'Google API JWT failed';
               return out;
             }
-          } catch (e) {
-            console.log(e);
-            out.success = true;
-            out.contestantId = contestantId;
-            out.fileId = 'Google API JWT failed';
-            return out;
           }
+        } else {
+          out.success = false;
+          out.reason = 'Cannot get sequence';
+          return out;
         }
-      } else {
-        out.success = false;
-        out.reason = 'Cannot get sequence';
-        return out;
       }
     }
   }
-});
+);
