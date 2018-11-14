@@ -3,7 +3,7 @@
   "packageRules": [
     {
       "packageNames": ["typescript"],
-      "enabled": false
+      "allowedVersions": "< 3.2"
     },
     {
       "packageNames": [
