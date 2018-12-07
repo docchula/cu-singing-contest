@@ -7,7 +7,7 @@
     "cors": "2.8.5",
     "firebase-admin": "6.3.0",
     "firebase-functions": "2.1.0",
-    "googleapis": "35.0.0"
+    "googleapis": "36.0.0"
   },
   "private": true,
   "devDependencies": {
