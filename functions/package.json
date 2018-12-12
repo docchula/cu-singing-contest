@@ -5,7 +5,7 @@
     "axios": "0.18.0",
     "bcrypt": "3.0.2",
     "cors": "2.8.5",
-    "firebase-admin": "6.3.0",
+    "firebase-admin": "6.4.0",
     "firebase-functions": "2.1.0",
     "googleapis": "36.0.0"
   },
