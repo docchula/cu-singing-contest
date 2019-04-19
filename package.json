@@ -24,7 +24,7 @@
     "@angular/router": "7.2.13",
     "bulma": "0.7.4",
     "core-js": "2.6.5",
-    "firebase": "5.9.4",
+    "firebase": "5.10.0",
     "font-awesome": "4.7.0",
     "hammerjs": "2.0.8",
     "jwt-decode": "2.2.0",
