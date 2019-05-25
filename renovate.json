@@ -26,5 +26,6 @@
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": "after 5pm before 10pm on Friday"
-  }
+  },
+  "masterIssue": true
 }
