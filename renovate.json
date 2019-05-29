@@ -1,31 +1,3 @@
 {
-  "extends": ["config:base"],
-  "packageRules": [
-    {
-      "packageNames": ["typescript"],
-      "allowedVersions": "< 3.2"
-    },
-    {
-      "packageNames": [
-        "@angular/cli",
-        "@angular-devkit/build-angular"
-      ],
-      "groupName": "Angular CLI monorepo"
-    },
-    {
-      "packageNames": [
-        "jasmine",
-        "jasmine-core"
-      ],
-      "groupName": "Jasmine packages"
-    }
-  ],
-  "prHourlyLimit": 0,
-  "prConcurrentLimit": 0,
-  "rebaseStalePrs": true,
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": "after 5pm before 10pm on Friday"
-  },
-  "masterIssue": true
+  "extends": ["@sarunint:angular"]
 }
