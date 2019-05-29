@@ -30,11 +30,11 @@ const routes: Routes = [
       },
       {
         path: 'main',
-        loadChildren: './main/main.module#MainModule'
+        loadChildren: () => import('./main/main.module').then(m => m.MainModule)
       },
       {
         path: ':token',
-        loadChildren: './admin/admin.module#AdminModule',
+        loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
         canLoad: [UserGuard, AdminGuard]
       }
     ]
