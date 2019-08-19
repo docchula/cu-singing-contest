@@ -12,7 +12,7 @@
   "private": true,
   "devDependencies": {
     "@types/bcrypt": "3.0.0",
-    "@types/cors": "2.8.5",
+    "@types/cors": "2.8.6",
     "typescript": "3.5.3"
   },
   "scripts": {
