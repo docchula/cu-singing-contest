@@ -21,7 +21,10 @@
         <note priority="1" from="meaning">sign out</note>
       </trans-unit>
       <trans-unit id="copyright" datatype="html">
-        <source>สงวนลิขสิทธิ์ 2560 ฝ่ายเทคโนโลยีสารสนเทศ และฝ่ายดนตรีสากล สโมสรนิสิตคณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</source><target>Copyright, 2017. IT Division and International Music Division of the Student Union of the Faculty of Medicine, Chulalongkorn University</target>
+        <source>
+      ฝ่ายเทคโนโลยีสารสนเทศ และฝ่ายดนตรีสากล สโมสรนิสิตคณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+      <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>ติดต่อสอบถาม<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+    </source><target>IT Division and International Music Division of the Student Union of the Faculty of Medicine, Chulalongkorn University</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.html</context>
           <context context-type="linenumber">37</context>
@@ -30,7 +33,7 @@
         <note priority="1" from="meaning">copyright</note>
       </trans-unit>
       <trans-unit id="preRegistration" datatype="html">
-        <source>ขณะนี้ยังไม่ถึงเวลาสมัครเข้าการแข่งขัน<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" />เริ่มรับสมัครวันที่ 1 ตุลาคม 2560 เวลา 10.00 น.</source><target>Currently, it is not the registration period, yet. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" />Registration opens on 1st of October, 2017 at 10.</target>
+        <source>ขณะนี้ยังไม่ถึงเวลาสมัครเข้าการแข่งขัน<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>เริ่มรับสมัคร 18 กันยายน 2562</source><target>Currently, it is not the registration period, yet. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Registration opens on 18th September 2019</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.html</context>
           <context context-type="linenumber">15</context>
@@ -41,10 +44,10 @@
       <trans-unit id="postRegistration" datatype="html">
         <source>
               ขณะนี้หมดเวลาสมัครเข้าแข่งขันแล้ว
-              <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;" />เข้าสู่ระบบ<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;" />
+              <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button>"/>เข้าสู่ระบบ<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button>"/>
             </source><target>
 The registration period has ended.
-<x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;" />Sign In<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;" />
+<x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button>"/>Sign In<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button>"/>
 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.html</context>
@@ -54,7 +57,7 @@ The registration period has ended.
         <note priority="1" from="meaning">post-registration text</note>
       </trans-unit>
       <trans-unit id="duringRegistration" datatype="html">
-        <source>เปิดรับสมัครตั้งแต่วันที่ 1 ตุลาคม 2560 - 31 ตุลาคม 2560</source><target>Registration is now open during 1st - 30th of September, 2018</target>
+        <source>เปิดรับสมัครวันนี้ ถึง 6 ตุลาคม 2562</source><target>Registration is now open until 6th October 2019</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.html</context>
           <context context-type="linenumber">22</context>
@@ -89,51 +92,11 @@ The registration period has ended.
         <note priority="1" from="description">A text to tell users that they need to use CUNET account</note>
         <note priority="1" from="meaning">cunet notice</note>
       </trans-unit>
-      <trans-unit id="signInStudentIdLabel" datatype="html">
-        <source>เลขประจำตัวนิสิต</source><target>Student ID</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.html</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-        <note priority="1" from="description">A text at student id label of sign in form</note>
-        <note priority="1" from="meaning">sign in form - student id label</note>
-      </trans-unit>
-      <trans-unit id="signInStudentIdPlaceholder" datatype="html">
-        <source>รหัสประจำตัวนิสิต 8 หลัก</source><target>Student ID (8 digits - not including faculty code)</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-        <note priority="1" from="description">A text at student id placeholder of sign in form</note>
-        <note priority="1" from="meaning">sign in form - student id placeholder</note>
-      </trans-unit>
-      <trans-unit id="signInPasswordLabel" datatype="html">
-        <source>รหัสผ่าน</source><target>Password</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.html</context>
-          <context context-type="linenumber">25</context>
-        </context-group>
-        <note priority="1" from="description">A text at password label of sign in form</note>
-        <note priority="1" from="meaning">sign in form - password label</note>
-      </trans-unit>
-      <trans-unit id="signInPasswordPlaceholder" datatype="html">
-        <source>รหัสผ่าน</source><target>Password</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.html</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
-        <note priority="1" from="description">A text at password placeholder of sign in form</note>
-        <note priority="1" from="meaning">sign in form - password placeholder</note>
-      </trans-unit>
-      <trans-unit id="signInButton" datatype="html">
-        <source>เข้าสู่ระบบ</source><target>Sign In</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/login/login.component.html</context>
-          <context context-type="linenumber">40</context>
-        </context-group>
-        <note priority="1" from="description">A text to be shown on sign in button</note>
-        <note priority="1" from="meaning">sign in button</note>
-      </trans-unit>
+      
+      
+      
+      
+      
       <trans-unit id="acceptTitle" datatype="html">
         <source>รับทราบระเบียบการแข่งขัน</source><target>Accept the Rule</target>
         <context-group purpose="location">
@@ -151,7 +114,7 @@ The registration period has ended.
         <note priority="1" from="description">accept notice title</note>
       </trans-unit>
       <trans-unit id="acceptNoticeBody" datatype="html">
-        <source>กรุณาอ่านระเบียบการแข่งขันอย่างละเอียด <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />หากไม่ปฏิบัติตาม คณะกรรมการอาจพิจารณาตัดสิทธิ์การแข่งขัน<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /></source><target>Please read the rule thoroughly. <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Failure to comply can result in disqualification.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /></target>
+        <source>กรุณาอ่านระเบียบการแข่งขันอย่างละเอียด <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>หากไม่ปฏิบัติตาม คณะกรรมการอาจพิจารณาตัดสิทธิ์การแข่งขัน<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/></source><target>Please read the rule thoroughly. <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Failure to comply can result in disqualification.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/accept/accept.component.html</context>
           <context context-type="linenumber">7</context>
@@ -160,33 +123,34 @@ The registration period has ended.
       </trans-unit>
       <trans-unit id="acceptRule" datatype="html">
         <source>
-  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;" />การแข่งขัน CU Singing Contest ครั้งที่ 26 ประกอบด้วยการแข่งขัน 3 รอบ ดังนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;" />
-  <x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />การแข่งขันในรอบที่ 1 : วันที่ 29 ตุลาคม - 2 พฤศจิกายน 2561 ณ หอประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยจะคัดผู้เข้าแข่งขันวันละ 10 คน รวม 50 คน เข้าสู่รอบถัดไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />การแข่งขันในรอบที่ 2 : วันที่ 7 พฤศจิกายน 2561 ณ หอประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยคัดเหลือผู้เข้ารอบสุดท้าย 10 คน<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />รอบชิงชนะเลิศ : วันที่ 24 มกราคม 2562 ณ หอประชุมใหญ่ จุฬาลงกรณ์มหาวิทยาลัย<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-  <x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol&gt;" />
-  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;" />ผู้สมัคร จะต้องดำเนินการสมัครผ่านทางเว็บไซต์ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" />https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" /> โดยทำตามขั้นตอนให้ครบถ้วน พร้อมชำระค่าสมัคร 180 บาท ภายในกำหนดเวลาต่อไปนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;" />
-  <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />กรอกข้อมูลพื้นฐาน ภายในวันที่ 30 กันยายน 2561 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />ชำระค่าสมัคร พร้อม upload หลักฐาน ภายในวันที่ 1 ตุลาคม 2561 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />เลือกวันแข่งขัน และเพลงที่ใช้ ภายในวันที่ 15 ตุลาคม 2561 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />รับทราบวันแข่งขัน และยืนยันการสมัคร ตั้งแต่วันที่ 19 ตุลาคม 2561 เป็นต้นไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-  <x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;" />
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>การแข่งขัน CU Singing Contest ครั้งที่ 27 ประกอบด้วยการแข่งขัน 3 รอบ ดังนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การแข่งขันในรอบที่ 1 : วันที่ 28 ตุลาคม - 1 พฤศจิกายน 2562 ณ หอประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยจะคัดผู้เข้าแข่งขันวันละ 10 คน รวม 50 คน เข้าสู่รอบถัดไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การแข่งขันในรอบที่ 2 : วันที่ 6 พฤศจิกายน 2562 ณ หอประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยคัดเหลือผู้เข้ารอบสุดท้าย 10 คน<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การแข่งขันรอบชิงชนะเลิศ : วันที่ 24 มกราคม 2562 ณ หอประชุมใหญ่จุฬาลงกรณ์มหาวิทยาลัย<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+  <x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>ผู้สมัคร จะต้องดำเนินการสมัครผ่านทางเว็บไซต์ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> โดยดำเนินการตามขั้นตอนให้ครบถ้วน พร้อมชำระค่าสมัคร 190 บาท ภายในกำหนดเวลาต่อไปนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>กรอกข้อมูลพื้นฐาน ภายในวันที่ 6 ตุลาคม 2562 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>ชำระค่าสมัคร พร้อมอัพโหลดหลักฐาน ภายในวันที่ 7 ตุลาคม 2562 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>เลือกวันแข่งขันและเพลงที่ใช้ ภายในวันที่ 15 ตุลาคม 2562 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>รับทราบวันแข่งขัน และยืนยันการสมัคร ตั้งแต่วันที่ 19 ตุลาคม 2562 เป็นต้นไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+  <x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>หากมีข้อสงสัย สามารถติดต่อสอบถามได้ผ่านทาง Facebook Page <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a>"/>CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
 </source><target>
-<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;" />26th CU Singing Contest consists of 3 rounds: <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;" />
-<x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />1st Round will be held during 29th of October-2nd of November, 2018 at Chalerm Prommas Auditorium, Faculty of Medicine, Chulalongkorn University. On each day, 10 contestants will proceed to the next round.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />2nd Round will be held on 7th of November, 2018 at Chalerm Prommas Auditorium, Faculty of Medicine, Chulalongkorn University. 10 contestants will proceed to the final round.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />The final round will be held on 24th of January, 2019 at the Chulalongkorn University Auditorium.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol&gt;" />
-<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;" /> Contestants must register via <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" />https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" /> by following all instruction guided. They also need to pay the registration fee of 180 baht. The schedules are as follows:<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;" />
-<x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />Complete contestant's profile within 30th of September, 2018, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />Pay registration fee and upload payment slip within 1st of October, 2018, 10.00 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />Choose contest day and song within 15th of October, 2018, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />Registration confirmation and contest date will be announced on 19th of October, 2018.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;" />
+<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>27th CU Singing Contest consists of 3 rounds: <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+<x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The 1st Round will be held between 28 October 2019 - 1 November 2019 at Chalerm Prommas Auditorium, Faculty of Medicine, Chulalongkorn University. On each day, 10 contestants will proceed to the next round.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The 2nd Round will be held on 6 November 2019 at Chalerm Prommas Auditorium, Faculty of Medicine, Chulalongkorn University. 10 contestants will proceed to the final round.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The final round will be held on 24 January 2019 at the Chulalongkorn University Auditorium.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol>"/>
+<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/> Contestants must register via <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> by following all instruction guided. They also need to pay the registration fee of 190 baht. The schedules are as follows:<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+<x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Complete contestant's profile within 6 October 2019, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Pay registration fee and upload payment slip within 7 October 2019, 10.00 PM. Once your Payment is approved within 24 hours after uploaded, you'll be able to select date of contest and the song.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>All contestants must choose their contest day and song before 15 October 2019, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Contest dates will be announced on 19 October 2019.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/>
 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/accept/accept.component.html</context>
@@ -196,54 +160,30 @@ The registration period has ended.
       </trans-unit>
       <trans-unit id="congrats" datatype="html">
         <source>ขอแสดงความยินดี</source><target>Congratulations</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
-          <context context-type="linenumber">28</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/pay/pay.component.html</context>
-          <context context-type="linenumber">25</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
-          <context context-type="linenumber">76</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">67</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
-          <context context-type="linenumber">40</context>
-        </context-group>
+        
+        
+        
+        
+        
         <note priority="1" from="description">contrats</note>
-      </trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/main/accept/accept.component.html</context><context context-type="linenumber">29</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/profile/profile.component.html</context><context context-type="linenumber">76</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">71</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/pay/pay.component.html</context><context context-type="linenumber">25</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/view-day/view-day.component.html</context><context context-type="linenumber">52</context></context-group></trans-unit>
       <trans-unit id="acceptDone" datatype="html">
         <source>
-      คุณได้รับทราบและยอมรับระเบียบการแข่งขันเรียบร้อยแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" />ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
+      คุณได้รับทราบและยอมรับระเบียบการแข่งขันเรียบร้อยแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
     </source><target>
-You have accepted the rule. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" />Next<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
+You have accepted the rule. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>Next<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
 </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
+        
         <note priority="1" from="description">accept done</note>
-      </trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/main/accept/accept.component.html</context><context context-type="linenumber">31</context></context-group></trans-unit>
       <trans-unit id="acceptIAccept" datatype="html">
         <source>ข้าพเจ้ารับทราบและยอมรับระเบียบการแข่งขันข้างต้นนี้แล้ว และพร้อมจะปฏิบัติตาม</source><target>I accept the rule and will comply to the rule.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
-          <context context-type="linenumber">40</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/accept/accept.component.html</context><context context-type="linenumber">41</context></context-group></trans-unit>
       <trans-unit id="acceptButton" datatype="html">
         <source>ยอมรับ</source><target>Accept</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/accept/accept.component.html</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/accept/accept.component.html</context><context context-type="linenumber">47</context></context-group></trans-unit>
       <trans-unit id="dashboardAccept" datatype="html">
         <source>รับทราบขั้นตอนการสมัคร</source><target>Accept the Rule</target>
         <context-group purpose="location">
@@ -288,11 +228,11 @@ You have accepted the rule. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;
       </trans-unit>
       <trans-unit id="payInstruction" datatype="html">
         <source>
-  ให้ผู้เข้าแข่งขันชำระค่าสมัคร 180 บาท (หนึ่งร้อยแปดสิบบาทถ้วน) โดยโอนเงินเข้าบัญชีธนาคารไทยพาณิชย์ สาขาสภากาชาดไทย ชื่อบัญชี
-  <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />นายภัชภูมิ เลิศจารุเกตุ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> เลขที่บัญชี <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />407-239026-5<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />
+  ให้ผู้เข้าแข่งขันชำระค่าสมัคร 190 บาท (หนึ่งร้อยเก้าสิบบาทถ้วน) โดยโอนเงินเข้าบัญชีธนาคารกสิกรไทย สาขาสยามสแควร์ ชื่อบัญชี
+  <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>นายธนนันท์ ว่องวงศ์ศรี<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> เลขที่บัญชี <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>039-107701-0<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
 </source><target>
-Contestants shall pay the registration fee of 180 baht (One hundred and eighty baht) by transferring the exact amount to the Siam Commercial Back, Thai Red Cross branch account named
-<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />นายภัชภูมิ เลิศจารุเกตุ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> Account Number <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />407-239026-5<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />
+Contestants shall pay the registration fee of 190 baht (One hundred and ninety baht) by transferring the exact amount to the Kasikornbank, Siam Square branch account named
+<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>นายธนนันท์ ว่องวงศ์ศรี<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> Account Number <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>039-107701-0<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/pay/pay.component.html</context>
@@ -301,9 +241,9 @@ Contestants shall pay the registration fee of 180 baht (One hundred and eighty b
       </trans-unit>
       <trans-unit id="paySlipInstruction" datatype="html">
         <source>
-  หลังจากโอนเงินเรียบร้อยแล้ว ให้ทำการ Upload หลักฐานการโอนเงินด้านล่างนี้ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />ภายในวันที่ 1 ตุลาคม 2561 เวลา 22.00 น.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />
+  หลังจากโอนเงินเรียบร้อยแล้ว ให้ทำการอัพโหลดหลักฐานการโอนเงินผ่านทางฟอร์มต่อไปนี้ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>ภายในวันที่ 7 ตุลาคม 2562 เวลา 22.00 น.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
 </source><target>
-After transferring, contestants shall upload the payment slip below <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />within 1st of October, 2018, 10.00 PM.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />
+After transferring, contestants shall upload the payment slip below <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>within 7 October 2019, 10.00 PM.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/pay/pay.component.html</context>
@@ -344,9 +284,9 @@ Contestants will be able to select the contest day and song after the payment sl
       </trans-unit>
       <trans-unit id="payNext" datatype="html">
         <source>
-      หลักฐานการโอนเงินของคุณได้รับการตรวจสอบแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" />ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
+      หลักฐานการโอนเงินของคุณได้รับการตรวจสอบแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
     </source><target>
-Your slip has been checked. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" />Next<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
+Your slip has been checked. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>Next<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/pay/pay.component.html</context>
@@ -362,11 +302,11 @@ Your slip has been checked. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;
       </trans-unit>
       <trans-unit id="payWaitBody" datatype="html">
         <source>
-        คุณได้ทำการ Upload หลักฐานการโอนเงินเรียบร้อยแล้ว<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> กรุณารอเพื่อให้คณะกรรมการตรวจสอบหลักฐานการโอนเงิน หากผ่านไปแล้ว
-        24 ชั่วโมง สถานะการตรวจสอบยังไม่เปลี่ยนแปลง ให้ส่งข้อความมาที่ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" /> พร้อมแจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร
+        คุณได้ทำการ Upload หลักฐานการโอนเงินเรียบร้อยแล้ว<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> กรุณารอเพื่อให้คณะกรรมการตรวจสอบหลักฐานการโอนเงิน หากผ่านไปแล้ว
+        24 ชั่วโมง สถานะการตรวจสอบยังไม่เปลี่ยนแปลง ให้ส่งข้อความมาที่ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> พร้อมแจ้งเลขประจำตัวนิสิตที่ใช้ในการสมัคร
       </source><target>
-You have uploaded the slip.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> Please wait for our staffs to check the slip. If
- 24 hours have been passed and the status has not changed, please send a message to <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" />CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" /> and please provide your student ID.
+You have uploaded the slip.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Please wait for our staffs to check the slip. If
+ 24 hours have been passed and the status has not changed, please send a message to <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/>CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> and please provide your student ID.
 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/pay/pay.component.html</context>
@@ -473,55 +413,25 @@ You have uploaded the slip.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;
       </trans-unit>
       <trans-unit id="select" datatype="html">
         <source>เลือก</source><target>Select</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
-          <context context-type="linenumber">58</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">41</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">52</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/title/title.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/education-level/education-level.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-      </trans-unit>
+        
+        
+        
+        
+        
+        
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/profile/profile.component.html</context><context context-type="linenumber">58</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/profile/title/title.component.html</context><context context-type="linenumber">5</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/profile/education-level/education-level.component.html</context><context context-type="linenumber">8</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">23</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">34</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">45</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">56</context></context-group></trans-unit>
       <trans-unit id="submit" datatype="html">
         <source>บันทึกข้อมูล</source><target>Submit</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/profile/profile.component.html</context>
-          <context context-type="linenumber">69</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
-          <context context-type="linenumber">34</context>
-        </context-group>
-      </trans-unit>
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/profile/profile.component.html</context><context context-type="linenumber">69</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-song/select-song.component.html</context><context context-type="linenumber">37</context></context-group></trans-unit>
       <trans-unit id="profileNext" datatype="html">
         <source>
-      คุณได้กรอกข้อมูลพื้นฐานเรียบร้อยแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" />ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
+      คุณได้กรอกข้อมูลพื้นฐานเรียบร้อยแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
     </source><target>
-You have completed your profile. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" />Next<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
+You have completed your profile. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>Next<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/profile/profile.component.html</context>
@@ -529,7 +439,13 @@ You have completed your profile. <x id="START_LINK" ctype="x-a" equiv-text="&lt;
         </context-group>
       </trans-unit>
       <trans-unit id="dayInstruction" datatype="html">
-        <source>ให้ผู้เข้าแข่งขันเรียงลำดับความต้องการของวันแข่งขันในรอบที่ 1 โดยคุณสามารถแก้ไขได้จนถึงวันที่ 15 ตุลาคม 2561 เวลา 23.59 น.</source><target>Please order you preference of the contest day for the first round. Modifications will be accepted until 15th of October, 2018, 11.59 PM.</target>
+        <source>
+  ให้ผู้เข้าแข่งขันแจ้งความประสงค์วันที่ต้องการเข้าแข่งขัน 5 อันดับ โดยสามารถแก้ไขข้อมูลได้จนถึง 15 ตุลาคม 2562 เวลา 23.59 น.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+  โปรดทราบว่าผู้เข้าแข่งขันอาจไม่ได้แข่งขันในวันที่เลือกเป็นอันดับแรก หากจำนวนผู้เข้าแข่งขันในวันนั้น ๆ เกินกว่าจำนวนที่สามารถรองรับได้ จึงขอให้ผู้เข้าแข่งขันทุกท่าน กรุณาเข้าสู่ระบบเพื่อตรวจสอบวันแข่งขันของท่านอีกครั้งในวันที่ 19 ตุลาคมนี้
+  หากมีข้อสงสัยหรือพบปัญหาใด ๆ สามารถติดต่อได้ทาง Facebook Page "CU Singing Contest"
+</source><target>Please order you preference of the contest day for the first round. Modifications will be accepted until 15th October 2019.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Please be informed that you may not get the date you wanted if the number of contestants on that day exceed the limit. All contestants should log in to this website again on 19th October 2019 to check your contest date.
+        If you have any questions or concerns, please contact us via Facebook page "CU Singing Contest".
+      </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
           <context context-type="linenumber">1</context>
@@ -537,52 +453,37 @@ You have completed your profile. <x id="START_LINK" ctype="x-a" equiv-text="&lt;
       </trans-unit>
       <trans-unit id="day1" datatype="html">
         <source>อันดับที่ 1</source><target>1st preference</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">8</context></context-group></trans-unit>
       <trans-unit id="day2" datatype="html">
         <source>อันดับที่ 2</source><target>2nd preference</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">19</context></context-group></trans-unit>
       <trans-unit id="day3" datatype="html">
         <source>อันดับที่ 3</source><target>3rd preference</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">26</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">30</context></context-group></trans-unit>
       <trans-unit id="day4" datatype="html">
         <source>อันดับที่ 4</source><target>4th preference</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">37</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">41</context></context-group></trans-unit>
       <trans-unit id="day5" datatype="html">
         <source>อันดับที่ 5</source><target>5th preference</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">48</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">52</context></context-group></trans-unit>
       <trans-unit id="dayNext" datatype="html">
         <source>
-      คุณได้เลือกวันในการแข่งขันรอบแรกเรียบร้อยแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" />ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
+      คุณได้เลือกวันในการแข่งขันรอบแรกเรียบร้อยแล้ว <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>ไปขั้นตอนถัดไป<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
     </source><target>
-You have select your contest day for the first round. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" />Next<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
+You have select your contest day for the first round. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>Next<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
 </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
-          <context context-type="linenumber">69</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">73</context></context-group></trans-unit>
       <trans-unit id="songInstruction" datatype="html">
-        <source>คุณสามารถเลือกใช้เพลง Backing Track ของคณะกรรมการ หรือคุณอาจเตรียม Backing Track ของคุณมาใช้ในวันแข่งขัน หรือคุณอาจเล่นดนตรีสดก็ได้</source><target>You can use our backing track, provide your own backing track or you can choose to play live music using your instrument.</target>
+        <source>
+  คุณสามารถเลือกใช้เพลง Backing Track ของคณะกรรมการ หรือคุณอาจเตรียม Backing Track ของคุณมาใช้ในวันแข่งขัน หรือคุณอาจเล่นดนตรีสดก็ได้<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+  เพลงที่ใช้แข่งขันต้องมีความยาวไม่เกิน 6 นาที และไม่มีเนื้อหาดูหมิ่น ส่อเสียด หยาบคาย หรือพาดพิงถึงสถาบันพระมหากษัตริย์ การเมือง หรือศาสนา
+</source><target>You can use our backing track, provide your own backing track or you can choose to play live music using your instrument.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Please be reminded that the selected song may not be longer than 6 minutes or contain inappropriate, distasteful content including references to the monarch, politics or religion.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
           <context context-type="linenumber">1</context>
@@ -590,100 +491,76 @@ You have select your contest day for the first round. <x id="START_LINK" ctype="
       </trans-unit>
       <trans-unit id="songWhichMode" datatype="html">
         <source>คุณต้องการใช้ Backing Track จากไหน?</source><target>Which backing track would you like to use?</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/select-song.component.html</context><context context-type="linenumber">7</context></context-group></trans-unit>
       <trans-unit id="songModeNormal" datatype="html">
         <source>ใช้ Backing Track
           ของคณะกรรมการ
         </source><target>Use the backing track
  provided by us
 </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/select-song.component.html</context><context context-type="linenumber">10</context></context-group></trans-unit>
       <trans-unit id="songModeCustom" datatype="html">
         <source>ใช้ Backing Track
           ที่เตรียมมาเอง
         </source><target>Use your own
  backing track
 </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/select-song.component.html</context><context context-type="linenumber">17</context></context-group></trans-unit>
       <trans-unit id="songModeLive" datatype="html">
         <source>ต้องการเล่นดนตรีสด</source><target>You'd like to play live music</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/select-song.component.html</context><context context-type="linenumber">24</context></context-group></trans-unit>
       <trans-unit id="songNearlyFinish" datatype="html">
         <source>ใกล้เสร็จแล้ว</source><target>Nearly finish</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
-          <context context-type="linenumber">42</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/select-song.component.html</context><context context-type="linenumber">45</context></context-group></trans-unit>
       <trans-unit id="songNormalInstruction" datatype="html">
         <source>
-          คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}" /> โดยใช้ Backing Track ของคณะกรรมการ<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> ให้คุณส่งข้อความมาที่
-          <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
-          พร้อมกับ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> และแจ้งว่าจะขอรับ Backing Track เพลง <x id="INTERPOLATION_1" equiv-text="{{currentSelectedSong.song
-          | song}}" /><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
+          คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> โดยใช้ Backing Track ของคณะกรรมการ<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ให้คุณส่งข้อความมาที่
+          <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+          พร้อมกับ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> และแจ้งว่าจะขอรับ Backing Track เพลง <x id="INTERPOLATION_1" equiv-text="{{currentSelectedSong.song
+          | song}}"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
         </source><target>
-You have selected to use the song <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}" /> by using the backing track provided by us.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> Please contact us at
-<x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
- and please provide <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />your student ID<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> and inform us that you would like to receive the backing track for <x id="INTERPOLATION_1" equiv-text="{{currentSelectedSong.song
-          | song}}" />. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" />See you on contest day!
+You have selected to use the song <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> by using the backing track provided by us.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Please contact us at
+<x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+ and please provide <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>your student ID<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> and inform us that you would like to receive the backing track for <x id="INTERPOLATION_1" equiv-text="{{currentSelectedSong.song
+          | song}}"/>. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>See you on contest day!
 </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/select-song.component.html</context><context context-type="linenumber">49</context></context-group></trans-unit>
       <trans-unit id="songCustomInstruction" datatype="html">
         <source>
-            คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}" /> โดยใช้ Backing Track ของคุณเองในการแข่งขัน<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> ให้คุณส่งข้อความมาที่
-            <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
-            พร้อมกับ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />
-            พร้อมแนบไฟล์ Backing Track ที่คุณจะใช้ พร้อมแจ้งรายละเอียดของเพลง (ชื่อเพลง, ศิลปิน)<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> หลังจากนั้น ไปฝึกซ้อมให้มาก
+            คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> โดยใช้ Backing Track ของคุณเองในการแข่งขัน<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ให้คุณส่งข้อความมาที่
+            <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+            พร้อมกับ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+            พร้อมแนบไฟล์ Backing Track ที่คุณจะใช้ พร้อมแจ้งรายละเอียดของเพลง (ชื่อเพลง, ศิลปิน)<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> หลังจากนั้น ไปฝึกซ้อมให้มาก
             ๆ แล้วพบกันในวันแข่งขัน!
           </source><target>
-You have selected to use the song <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}" /> by using your own backing track.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" />Please contact us at
-<x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
- and please provide <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />your student ID<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />
- and attach the backing track you want to use. Please also provide the artist and the name of the song. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" />See you on contest day!
+You have selected to use the song <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> by using your own backing track.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Please contact us at
+<x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+ and please provide <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>your student ID<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+ and attach the backing track you want to use. Please also provide the artist and the name of the song. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>See you on contest day!
 
 </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
-          <context context-type="linenumber">56</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/select-song.component.html</context><context context-type="linenumber">59</context></context-group></trans-unit>
       <trans-unit id="songLiveInstruction" datatype="html">
         <source>
-            คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}" /> โดยคุณจะเป็นผู้เล่นดนตรีสด<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> ให้คุณส่งข้อความมาที่
-            <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
-            พร้อมกับ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />
-            พร้อมแจ้งรายละเอียดของเครื่องดนตรีที่จะใช้<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
+            คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> โดยคุณจะเป็นผู้เล่นดนตรีสด<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ให้คุณส่งข้อความมาที่
+            <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+            พร้อมกับ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>แจ้งรหัสประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+            พร้อมแจ้งรายละเอียดของเครื่องดนตรีที่จะใช้<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> หลังจากนั้น ไปฝึกซ้อมให้มาก ๆ แล้วพบกันในวันแข่งขัน!
           </source><target>
-You have selected to play <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}" /> using live music.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> Please contact us at
-<x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" />
- and please provide <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />your student ID.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />
- Please also provide details about you instrument.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;" /> See you on contest day!
+You have selected to play <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> using live music.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Please contact us at
+<x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+ and please provide <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>your student ID.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+ Please also provide details about you instrument.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> See you on contest day!
 </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/select-song.component.html</context>
-          <context context-type="linenumber">65</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/select-song.component.html</context><context context-type="linenumber">68</context></context-group></trans-unit>
       <trans-unit id="viewDayTitle" datatype="html">
         <source>ดูวันแข่งขันรอบที่ 1</source><target>See the assigned contest day for the first round</target>
         <context-group purpose="location">
@@ -693,98 +570,83 @@ You have selected to play <x id="INTERPOLATION" equiv-text="{{currentSelectedSon
       </trans-unit>
       <trans-unit id="viewDayDayTitle" datatype="html">
         <source>วันแข่งขันรอบที่ 1</source><target>Assigned contest day for the first round</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/view-day/view-day.component.html</context><context context-type="linenumber">5</context></context-group></trans-unit>
       <trans-unit id="viewDayDayBody" datatype="html">
-        <source>ท่านได้รับการจัดสรรให้มาแข่งขันรอบที่ 1 ในวันที่ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" /><x id="INTERPOLATION" equiv-text="{{firstDay | async}}" /><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /></source><target>Your first round contest day have been assigned to <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" /><x id="INTERPOLATION" equiv-text="{{firstDay | async}}" /><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
+        <source>ท่านได้รับการจัดสรรให้มาแข่งขันรอบที่ 1 ในวันที่ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/><x id="INTERPOLATION" equiv-text="{{firstDay |
+          async}}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/></source><target>Your first round contest day have been assigned to <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/><x id="INTERPOLATION" equiv-text="{{firstDay | async}}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>.</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/view-day/view-day.component.html</context><context context-type="linenumber">8</context></context-group></trans-unit>
       <trans-unit id="viewDayNoticeTitle" datatype="html">
         <source>โปรดทราบ</source><target>Notice</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/view-day/view-day.component.html</context><context context-type="linenumber">15</context></context-group></trans-unit>
       <trans-unit id="viewDayNoticeBody" datatype="html">
-        <source>กรุณาอ่านสิ่งที่ควรทราบข้างใต้นี้อย่างละเอียด</source><target>Please read the message below carefully.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-      </trans-unit>
+        <source>กรุณาอ่านข้อควรทราบดังต่อไปนี้อย่างละเอียด</source><target>Please read the message below carefully.</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/view-day/view-day.component.html</context><context context-type="linenumber">18</context></context-group></trans-unit>
       <trans-unit id="viewDayMessage" datatype="html">
         <source>
-  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;" />ในการแข่งขันรอบที่ 1 ผู้เข้าแข่งขันมีสิ่งที่ควรทราบ ดังต่อไปนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;" />
-  <x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />
-      การแข่งขันในรอบที่ 1 และรอบที่ 2 จะจัดขึ้น ณ ห้องประชุม เฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยท่านสามารถเดินทางมายังสถานที่จัดงานได้ ดังนี้
-      <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;" />
-        <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />รถโดยสารภายในจุฬาลงกรณ์มหาวิทยาลัย สาย 3<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-        <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />รถไฟฟ้า BTS สถานีศาลาแดง<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-        <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />รถไฟฟ้าใต้ดิน MRT สายสีน้ำเงิน สถานีสีลม<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-      <x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;" />
-    <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />สิ่งที่ผู้เข้าแข่งขันต้องเตรียมมาในวันแข่งขัน ได้แก่ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />บัตรประจำตัวนิสิต<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> และ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />เครื่องดนตรีส่วนตัว<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> (ในกรณีที่ท่านได้แจ้งความประสงค์จะใช้เครื่องดนตรีแทน backing track)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />การลงทะเบียนการแข่งขันจะเริ่มขึ้นตั้งแต่เวลา 16.30 น.-18.30 น. <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />หากผู้เข้าแข่งขันไม่มาลงทะเบียนในช่วงเวลาดังกล่าว จะถือว่าสละสิทธิ์<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> ในกรณีมีเหตุฉุกเฉิน หรือมีปัญหาใด ๆ ในการเดินทางมาสถานที่แข่งขัน (เช่น หลงทาง) สามารถติดต่อคณะกรรมการจัดการแข่งขันได้ที่หมายเลขโทรศัพท์ 09-4485-8173 หรือแจ้งมายัง <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" /><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />ท่านสามารถรับทราบเกณฑ์การให้คะแนนในรอบที่ 1 และรอบที่ 2 ได้ที่ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" /><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />ในระหว่างการแข่งขัน จะมีการอัดเสียงการแสดง เพื่อเป็นประโยชน์ในการให้คะแนนของกรรมการในกรณีที่จำเป็น ท่านจะได้รับไฟล์เสียงการแสดงของตน ผ่านทาง email ที่ผู้เข้าแข่งขันใช้สมัคร<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />หากผู้เข้าแข่งขันมีปัญหาเกี่ยวกับวันแข่งขันรอบที่ 1 ของตนเอง ให้ส่งข้อความมาที่ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" /> ภายในวันที่ 24 ตุลาคม 2561 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-  <x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol&gt;" />
-</source><target>
-<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;" />In the first round, the contestants should know the followings:<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;" />
-<x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>ในการแข่งขันรอบที่ 1 ผู้เข้าแข่งขันมีสิ่งที่ควรทราบ ดังต่อไปนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+    <x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol>"/>
+      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>
+        การแข่งขันในรอบที่ 1 และรอบที่ 2 จะจัดขึ้น ณ ห้องประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์
+        จุฬาลงกรณ์มหาวิทยาลัย โดยท่านสามารถเดินทางมายังสถานที่จัดงานได้ ผ่านทางขนส่งมวลชน ดังต่อไปนี้
+        <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/>
+          <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>รถโดยสารภายในจุฬาลงกรณ์มหาวิทยาลัย สาย 3<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+          <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>รถไฟฟ้า BTS สถานีศาลาแดง<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+          <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>รถไฟฟ้าใต้ดิน MRT สายสีน้ำเงิน สถานีสีลม<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+        <x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/>
+      <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>สิ่งที่ผู้เข้าแข่งขันต้องเตรียมมาในวันแข่งขัน ได้แก่ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>บัตรประจำตัวนิสิต<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> และ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>เครื่องดนตรีส่วนตัว<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+        (ในกรณีที่ท่านได้แจ้งความประสงค์จะใช้เครื่องดนตรีแทน backing track)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การลงทะเบียนการแข่งขันจะเริ่มขึ้นตั้งแต่เวลา 16.30 น. - 18.30 น. <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>หากผู้เข้าแข่งขันไม่มาลงทะเบียนในช่วงเวลาดังกล่าว
+          จะถือว่าสละสิทธิ์ และไม่มีการคืนค่าสมัครในกรณีใด ๆ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> ในกรณีมีเหตุฉุกเฉิน หรือมีปัญหาใด ๆ ในการเดินทางมาสถานที่แข่งขัน (เช่น หลงทาง)
+        สามารถติดต่อคณะกรรมการจัดการแข่งขันได้ที่หมายเลขโทรศัพท์ 09-0464-5791 หรือแจ้งมายัง <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>ท่านสามารถรับทราบเกณฑ์การให้คะแนนในรอบที่ 1 และรอบที่ 2 ได้ที่ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>ในระหว่างการแข่งขัน จะมีการอัดเสียงการแสดง เพื่อเป็นประโยชน์ในการให้คะแนนของกรรมการในกรณีที่จำเป็น
+        ท่านจะได้รับไฟล์เสียงการแสดงของตน ผ่านทางที่อยู่อีเมลที่ใช้สมัครเข้าแข่งขัน<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>หากผู้เข้าแข่งขันมีปัญหาเกี่ยวกับวันแข่งขันรอบที่ 1 ของตนเอง ให้ติดต่อที่ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> ภายในวันที่ 25 ตุลาคม 2562
+        เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การตัดสินของคณะกรรมการเป็นที่สิ้นสุด<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol>"/>
+  </source><target>
+<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>In the first round, the contestants should be informed of the followings:<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+<x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>
 The first and the second round will be held at Chalerm Prommas Auditorium, Or-por-ror builing (อาคาร อปร), Faculty of Medicine, Chulalongkorn University. You can reach the contest venue by:
-<x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />Chulalongkorn University Shuttle Bus, Route 3<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />BTS Skytrain, Sala Deang Station<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />MRT Blue Line, Silom Station<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;" />
-<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />The contestants shall prepare <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Student ID Card<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> and <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />their own instrument<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> (In case they have declared that they are going to play the song themselves)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />The registration will occur between 04.30 PM-06.30 PM. <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Failure to register in the specified period will result in disqualification.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> In case of any emergencies, contestants shall contact our staff via phone number 09-4485-8173 or <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" /><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />Contestants can view the scoring criteria for the first and second round at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" /><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />The performance will be recorded in case the judges want to listen for the second time. You will receive your own performance audio file via the registered email address.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;" />If contestants should have any problem regarding their contest day for the first round, please contact our staff at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;" /><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;" /><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;" /> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;" /> by 24th of October, 2018, 10.00 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;" />
-<x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol&gt;" />
+<x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Chulalongkorn University Shuttle Bus, Route 3<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>BTS Skytrain, Sala Deang Station<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>MRT Blue Line, Silom Station<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/>
+<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The contestants shall prepare <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Student ID Card<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> and <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>their own instrument<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> (in case they have declared that they are going to play the song themselves)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Registration will be open from 4.30 PM until 6.00 PM. <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Failure to register in the specified period will result in disqualification and registration fee is not refundable.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> In case of any emergencies, contestants shall contact our staff via phone number 09-0464-5791 or <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Contestants can view the scoring criteria for the first and second round at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The performance will be recorded in case the judges want to listen for the second time. You will receive your own performance audio file via the registered email address.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>If contestants should have any problem regarding their contest day for the first round, please contact our staff at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> by 25 October 2019, 10.00 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>7.	The Judges’ decisions are final.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+<x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol>"/>
 </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/view-day/view-day.component.html</context><context context-type="linenumber">21</context></context-group></trans-unit>
       <trans-unit id="viewDayDone" datatype="html">
         <source>
-      คุณได้รับทราบวันแข่งขันรอบที่ 1 และสิ่งที่ควรทราบต่าง ๆ แล้ว
-    </source><target>
+        คุณได้รับทราบวันแข่งขันรอบที่ 1 และสิ่งที่ควรทราบต่าง ๆ แล้ว
+      </source><target>
 You have acknowledged your first round contest day and have read the details of the first round.
 </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
-          <context context-type="linenumber">42</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/view-day/view-day.component.html</context><context context-type="linenumber">54</context></context-group></trans-unit>
       <trans-unit id="viewDayAccept" datatype="html">
         <source>ข้าพเจ้ารับทราบวันแข่งขันในรอบที่ 1 และสิ่งที่ควรทราบต่าง ๆ แล้ว</source><target>I acknowledged my first round contest day and have read the details of the first round.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
-          <context context-type="linenumber">52</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/view-day/view-day.component.html</context><context context-type="linenumber">64</context></context-group></trans-unit>
       <trans-unit id="viewDayButton" datatype="html">
         <source>รับทราบ</source><target>Acknowledge</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/view-day/view-day.component.html</context>
-          <context context-type="linenumber">58</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/main/view-day/view-day.component.html</context><context context-type="linenumber">70</context></context-group></trans-unit>
       <trans-unit id="titleOtherPlaceholder" datatype="html">
         <source>คำนำหน้าชื่ออื่น ๆ</source><target>Other title</target>
         <context-group purpose="location">

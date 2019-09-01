@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="navbar-brand">
         <a class="navbar-item" [routerLink]="['/']">
-        CU Singing Contest 26<sup>th</sup>
+        CU Singing Contest 27<sup>th</sup>
       </a>
 
         <div class="navbar-burger" [ngClass]="{'is-active': navOpen}" (click)="toggleNav()">
@@ -34,9 +34,13 @@
 </div>
 <div class="footer">
   <div class="container has-text-centered">
-    <p i18n="copyright|A copyright text at the footer@@copyright">สงวนลิขสิทธิ์ 2560 ฝ่ายเทคโนโลยีสารสนเทศ และฝ่ายดนตรีสากล สโมสรนิสิตคณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</p>
-    <p>Build {{ appInfo.sha }}</p>
-    <p>Built at {{ appInfo.builtAt }}</p>
-    <p><a href="https://github.com/sarunint/cu-singing-contest">Source Code</a></p>
+    <p i18n="copyright|A copyright text at the footer@@copyright">
+      ฝ่ายเทคโนโลยีสารสนเทศ และฝ่ายดนตรีสากล สโมสรนิสิตคณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย<br/>
+      <a href="https://www.facebook.com/cusinging/" target="_blank">ติดต่อสอบถาม</a>
+    </p>
+    <small>
+      Build {{ appInfo.sha }}; Build time {{ appInfo.builtAt }}
+      (<a href="https://github.com/sarunint/cu-singing-contest" target="_blank">Source Code</a>)
+    </small>
   </div>
 </div>
