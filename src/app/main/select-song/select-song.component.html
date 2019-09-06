@@ -30,7 +30,7 @@
     <cusc-song-searcher formControlName="song"></cusc-song-searcher>
   </ng-template>
   <ng-template #notStandard>
-    <cusc-song-name-input formControlName="song"></cusc-song-name-input>
+    <cusc-song-name-input formControlName="song" [mode]="songForm.get('mode').value"></cusc-song-name-input>
   </ng-template>
   <div class="field">
     <div class="control">
@@ -65,7 +65,7 @@
         </ng-template>
         <ng-template #mLive>
           <div class="message-body" i18n="@@songLiveInstruction">
-            คุณได้เลือกที่จะใช้เพลง {{currentSelectedSong.song | song}} โดยคุณจะเป็นผู้เล่นดนตรีสด<br> ให้คุณส่งข้อความมาที่
+            คุณได้เลือกที่จะใช้เพลง {{currentSelectedSong.song | song}} โดยคุณจะเป็นผู้เล่นดนตรีสด โดย{{currentSelectedSong.song.instrument}}<br> ให้คุณส่งข้อความมาที่
             <a href="https://m.me/cusinging"><i class="fa fa-facebook-official" aria-hidden="true"></i> CU Singing Contest</a>
             พร้อมกับ<strong>แจ้งเลขประจำตัวนิสิตที่ใช้ในการสมัคร</strong>
             พร้อมแจ้งรายละเอียดของเครื่องดนตรีที่จะใช้ และรายละเอียดของเพลง (ชื่อเพลง, ศิลปิน)
