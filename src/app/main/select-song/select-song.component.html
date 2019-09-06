@@ -7,7 +7,7 @@
     <label class="label" i18n="@@songWhichMode">คุณต้องการใช้ Backing Track จากไหน?</label>
     <div class="control">
       <label class="radio">
-        <input type="radio" value="standard" formControlName="mode"> <ng-container i18n="@@songModeNormal">ใช้ Backing Track
+        <input type="radio" value="standard" formControlName="mode" (change)="setStandardMode()"> <ng-container i18n="@@songModeNormal">ใช้ Backing Track
           ของคณะกรรมการ
         </ng-container>
       </label>
