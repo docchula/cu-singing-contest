@@ -62,4 +62,8 @@ export class SelectSongComponent implements OnInit {
         });
     }
   }
+
+  setStandardMode() {
+    this.songForm.setValue({mode: 'standard', song: {name: '', artist: ''}});
+  }
 }
