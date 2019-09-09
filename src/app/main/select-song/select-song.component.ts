@@ -13,7 +13,7 @@ import { SelectedSong } from '../../shared/selected-song';
 })
 export class SelectSongComponent implements OnInit {
   songForm: FormGroup;
-  currentSelectedSong$: Observable<any>;
+  currentSelectedSong$: Observable<SelectedSong>;
   disableSubmit = false;
   selected$: Observable<boolean>;
 

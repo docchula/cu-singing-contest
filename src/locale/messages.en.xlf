@@ -421,7 +421,7 @@ You have uploaded the slip.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
 
 
 
-      <context-group purpose="location"><context context-type="sourcefile">app/main/profile/profile.component.html</context><context context-type="linenumber">58</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/profile/title/title.component.html</context><context context-type="linenumber">5</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/profile/education-level/education-level.component.html</context><context context-type="linenumber">8</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">23</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">34</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">45</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">56</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/main/profile/profile.component.html</context><context context-type="linenumber">58</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/profile/title/title.component.html</context><context context-type="linenumber">5</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/profile/education-level/education-level.component.html</context><context context-type="linenumber">8</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">23</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">34</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">45</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-day/select-day.component.html</context><context context-type="linenumber">56</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context><context context-type="linenumber">9</context></context-group></trans-unit>
       <trans-unit id="submit" datatype="html">
         <source>บันทึกข้อมูล</source><target>Submit</target>
 
@@ -548,7 +548,7 @@ You have selected to use the song <x id="INTERPOLATION" equiv-text="{{currentSel
       <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/select-song.component.html</context><context context-type="linenumber">59</context></context-group></trans-unit>
       <trans-unit id="songLiveInstruction" datatype="html">
         <source>
-            คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> โดยคุณจะเป็นผู้เล่นดนตรีสด<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ให้คุณส่งข้อความมาที่
+            คุณได้เลือกที่จะใช้เพลง <x id="INTERPOLATION" equiv-text="{{currentSelectedSong.song | song}}"/> โดยคุณจะเป็นผู้เล่นดนตรีสด โดย<x id="INTERPOLATION_1" equiv-text="{{currentSelectedSong.song.instrument}}"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ให้คุณส่งข้อความมาที่
             <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
             พร้อมกับ<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>แจ้งเลขประจำตัวนิสิตที่ใช้ในการสมัคร<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
             พร้อมแจ้งรายละเอียดของเครื่องดนตรีที่จะใช้ และรายละเอียดของเพลง (ชื่อเพลง, ศิลปิน)
@@ -730,29 +730,35 @@ You have acknowledged your first round contest day and have read the details of 
           <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
+      </trans-unit><trans-unit id="instrumentSelectLabel" datatype="html">
+        <source>เครื่องดนตรี</source><target state="translated">Instrument</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit><trans-unit id="instrumentSpecifyLabel" datatype="html">
+        <source>ระบุเครื่องดนตรี</source><target state="translated">Please specify the instrument you would like to use</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit><trans-unit id="instrumentOtherPlaceholder" datatype="html">
+        <source>ชื่อ-รายละเอียดเครื่องดนตรี</source><target state="translated">Name or model (if any)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="songNameInputName" datatype="html">
         <source>ชื่อเพลง</source><target>Song Name</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-      </trans-unit>
+
+
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context><context context-type="linenumber">24</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context><context context-type="linenumber">26</context></context-group></trans-unit>
       <trans-unit id="songNameInputArtist" datatype="html">
         <source>ศิลปิน</source><target>Artist</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
-      </trans-unit>
+
+
+      <context-group purpose="location"><context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context><context context-type="linenumber">30</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/main/select-song/song-name-input/song-name-input.component.html</context><context context-type="linenumber">32</context></context-group></trans-unit>
     </body>
   </file>
 </xliff>
