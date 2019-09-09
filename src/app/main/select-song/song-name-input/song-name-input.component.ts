@@ -26,6 +26,13 @@ export class SongNameInputComponent implements OnInit, ControlValueAccessor, OnD
   stringOtherInstrument = 'เอาเครื่องดนตรีอื่น ๆ มาเอง';
   stringOtherInstrumentEn = 'Your other instrument';
   stringInstrumentPreset = [
+    'acoustic guitar',
+    'keyboard',
+    'your acoustic guitar with jack',
+    'your keyboard',
+    'other'
+  ];
+  stringInstrumentPresetTh = [
     'ใช้เครื่องดนตรีของงาน “กีต้าร์โปร่งไฟฟ้า”',
     'ใช้เครื่องดนตรีของงาน “คีย์บอร์ด Roland Juno-Di 61 คีย์”',
     'เอาเครื่องดนตรีมาเอง “กีต้าร์โปร่งไฟฟ้า (มีช่องเสียบแจ็ค)”',
@@ -54,10 +61,10 @@ export class SongNameInputComponent implements OnInit, ControlValueAccessor, OnD
       this.onChange(v);
     });
     this.instrument = new FormControl(this.stringInstrumentPreset.includes(this.songForm.value.instrument)
-      ? this.songForm.value.instrument : this.stringOtherInstrument);
+      ? this.songForm.value.instrument : 'other');
     this.otherInstrument = new FormControl(this.stringInstrumentPreset.includes(this.songForm.value.instrument)
       ? '' : this.songForm.value.instrument);
-    this.stringInstrumentPresetShow = (this.localeId === 'th') ? this.stringInstrumentPreset : this.stringInstrumentPresetEn;
+    this.stringInstrumentPresetShow = (this.localeId === 'th') ? this.stringInstrumentPresetTh : this.stringInstrumentPresetEn;
   }
 
   writeValue(obj: any): void {
@@ -84,14 +91,13 @@ export class SongNameInputComponent implements OnInit, ControlValueAccessor, OnD
   }
 
   onInstrumentSelectChange (value) {
-    if (value !== this.stringOtherInstrument) {
+    if (value !== 'other') {
       this.songForm.patchValue({instrument: value});
     }
-    console.log(this.songForm.value);
   }
 
   onInstrumentSpecifyChange (value) {
-    if (this.instrument.value === this.stringOtherInstrument) {
+    if (this.instrument.value === 'other') {
       this.songForm.patchValue({instrument: value});
     }
   }

@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="field" *ngIf="instrument.value === stringOtherInstrument">
+    <div class="field" *ngIf="instrument.value === 'other'">
       <label class="label" i18n="@@instrumentSpecifyLabel">ระบุเครื่องดนตรี</label>
       <div class="control is-expanded">
         <input class="input" type="text" placeholder="ชื่อ-รายละเอียดเครื่องดนตรี" [formControl]="otherInstrument" i18n-placeholder="@@instrumentOtherPlaceholder" (change)="onInstrumentSpecifyChange($event.target.value)">
