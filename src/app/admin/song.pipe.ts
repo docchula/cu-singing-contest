@@ -10,11 +10,10 @@ export class SongPipe implements PipeTransform {
 
   transform(value: SelectedSong, args?: any): any {
     if (value) {
-      if (value.mode === 'standard') {
-        return new UserSongPipe('th').transform(value.song);
-      } else {
-        return new SongModePipe().transform(value.mode) + ': ' + new UserSongPipe('th').transform(value.song);
-      }
+      return new SongModePipe().transform(value.mode)
+        + ': '
+        + new UserSongPipe('th').transform(value.song)
+        + ((value.song as Object).hasOwnProperty('instrument') ? ` (${value.song.instrument})` : '');
     } else {
       return 'ยังไม่ได้เลือกเพลง';
     }
