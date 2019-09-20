@@ -45,7 +45,16 @@ export class SongCheckComponent implements OnInit {
 
   saveStatus(uid: string) {
     const control = this.urlInputs[uid];
+
     if (control.valid) {
+      // convert link from https://drive.google.com/file/d/... to https://drive.google.com/open?id=...
+      const controlValue = (control.value as string);
+      if (controlValue.match(/^https:\/\/drive\.google\.com\/file\/d\/.+$/)) {
+        control.setValue('https://drive.google.com/open?id=' + controlValue.substr(32, controlValue.substr(32).indexOf('/')));
+      } else if (controlValue.match(/^https:\/\/drive\.google\.com\/a\/docchula\.com\/file\/d\/.+$/)) {
+        control.setValue('https://drive.google.com/open?id=' + controlValue.substr(47, controlValue.substr(47).indexOf('/')));
+      }
+
       this.adminService.saveSongUrl(uid, control.value).subscribe();
       this.adminService.toggleSongStatus(uid).subscribe(_ => {
         control.reset();
@@ -59,7 +68,10 @@ export class SongCheckComponent implements OnInit {
 }
 
 const checkUrlFormat = (c: AbstractControl) => {
-  if ((c.value as string).match(/^https:\/\/drive\.google\.com\/open\?id=.+$/)) {
+  const controlValue = c.value as string;
+  if (controlValue.match(/^https:\/\/drive\.google\.com\/open\?id=.+$/)
+    || controlValue.match(/^https:\/\/drive\.google\.com\/file\/d\/.+$/)
+    || controlValue.match(/^https:\/\/drive\.google\.com\/a\/docchula\.com\/file\/d\/.+$/)) {
     return null;
   } else {
     return {format: true};
