@@ -25,7 +25,6 @@ deploy-web:
     - build
   script:
     - firebase deploy --only hosting --token "$FIREBASE_TOKEN"
-    - firebase deploy --only functions --token "$FIREBASE_TOKEN"
 
 deploy-functions:
   stage: deploy
