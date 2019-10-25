@@ -15,15 +15,28 @@ build:
     paths:
       - $HOME/.npm/
 
-deploy:
+deploy-web:
   stage: deploy
   image: sarunint/firebase-tools:latest
   only:
-    - master
+    refs:
+      - master
   dependencies:
     - build
   script:
     - firebase deploy --only hosting --token "$FIREBASE_TOKEN"
+    - firebase deploy --only functions --token "$FIREBASE_TOKEN"
+
+deploy-functions:
+  stage: deploy
+  image: sarunint/firebase-tools:latest
+  only:
+    refs:
+      - master
+  script:
+    - cd functions
+    - npm ci
+    - firebase deploy --only functions --token "$FIREBASE_TOKEN"
 
 stages:
   - build
