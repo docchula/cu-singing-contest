@@ -5,7 +5,7 @@
     </h1>
   </div>
 </nav>
-<div class="container">
+<div class="container" *ngIf="currentDay$ | async as day">
 
   <ng-container *ngIf="singing$ | async as user">
     <h2 class="is-size-2">กำลังร้อง</h2>
@@ -13,7 +13,10 @@
       <h3 class="is-size-3">{{user.key}} - {{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}}
         ({{user.payload.val().profile.nname}})</h3>
       <h4 class="is-size-4">{{user.payload.val().profile.faculty.name}}</h4>
-      <h4 class="is-size-4"><span class="icon has-text-info"><i class="material-icons">music_note</i></span> {{user.payload.val().selectedSong2.song.artist}} - {{user.payload.val().selectedSong2.song.name}}</h4>
+      <h4 class="is-size-4" *ngIf="((day === 6) ? user.payload.val().selectedSong2 : user.payload.val().selectedSong) as selectedSong">
+        <span class="icon has-text-info"><i class="material-icons">music_note</i></span>
+        {{selectedSong.song.artist}} - {{selectedSong.song.name}}
+      </h4>
     </div>
   </ng-container>
   <h2 class="is-size-2">ลำดับต่อไป</h2>
@@ -32,7 +35,9 @@
         {{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}} ({{user.payload.val().profile.nname}})
       </td>
       <td>{{user.payload.val().profile.faculty.name}}</td>
-      <td>{{user.payload.val().selectedSong2.song.artist}} - {{user.payload.val().selectedSong2.song.name}}</td>
+      <td *ngIf="((day === 6) ? user.payload.val().selectedSong2 : user.payload.val().selectedSong) as selectedSong">
+        {{selectedSong.song.artist}} - {{selectedSong.song.name}}
+      </td>
     </tr>
   </table>
 

@@ -13,17 +13,18 @@
   </div>
   <table class="table is-fullwidth">
     <thead>
-      <tr>
-        <th>ID</th>
-        <th>ชื่อ-นามสกุล</th>
-        <th>โทรศัพท์มือถือ</th>
-        <th>ประเภท</th>
-        <th>เพลง</th>
-        <th>สถานะ</th>
-        <th>Smoke</th>
-        <th>การดำเนินการ</th>
-      </tr>
+    <tr>
+      <th>ID</th>
+      <th>ชื่อ-นามสกุล</th>
+      <th>โทรศัพท์มือถือ</th>
+      <th>ประเภท</th>
+      <th>เพลง</th>
+      <th>สถานะ</th>
+      <th>Smoke</th>
+      <th>การดำเนินการ</th>
+    </tr>
     </thead>
+    <tbody *ngIf="day$ | async as day">
     <tr *ngFor="let user of filteredUserList$ | async">
       <td>{{user.key}}</td>
       <td [ngClass]="{'is-info': user.payload.val().liveStatus === 3}">
@@ -31,16 +32,20 @@
         <small>{{user.payload.val().profile.nameReading}}</small>
       </td>
       <td>{{user.payload.val().profile.mobile}}</td>
-        <td>{{user.payload.val().selectedSong2.mode | songMode}}</td>
-        <td>{{user.payload.val().selectedSong2.song.artist}} - {{user.payload.val().selectedSong2.song.name}}</td>
+      <ng-container *ngIf="((day === 6) ? user.payload.val().selectedSong2 : user.payload.val().selectedSong) as selectedSong">
+        <td>{{selectedSong.mode | songMode}}</td>
+        <td>{{selectedSong.song.artist}} - {{selectedSong.song.name}}</td>
+      </ng-container>
 
       <td>{{status[user.payload.val().liveStatus].name}}</td>
       <td [ngClass]="{'is-primary': !!user.payload.val().smoke}">{{!!user.payload.val().smoke}}</td>
       <td>
-        <button class="button is-primary" *ngIf="positions[mode.value]?.canNext.includes(user.payload.val().liveStatus)" (click)="next(user.key)">{{status[user.payload.val().liveStatus].next}}</button>
+        <button class="button is-primary" *ngIf="positions[mode.value]?.canNext.includes(user.payload.val().liveStatus)"
+                (click)="next(user.key)">{{status[user.payload.val().liveStatus].next}}</button>
         <button class="button is-danger" *ngIf="positions[mode.value]?.canReverse.includes(user.payload.val().liveStatus)" (click)="back(user.key)">ย้อนกลับ</button>
         <button class="button is-info" *ngIf="positions[mode.value]?.canTrigger && status[user.payload.val().liveStatus].hasTrigger" (click)="trigger(user.key, 'smoke')">เปลี่ยน Smoke</button>
       </td>
     </tr>
+    </tbody>
   </table>
 </div>

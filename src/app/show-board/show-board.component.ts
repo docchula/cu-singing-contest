@@ -23,7 +23,7 @@ export class ShowBoardComponent implements OnInit {
     this.currentDay$ = this.configService.getConfigObjectValue<number>(
       'liveDay'
     );
-    this.contestantList$ = this.currentDay$.pipe(
+    this.contestantList$ = this.configService.getConfigObjectValue<number>('liveDay').pipe(
       switchMap(day => {
         return this.liveService.getDayList(day);
       }),
