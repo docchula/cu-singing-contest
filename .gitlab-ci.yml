@@ -30,6 +30,7 @@ deploy-web:
 deploy-functions:
   stage: deploy
   image: sarunint/firebase-tools:latest
+  when: manual
   only:
     refs:
       - master
