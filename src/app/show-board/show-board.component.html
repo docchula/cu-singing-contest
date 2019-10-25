@@ -9,7 +9,7 @@
 
   <ng-container *ngIf="singing$ | async as user">
     <h2 class="is-size-2">กำลังร้อง</h2>
-    <div class="box">
+    <div class="box has-background-grey-darker has-text-light">
       <h3 class="is-size-3">{{user.key}} - {{user.payload.val().profile.title}}{{user.payload.val().profile.fname}} {{user.payload.val().profile.lname}}
         ({{user.payload.val().profile.nname}})</h3>
       <h4 class="is-size-4">{{user.payload.val().profile.faculty.name}}</h4>
@@ -20,7 +20,7 @@
     </div>
   </ng-container>
   <h2 class="is-size-2">ลำดับต่อไป</h2>
-  <table class="table is-fullwidth">
+  <table class="table is-fullwidth has-background-black-bis has-text-light">
     <thead>
     <tr>
       <th>ID</th>

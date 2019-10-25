@@ -55,5 +55,6 @@ export class ShowBoardComponent implements OnInit {
         }
       })
     );
+    document.getElementsByTagName('body').item(0).style.backgroundColor = '#121212';
   }
 }
