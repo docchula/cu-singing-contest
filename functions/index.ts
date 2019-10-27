@@ -85,45 +85,42 @@ export const resetDay = functions.https.onCall(async (data, context) => {
     sub
   );
   const drive = google.drive('v3');
+  await jwtClient.authorize();
+  const dayRef = admin
+    .database()
+    .ref('config/dayFolders')
+    .child(`day${dayToReset}`);
+  const dayFolderId = (await dayRef.once('value')).val();
   try {
-    await jwtClient.authorize();
-    const dayRef = admin
-      .database()
-      .ref('config/dayFolders')
-      .child(`day${dayToReset}`);
-    const dayFolderId = (await dayRef.once('value')).val();
     try {
       await drive.files.delete({
         auth: jwtClient,
         fileId: dayFolderId
       });
-      const parentFolderIdRef = admin
-        .database()
-        .ref('config/dayParentFolder')
-        .once('value');
-      const parentFolderId = (await parentFolderIdRef).val();
-      try {
-        const createResult = await drive.files.create({
-          auth: jwtClient,
-          requestBody: {
-            name: `Day${dayToReset}`,
-            mimeType: 'application/vnd.google-apps.folder',
-            parents: [parentFolderId]
-          }
-        });
-        await dayRef.set(createResult.data.id);
-        out.success = true;
-        return out;
-      } catch (e) {
-        console.log(e);
-        out.success = false;
-        out.reason = 'Cannot create folder';
-        return out;
-      }
+    } catch (e) {
+      // Allow failure
+    }
+    const parentFolderIdRef = admin
+      .database()
+      .ref('config/dayParentFolder')
+      .once('value');
+    const parentFolderId = (await parentFolderIdRef).val();
+    try {
+      const createResult = await drive.files.create({
+        auth: jwtClient,
+        requestBody: {
+          name: `Day${dayToReset}`,
+          mimeType: 'application/vnd.google-apps.folder',
+          parents: [parentFolderId]
+        }
+      });
+      await dayRef.set(createResult.data.id);
+      out.success = true;
+      return out;
     } catch (e) {
       console.log(e);
       out.success = false;
-      out.reason = 'Cannot delete folder';
+      out.reason = 'Cannot create folder';
       return out;
     }
   } catch (e) {
