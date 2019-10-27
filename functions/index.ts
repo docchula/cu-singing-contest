@@ -95,7 +95,8 @@ export const resetDay = functions.https.onCall(async (data, context) => {
     try {
       await drive.files.delete({
         auth: jwtClient,
-        fileId: dayFolderId
+        fileId: dayFolderId,
+        supportsAllDrives: true
       });
     } catch (e) {
       // Allow failure
@@ -239,7 +240,8 @@ export const registerContestant = functions.https.onCall(
                     name: contestantId,
                     mimeType: 'application/vnd.google-apps.folder',
                     parents: [dayFolderId]
-                  }
+                  },
+                  supportsAllDrives: true
                 });
                 try {
                   const copyResult = await drive.files.copy({
@@ -247,7 +249,8 @@ export const registerContestant = functions.https.onCall(
                     fileId,
                     requestBody: {
                       parents: [createResult.data.id!]
-                    }
+                    },
+                    supportsAllDrives: true
                   });
                   out.success = true;
                   out.contestantId = contestantId;
