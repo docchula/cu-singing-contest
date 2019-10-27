@@ -112,7 +112,8 @@ export const resetDay = functions.https.onCall(async (data, context) => {
           name: `Day${dayToReset}`,
           mimeType: 'application/vnd.google-apps.folder',
           parents: [parentFolderId]
-        }
+        },
+        supportsAllDrives: true
       });
       await dayRef.set(createResult.data.id);
       out.success = true;
