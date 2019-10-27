@@ -13,52 +13,6 @@ const appSecret = functions.config().chula_sso.app_secret;
 
 admin.initializeApp();
 
-export const authenticate = functions.https.onCall(async (data, context) => {
-  const username: string = data.username;
-  const password: string = data.password;
-  const out: any = {};
-  if (username.startsWith('cusc-temp-')) {
-    const hash = (await admin
-      .database()
-      .ref('config/temp-user')
-      .child(username)
-      .once('value')).val();
-    if (bcrypt.compareSync(password, hash)) {
-      out.success = true;
-      out.token = await admin.auth().createCustomToken(username);
-    } else {
-      out.success = false;
-    }
-  } else {
-    const result = axios
-      .get('https://www.it.chula.ac.th/downloads', {
-        auth: {
-          username,
-          password
-        },
-        httpsAgent: new https.Agent({
-          rejectUnauthorized: false
-        })
-      })
-      .then(response => {})
-      .catch(error => {
-        switch (error.response.status) {
-          case 403:
-            return true;
-          default:
-            return false;
-        }
-      });
-    if (await result) {
-      out.success = true;
-      out.token = await admin.auth().createCustomToken(`cunet-${username}`);
-    } else {
-      out.success = false;
-    }
-  }
-  return out;
-});
-
 export const chulaSso = functions.https.onCall(async (data, context) => {
   const ticket = data.ticket;
   try {
