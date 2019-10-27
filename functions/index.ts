@@ -99,7 +99,19 @@ export const resetDay = functions.https.onCall(async (data, context) => {
         supportsAllDrives: true
       });
     } catch (e) {
-      // Allow failure
+      // Allow failure, in that case, we trash it instead.
+      try {
+        await drive.files.update({
+          auth: jwtClient,
+          fileId: dayFolderId,
+          supportsAllDrives: true,
+          requestBody: {
+            trashed: true
+          }
+        })
+      } catch (e) {
+        // Still allow failure, in that case, it is not created yet.
+      }
     }
     const parentFolderIdRef = admin
       .database()
