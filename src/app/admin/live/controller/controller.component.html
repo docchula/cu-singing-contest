@@ -33,7 +33,10 @@
       </td>
       <td>{{user.payload.val().profile.mobile}}</td>
       <ng-container *ngIf="((day === 6) ? user.payload.val().selectedSong2 : user.payload.val().selectedSong) as selectedSong">
-        <td>{{selectedSong.mode | songMode}}</td>
+        <td>
+          {{selectedSong.mode | songMode}}
+          <i *ngIf="(selectedSong.mode === 'live') && selectedSong.song.hasOwnProperty('instrument')">({{ selectedSong.song.instrument }})</i>
+        </td>
         <td>{{selectedSong.song.artist}} - {{selectedSong.song.name}}</td>
       </ng-container>
 
