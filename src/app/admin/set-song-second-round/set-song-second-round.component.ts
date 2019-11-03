@@ -79,6 +79,14 @@ export class SetSongSecondRoundComponent implements OnInit {
       artistControl.valid &&
       modeControl.valid
     ) {
+      // convert link from https://drive.google.com/file/d/... to https://drive.google.com/open?id=...
+      const songUrl = (songUrlControl.value as string);
+      if (songUrl.match(/^https:\/\/drive\.google\.com\/file\/d\/.+$/)) {
+        songUrlControl.setValue('https://drive.google.com/open?id=' + songUrl.substr(32, songUrl.substr(32).indexOf('/')));
+      } else if (songUrl.match(/^https:\/\/drive\.google\.com\/a\/docchula\.com\/file\/d\/.+$/)) {
+        songUrlControl.setValue('https://drive.google.com/open?id=' + songUrl.substr(47, songUrl.substr(47).indexOf('/')));
+      }
+
       combineLatest(
         this.adminService.saveUserField<{ mode: string; song: Song }>(
           uid,
@@ -113,12 +121,13 @@ export class SetSongSecondRoundComponent implements OnInit {
 }
 
 const checkUrlFormat = (c: AbstractControl) => {
-  if (
-    (c.value as string).match(/^https:\/\/drive\.google\.com\/open\?id=.+$/)
-  ) {
+  const controlValue = c.value as string;
+  if (controlValue.match(/^https:\/\/drive\.google\.com\/open\?id=.+$/)
+    || controlValue.match(/^https:\/\/drive\.google\.com\/file\/d\/.+$/)
+    || controlValue.match(/^https:\/\/drive\.google\.com\/a\/docchula\.com\/file\/d\/.+$/)) {
     return null;
   } else {
-    return { format: true };
+    return {format: true};
   }
 };
 
