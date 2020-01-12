@@ -2,7 +2,7 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "dependencies": {
-    "axios": "0.19.0",
+    "axios": "0.19.1",
     "bcrypt": "3.0.7",
     "cors": "2.8.5",
     "firebase-admin": "8.9.0",
