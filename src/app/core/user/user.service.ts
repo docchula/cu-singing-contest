@@ -1,5 +1,3 @@
-import 'firebase/storage';
-
 import { Injectable } from '@angular/core';
 import { FirebaseApp } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -18,11 +16,11 @@ export class UserService {
   }
 
   signIn(token: string) {
-    return fromPromise(this.afa.auth.signInWithCustomToken(token));
+    return fromPromise(this.afa.signInWithCustomToken(token));
   }
 
   signOut() {
-    return fromPromise(this.afa.auth.signOut());
+    return fromPromise(this.afa.signOut());
   }
 
   _getUserObject<T = any>(path: string | null = null) {

@@ -13,6 +13,8 @@ import { UserGuard } from './user.guard';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { ShowBoardComponent } from './show-board/show-board.component';
 
+import 'firebase/database';
+
 @NgModule({
   declarations: [
     AppComponent,
