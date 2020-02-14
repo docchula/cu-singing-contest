@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "cu-singing-contest": {
+      "i18n": {
+        "locales": {
+          "en": "src/locale/messages.en.xlf"
+        },
+        "sourceLocale": "th"
+      },
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -11,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -28,6 +35,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -50,16 +63,25 @@
             },
             "en": {
               "aot": true,
-              "i18nFile": "src/locale/messages.en.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "en",
-              "i18nMissingTranslation": "error"
+              "i18nMissingTranslation": "error",
+              "localize": [
+                "en"
+              ]
             },
             "th": {
               "aot": true,
-              "i18nLocale": "th"
+              "localize": ["th"]
             },
             "production-en": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "localize": [
+                "en"
+              ],
               "outputPath": "dist/en",
               "optimization": true,
               "outputHashing": "all",
@@ -80,13 +102,18 @@
                   "with": "src/environments/version.prod.ts"
                 }
               ],
-              "i18nFile": "src/locale/messages.en.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "en",
-              "i18nMissingTranslation": "error",
-              "baseHref": "/en/"
+              "i18nMissingTranslation": "error"
             },
             "production-th": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "localize": [
+                "th"
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -105,8 +132,7 @@
                   "replace": "src/environments/version.ts",
                   "with": "src/environments/version.prod.ts"
                 }
-              ],
-              "i18nLocale": "th"
+              ]
             }
           }
         },
@@ -131,8 +157,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "cu-singing-contest:build",
-            "i18nFormat": "xlf",
-            "i18nLocale": "th",
+            "format": "xlf",
             "outFile": "messages.xlf",
             "outputPath": "locale"
           }
@@ -195,12 +220,13 @@
   "cli": {
     "warnings": {
       "typescriptMismatch": false
-    }
+    },
+    "analytics": false
   },
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "cusc",
-      "styleext": "css"
+      "style": "css"
     },
     "@schematics/angular:directive": {
       "prefix": "cusc"
