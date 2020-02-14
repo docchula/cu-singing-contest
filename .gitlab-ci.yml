@@ -4,8 +4,9 @@ build:
   script:
     - npm ci
     - npm run postinstall
-    - npx ng build -c production-th
-    - npx ng build -c production-en
+    - npx ng build --prod --localize
+    - cp -R ./dist/th ./dist
+    - rm -rf ./dist/th
   artifacts:
     paths:
       - dist/
