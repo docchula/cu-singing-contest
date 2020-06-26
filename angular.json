@@ -156,9 +156,7 @@
   },
   "defaultProject": "cu-singing-contest",
   "cli": {
-    "warnings": {
-      "typescriptMismatch": false
-    },
+    "warnings": {},
     "analytics": false
   },
   "schematics": {
