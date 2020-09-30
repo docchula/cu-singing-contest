@@ -26,7 +26,7 @@
     "firebase": "7.21.1",
     "font-awesome": "4.7.0",
     "hammerjs": "2.0.8",
-    "jwt-decode": "2.2.0",
+    "jwt-decode": "3.0.0",
     "rxjs": "6.6.3",
     "tslib": "2.0.1",
     "zone.js": "0.11.1"
