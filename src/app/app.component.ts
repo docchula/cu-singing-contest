@@ -1,6 +1,6 @@
 import { refCount, publishReplay } from 'rxjs/operators';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import { Observable, ConnectableObservable } from 'rxjs';
 
 import { UserService } from './core/user/user.service';
