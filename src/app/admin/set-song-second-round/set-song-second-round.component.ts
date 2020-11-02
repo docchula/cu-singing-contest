@@ -10,6 +10,7 @@ import {
 import { AdminService } from '../admin.service';
 import { map, tap } from 'rxjs/operators';
 import { Song } from '../../shared/song';
+import firebase from 'firebase/app';
 
 @Component({
   selector: 'cusc-set-song-second-round',
