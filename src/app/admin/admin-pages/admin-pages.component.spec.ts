@@ -1,7 +1,7 @@
 import { of } from 'rxjs';
 import { ConfigService } from '../../core/config/config.service';
 import { RouterTestingModule } from '@angular/router/testing';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AdminPagesComponent } from './admin-pages.component';
 import { UserService } from '../../core/user/user.service';
@@ -26,7 +26,7 @@ describe('AdminPagesComponent', () => {
   let component: AdminPagesComponent;
   let fixture: ComponentFixture<AdminPagesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ AdminPagesComponent ],
       imports: [

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SetDayBatchComponent } from './set-day-batch.component';
 
@@ -6,7 +6,7 @@ describe('SetDayBatchComponent', () => {
   let component: SetDayBatchComponent;
   let fixture: ComponentFixture<SetDayBatchComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SetDayBatchComponent ]
     })
