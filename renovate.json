@@ -1,3 +1,3 @@
 {
-  "extends": ["@sarunint:angular"]
+  "extends": ["@sarunint:angular-v12"]
 }
