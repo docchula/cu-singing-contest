@@ -1,5 +1,5 @@
 build:
-  image: node:10-alpine
+  image: node:14-alpine
   stage: build
   script:
     - npm ci
