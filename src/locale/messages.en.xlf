@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="th" datatype="plaintext" original="ng2.template" target-language="en-US">
+  <file source-language="th" datatype="plaintext" original="ng2.template" target-language="en">
     <body>
       <trans-unit id="signIn" datatype="html">
         <source>เข้าสู่ระบบ</source><target state="final">Sign In</target>
