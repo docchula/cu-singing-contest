@@ -16,5 +16,8 @@
     ],
     "module": "esnext",
     "baseUrl": "./"
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true
   }
 }
