@@ -90,13 +90,15 @@ export class SongNameInputComponent implements OnInit, ControlValueAccessor, OnD
     }
   }
 
-  onInstrumentSelectChange (value) {
+  onInstrumentSelectChange (event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
     if (value !== 'other') {
       this.songForm.patchValue({instrument: value});
     }
   }
 
-  onInstrumentSpecifyChange (value) {
+  onInstrumentSpecifyChange (event: Event) {
+    const value = (event.target as HTMLInputElement).value;
     if (this.instrument.value === 'other') {
       this.songForm.patchValue({instrument: value});
     }

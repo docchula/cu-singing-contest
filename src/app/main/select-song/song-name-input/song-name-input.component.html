@@ -5,7 +5,7 @@
       <label class="label" i18n="@@instrumentSelectLabel">เครื่องดนตรี</label>
       <div class="control is-expanded">
         <div class="select is-fullwidth">
-          <select [formControl]="instrument" (change)="onInstrumentSelectChange($event.target.value)">
+          <select [formControl]="instrument" (change)="onInstrumentSelectChange($event)">
             <option value="" disabled selected hidden i18n="@@select">เลือก</option>
             <option *ngFor="let title of stringInstrumentPreset; index as i" [value]="title">{{stringInstrumentPresetShow[i]}}</option>
           </select>
@@ -15,7 +15,7 @@
     <div class="field" *ngIf="instrument.value === 'other'">
       <label class="label" i18n="@@instrumentSpecifyLabel">ระบุเครื่องดนตรี</label>
       <div class="control is-expanded">
-        <input class="input" type="text" placeholder="ชื่อ-รายละเอียดเครื่องดนตรี" [formControl]="otherInstrument" i18n-placeholder="@@instrumentOtherPlaceholder" (change)="onInstrumentSpecifyChange($event.target.value)">
+        <input class="input" type="text" placeholder="ชื่อ-รายละเอียดเครื่องดนตรี" [formControl]="otherInstrument" i18n-placeholder="@@instrumentOtherPlaceholder" (change)="onInstrumentSpecifyChange($event)">
       </div>
     </div>
   </div>
