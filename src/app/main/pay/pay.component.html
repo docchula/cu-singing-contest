@@ -8,7 +8,7 @@
 <p i18n="@@paySelectSongAndDay">
   ผู้เข้าแข่งขันจะมีสิทธิ์เลือกวันแข่งขัน และเลือกเพลงหลังจากที่อัพโหลดหลักฐานการโอนเงิน และได้รับการตรวจสอบเรียบร้อย
 </p>
-<div class="field" *ngIf="!(slipStatus$ | async)">
+<div class="field" *ngIf="(slipStatus$ | async) === null">
   <div class="control">
     <input type="file" class="input" accept="image/*" #uploadFile (change)="selectedFile(uploadFile)">
   </div>
