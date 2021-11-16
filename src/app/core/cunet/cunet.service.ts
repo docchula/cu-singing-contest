@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { FirebaseApp } from '@angular/fire/compat';
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
-import undefined from 'firebase/compat/functions';
 
 interface CunetResult {
   success: boolean;
