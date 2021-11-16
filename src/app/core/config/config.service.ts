@@ -4,7 +4,7 @@ import {
   AngularFireList,
   AngularFireObject,
   QueryFn
-} from '@angular/fire/database';
+} from '@angular/fire/compat/database';
 import { Observable } from 'rxjs';
 
 @Injectable()

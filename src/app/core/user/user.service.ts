@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { FirebaseApp } from '@angular/fire';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFireDatabase } from '@angular/fire/database';
-import firebase from 'firebase/app';
+import { FirebaseApp } from '@angular/fire/compat';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import firebase from 'firebase/compat/app';
 import { Observable ,  from as fromPromise } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
 

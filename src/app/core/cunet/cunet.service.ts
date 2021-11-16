@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FirebaseApp } from '@angular/fire';
+import { FirebaseApp } from '@angular/fire/compat';
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
-import 'firebase/functions';
+import undefined from 'firebase/compat/functions';
 
 interface CunetResult {
   success: boolean;

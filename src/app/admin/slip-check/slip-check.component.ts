@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAction } from '@angular/fire/database';
-import firebase from 'firebase/app';
+import { AngularFireAction } from '@angular/fire/compat/database';
+import firebase from 'firebase/compat/app';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, combineLatest } from 'rxjs';
-import { AngularFireAction } from '@angular/fire/database';
+import { AngularFireAction } from '@angular/fire/compat/database';
 import {
   FormControl,
   FormBuilder,
@@ -10,7 +10,7 @@ import {
 import { AdminService } from '../admin.service';
 import { map, tap } from 'rxjs/operators';
 import { Song } from '../../shared/song';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
 @Component({
   selector: 'cusc-set-song-second-round',
