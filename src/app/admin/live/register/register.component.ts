@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { first, map, switchMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 
 import { ConfigService } from '../../../core/config/config.service';
 import { AdminService } from '../../admin.service';
@@ -12,7 +12,7 @@ import { AdminService } from '../../admin.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  uid: FormControl;
+  uid: UntypedFormControl;
 
   constructor(
     private configService: ConfigService,
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.uid = new FormControl('cunet-', Validators.required);
+    this.uid = new UntypedFormControl('cunet-', Validators.required);
   }
 
   register() {

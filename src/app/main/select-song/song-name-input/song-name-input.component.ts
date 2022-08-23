@@ -1,5 +1,5 @@
 import {Component, OnInit, forwardRef, OnDestroy, Inject, LOCALE_ID, Input} from '@angular/core';
-import {NG_VALUE_ACCESSOR, ControlValueAccessor, FormBuilder, FormGroup, FormControl} from '@angular/forms';
+import {NG_VALUE_ACCESSOR, ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, UntypedFormControl} from '@angular/forms';
 import { Song } from '../../../shared/song';
 import {Observable, Subscription} from 'rxjs';
 
@@ -19,10 +19,10 @@ export class SongNameInputComponent implements OnInit, ControlValueAccessor, OnD
   @Input() mode: string;
   _onChange: (value: Song) => void;
   _onTouch: () => void;
-  songForm: FormGroup;
+  songForm: UntypedFormGroup;
   sub: Subscription;
-  instrument: FormControl;
-  otherInstrument: FormControl;
+  instrument: UntypedFormControl;
+  otherInstrument: UntypedFormControl;
   stringOtherInstrument = 'เอาเครื่องดนตรีอื่น ๆ มาเอง';
   stringOtherInstrumentEn = 'Your other instrument';
   stringInstrumentPreset = [
@@ -49,7 +49,7 @@ export class SongNameInputComponent implements OnInit, ControlValueAccessor, OnD
   stringInstrumentPresetShow: string[];
   modeOther$: Observable<boolean>;
 
-  constructor(private fb: FormBuilder, @Inject(LOCALE_ID) private localeId: string) {}
+  constructor(private fb: UntypedFormBuilder, @Inject(LOCALE_ID) private localeId: string) {}
 
   ngOnInit() {
     this.songForm = this.fb.group({
@@ -60,9 +60,9 @@ export class SongNameInputComponent implements OnInit, ControlValueAccessor, OnD
     this.sub = this.songForm.valueChanges.subscribe(v => {
       this.onChange(v);
     });
-    this.instrument = new FormControl(this.stringInstrumentPreset.includes(this.songForm.value.instrument)
+    this.instrument = new UntypedFormControl(this.stringInstrumentPreset.includes(this.songForm.value.instrument)
       ? this.songForm.value.instrument : 'other');
-    this.otherInstrument = new FormControl(this.stringInstrumentPreset.includes(this.songForm.value.instrument)
+    this.otherInstrument = new UntypedFormControl(this.stringInstrumentPreset.includes(this.songForm.value.instrument)
       ? '' : this.songForm.value.instrument);
     this.stringInstrumentPresetShow = (this.localeId === 'th') ? this.stringInstrumentPresetTh : this.stringInstrumentPresetEn;
   }

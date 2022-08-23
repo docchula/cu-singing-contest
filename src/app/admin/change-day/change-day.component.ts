@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 import { ConfigService } from '../../core/config/config.service';
@@ -12,12 +12,12 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./change-day.component.css']
 })
 export class ChangeDayComponent implements OnInit {
-  userInput: FormControl;
+  userInput: UntypedFormControl;
   days$: Observable<Day[]>;
-  daySelect: FormControl;
+  daySelect: UntypedFormControl;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private admin: AdminService,
     private configService: ConfigService
   ) {}

@@ -1,7 +1,7 @@
 import { Component, forwardRef, OnInit } from '@angular/core';
 import {
   ControlValueAccessor,
-  FormControl,
+  UntypedFormControl,
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -26,14 +26,14 @@ export class SongSearcherComponent implements OnInit, ControlValueAccessor {
   selected: Song;
   _onChange: (value: Song) => void;
   _onTouch: () => void;
-  searchBox: FormControl;
+  searchBox: UntypedFormControl;
   searchResult$: Observable<Song[]>;
   disabled = false;
 
   constructor(private configService: ConfigService) {}
 
   ngOnInit() {
-    this.searchBox = new FormControl('');
+    this.searchBox = new UntypedFormControl('');
     this.searchResult$ = this.searchBox.valueChanges.pipe(
       debounceTime(1000),
       switchMap(v => {

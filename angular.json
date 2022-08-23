@@ -152,11 +152,12 @@
       }
     }
   },
-  "defaultProject": "cu-singing-contest",
   "cli": {
     "warnings": {},
     "analytics": false,
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   },
   "schematics": {
     "@schematics/angular:component": {

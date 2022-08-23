@@ -1,7 +1,7 @@
 import { Component, forwardRef, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import {
   ControlValueAccessor,
-  FormControl,
+  UntypedFormControl,
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
 import { Observable ,  combineLatest ,  of } from 'rxjs';
@@ -20,8 +20,8 @@ import { concat, map } from 'rxjs/operators';
   ]
 })
 export class TitleComponent implements OnInit, ControlValueAccessor {
-  title: FormControl;
-  otherTitle: FormControl;
+  title: UntypedFormControl;
+  otherTitle: UntypedFormControl;
 
   modeOther$: Observable<boolean>;
   stringPresetTitle: string[];
@@ -38,8 +38,8 @@ export class TitleComponent implements OnInit, ControlValueAccessor {
   ngOnInit() {
     this.stringOtherTitle = this.localeId === 'th' ? this.stringOtherTitleTh : this.stringOtherTitleEn;
     this.stringPresetTitle = this.localeId === 'th' ? this.stringPresetTitleTh : this.stringPresetTitleEn;
-    this.title = new FormControl('');
-    this.otherTitle = new FormControl('');
+    this.title = new UntypedFormControl('');
+    this.otherTitle = new UntypedFormControl('');
     this.modeOther$ = this.title.valueChanges.pipe(
       map((v, _) => {
         if (v === this.stringOtherTitle) {

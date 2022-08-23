@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, Validators } from '@angular/forms';
 import { FirebaseApp } from '@angular/fire/compat';
 
 @Component({
@@ -8,10 +8,10 @@ import { FirebaseApp } from '@angular/fire/compat';
   styleUrls: ['./reset.component.css']
 })
 export class ResetComponent implements OnInit {
-  dayInput: FormControl;
+  dayInput: UntypedFormControl;
   btnDisabled = false;
 
-  constructor(private fb: FormBuilder, private fba: FirebaseApp) { }
+  constructor(private fb: UntypedFormBuilder, private fba: FirebaseApp) { }
 
   ngOnInit() {
     this.dayInput = this.fb.control(1, [Validators.max(6), Validators.min(1)]);

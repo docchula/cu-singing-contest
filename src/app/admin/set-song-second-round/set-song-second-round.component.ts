@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, combineLatest } from 'rxjs';
 import { AngularFireAction } from '@angular/fire/compat/database';
 import {
-  FormControl,
-  FormBuilder,
+  UntypedFormControl,
+  UntypedFormBuilder,
   AbstractControl,
   Validators
 } from '@angular/forms';
@@ -19,12 +19,12 @@ import firebase from 'firebase/compat/app';
 })
 export class SetSongSecondRoundComponent implements OnInit {
   checked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
-  urlInputs: { [key: string]: FormControl } = {};
-  artistInputs: { [key: string]: FormControl } = {};
-  songNameInputs: { [key: string]: FormControl } = {};
-  songModeInputs: { [key: string]: FormControl } = {};
+  urlInputs: { [key: string]: UntypedFormControl } = {};
+  artistInputs: { [key: string]: UntypedFormControl } = {};
+  songNameInputs: { [key: string]: UntypedFormControl } = {};
+  songModeInputs: { [key: string]: UntypedFormControl } = {};
 
-  constructor(private adminService: AdminService, private fb: FormBuilder) {}
+  constructor(private adminService: AdminService, private fb: UntypedFormBuilder) {}
 
   ngOnInit() {
     this.checked$ = this.adminService.userList.pipe(

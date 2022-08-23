@@ -1,5 +1,5 @@
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 
@@ -23,7 +23,7 @@ export class SelectDayComponent implements OnInit {
     $exists: () => boolean;
   }>;
   daysDone$: Observable<boolean>;
-  daysForm: FormGroup;
+  daysForm: UntypedFormGroup;
   disableSubmit = false;
   daysTextKey: string;
 
@@ -39,13 +39,13 @@ export class SelectDayComponent implements OnInit {
     this.daysDone$ = this.userService
       .getUserObjectSnapshot('days')
       .pipe(map(d => d.payload.exists()));
-    this.daysForm = new FormGroup(
+    this.daysForm = new UntypedFormGroup(
       {
-        d1: new FormControl('', Validators.required),
-        d2: new FormControl('', Validators.required),
-        d3: new FormControl('', Validators.required),
-        d4: new FormControl('', Validators.required),
-        d5: new FormControl('', Validators.required)
+        d1: new UntypedFormControl('', Validators.required),
+        d2: new UntypedFormControl('', Validators.required),
+        d3: new UntypedFormControl('', Validators.required),
+        d4: new UntypedFormControl('', Validators.required),
+        d5: new UntypedFormControl('', Validators.required)
       },
       this.validateDays
     );
@@ -57,7 +57,7 @@ export class SelectDayComponent implements OnInit {
     this.daysTextKey = this.localeId === 'th' ? 'text' : 'textEn';
   }
 
-  validateDays(c: FormGroup) {
+  validateDays(c: UntypedFormGroup) {
     if (
       [c.get('d1'), c.get('d2'), c.get('d3'), c.get('d4'), c.get('d5')]
         .map(_c => _c.value)

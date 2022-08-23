@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
-  FormControl,
+  UntypedFormBuilder,
+  UntypedFormControl,
   Validators
 } from '@angular/forms';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -17,12 +17,12 @@ import { Day } from '../../shared/day';
   styleUrls: ['./set-day-batch.component.css']
 })
 export class SetDayBatchComponent implements OnInit {
-  userListInput: FormControl;
+  userListInput: UntypedFormControl;
   days$: Observable<Day[]>;
-  daySelect: FormControl;
+  daySelect: UntypedFormControl;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private admin: AdminService,
     private configService: ConfigService
   ) {}

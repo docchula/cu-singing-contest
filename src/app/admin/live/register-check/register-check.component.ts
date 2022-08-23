@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseApp } from '@angular/fire/compat';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
@@ -17,7 +17,7 @@ import { AdminService } from '../../admin.service';
 export class RegisterCheckComponent implements OnInit {
   userData$: Observable<User>;
   uid$: Observable<string>;
-  form: FormGroup;
+  form: UntypedFormGroup;
   stringMode = ['standard', 'custom', 'live'];
   day: number;
   btnEnabled = true;
@@ -42,12 +42,12 @@ export class RegisterCheckComponent implements OnInit {
         return this.adminService.getUser(uid);
       })
     );
-    this.form = new FormGroup({
-      mobile: new FormControl(''),
-      nameReading: new FormControl(''),
-      songMode: new FormControl(''),
-      songName: new FormControl(''),
-      songArtist: new FormControl('')
+    this.form = new UntypedFormGroup({
+      mobile: new UntypedFormControl(''),
+      nameReading: new UntypedFormControl(''),
+      songMode: new UntypedFormControl(''),
+      songName: new UntypedFormControl(''),
+      songArtist: new UntypedFormControl('')
     });
     this.configService
       .getConfigObjectValue<number>('liveDay')

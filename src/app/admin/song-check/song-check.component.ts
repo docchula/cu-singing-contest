@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 import { AdminService } from '../admin.service';
-import { FormControl, FormBuilder, AbstractControl } from '@angular/forms';
+import { UntypedFormControl, UntypedFormBuilder, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'cusc-song-check',
@@ -14,9 +14,9 @@ import { FormControl, FormBuilder, AbstractControl } from '@angular/forms';
 })
 export class SongCheckComponent implements OnInit {
   checked$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
-  urlInputs: {[key: string]: FormControl} = {};
+  urlInputs: {[key: string]: UntypedFormControl} = {};
 
-  constructor(private adminService: AdminService, private fb: FormBuilder) {}
+  constructor(private adminService: AdminService, private fb: UntypedFormBuilder) {}
 
   ngOnInit() {
     this.checked$ = this.adminService.userList.pipe(

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { LiveService } from '../../../core/live.service';
 import { ConfigService } from '../../../core/config/config.service';
 import { Observable } from 'rxjs';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 // TODO: Fix errors
 
@@ -16,7 +16,7 @@ export class ControllerComponent implements OnInit {
   userList$: Observable<any[]>;
   filteredUserList$: Observable<any[]>;
   day$: Observable<number>;
-  mode: FormControl;
+  mode: UntypedFormControl;
   positions = [
     {
       name: 'Administrator',
@@ -89,7 +89,7 @@ export class ControllerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.mode = new FormControl(-1);
+    this.mode = new UntypedFormControl(-1);
     this.filteredUserList$ = this.mode.valueChanges.pipe(
       switchMap(mode => {
         return this.configService.getConfigObjectValue<number>('liveDay').pipe(

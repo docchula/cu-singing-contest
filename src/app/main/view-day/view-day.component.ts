@@ -1,4 +1,4 @@
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { UserService } from '../../core/user/user.service';
 import { Day } from '../../shared/day';
@@ -14,7 +14,7 @@ import { ConfigService } from '../../core/config/config.service';
 export class ViewDayComponent implements OnInit {
   firstDay: Observable<string>;
   textKey: string;
-  acceptBox: FormControl;
+  acceptBox: UntypedFormControl;
   accepted: Observable<boolean>;
   allowViewDay: Observable<boolean>;
 
@@ -29,7 +29,7 @@ export class ViewDayComponent implements OnInit {
     this.firstDay = this.userService
       .getUserObjectValue<Day>('firstDay')
       .pipe(map(u => u[this.textKey]));
-    this.acceptBox = new FormControl(false, Validators.requiredTrue);
+    this.acceptBox = new UntypedFormControl(false, Validators.requiredTrue);
     this.accepted = this.userService
       .getUserObjectValue<boolean>('viewedDay')
       .pipe(map(a => !!a));

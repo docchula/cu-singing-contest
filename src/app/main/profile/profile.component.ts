@@ -1,5 +1,5 @@
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 
@@ -13,7 +13,7 @@ import { Faculty } from '../../shared/faculty';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  profileForm: FormGroup;
+  profileForm: UntypedFormGroup;
   faculties$: Observable<Faculty[]>;
   disableSubmit = false;
   profile$: Observable<any>;
@@ -28,21 +28,21 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.profileForm = new FormGroup({
-      title: new FormControl('', Validators.required),
-      fname: new FormControl('', Validators.required),
-      lname: new FormControl('', Validators.required),
-      nname: new FormControl('', Validators.required),
-      facebook: new FormControl('', Validators.required),
-      line: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      mobile: new FormControl('', [
+    this.profileForm = new UntypedFormGroup({
+      title: new UntypedFormControl('', Validators.required),
+      fname: new UntypedFormControl('', Validators.required),
+      lname: new UntypedFormControl('', Validators.required),
+      nname: new UntypedFormControl('', Validators.required),
+      facebook: new UntypedFormControl('', Validators.required),
+      line: new UntypedFormControl('', Validators.required),
+      email: new UntypedFormControl('', [Validators.required, Validators.email]),
+      mobile: new UntypedFormControl('', [
         Validators.required,
         Validators.maxLength(10),
         Validators.minLength(10)
       ]),
-      faculty: new FormControl('', Validators.required),
-      education: new FormControl(null, Validators.required)
+      faculty: new UntypedFormControl('', Validators.required),
+      education: new UntypedFormControl(null, Validators.required)
     });
     this.faculties$ = this.configService.getConfigListValue<Faculty>('faculties');
     this.profile$ = this.userService.getUserObjectValue('profile');

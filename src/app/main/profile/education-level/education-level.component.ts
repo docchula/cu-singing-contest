@@ -1,6 +1,6 @@
 import { Component, forwardRef, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Observable ,  of } from 'rxjs';
 import { combineAll, concat, map } from 'rxjs/operators';
 
@@ -17,9 +17,9 @@ import { combineAll, concat, map } from 'rxjs/operators';
   ]
 })
 export class EducationLevelComponent implements OnInit, ControlValueAccessor {
-  educationLevel: FormControl;
-  otherEducationLevel: FormControl;
-  year: FormControl;
+  educationLevel: UntypedFormControl;
+  otherEducationLevel: UntypedFormControl;
+  year: UntypedFormControl;
   _onTouch: () => void;
   onChange: (value: any) => void;
   stringEducationLevelPreset = ['ปริญญาตรี', 'ปริญญาโท', 'ปริญญาเอก'];
@@ -35,9 +35,9 @@ export class EducationLevelComponent implements OnInit, ControlValueAccessor {
   constructor(@Inject(LOCALE_ID) private localeId: string) {}
 
   ngOnInit() {
-    this.educationLevel = new FormControl();
-    this.otherEducationLevel = new FormControl();
-    this.year = new FormControl();
+    this.educationLevel = new UntypedFormControl();
+    this.otherEducationLevel = new UntypedFormControl();
+    this.year = new UntypedFormControl();
     this.modeYear$ = this.educationLevel.valueChanges.pipe(
       map(v => {
         if (v === this.stringEducationLevelWithNumber) {

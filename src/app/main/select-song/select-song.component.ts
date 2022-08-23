@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 
@@ -12,7 +12,7 @@ import { SelectedSong } from '../../shared/selected-song';
   styleUrls: ['./select-song.component.css']
 })
 export class SelectSongComponent implements OnInit {
-  songForm: FormGroup;
+  songForm: UntypedFormGroup;
   currentSelectedSong$: Observable<SelectedSong>;
   disableSubmit = false;
   selected$: Observable<boolean>;
@@ -20,10 +20,10 @@ export class SelectSongComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.songForm = new FormGroup(
+    this.songForm = new UntypedFormGroup(
       {
-        mode: new FormControl('', Validators.required),
-        song: new FormControl({})
+        mode: new UntypedFormControl('', Validators.required),
+        song: new UntypedFormControl({})
       },
       this.customValidate
     );
@@ -38,7 +38,7 @@ export class SelectSongComponent implements OnInit {
     this.selected$ = this.currentSelectedSong$.pipe(map(ss => !!ss));
   }
 
-  customValidate(c: FormGroup) {
+  customValidate(c: UntypedFormGroup) {
     if (c.get('mode').value) {
       if ((c.get('song').value as Object).hasOwnProperty('name')) {
         return {};
