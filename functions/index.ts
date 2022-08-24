@@ -1,9 +1,7 @@
 import axios from 'axios';
-import * as bcrypt from 'bcrypt';
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
 import { google } from 'googleapis';
-import * as https from 'https';
 
 const privKeyString = functions.config().oauth2.priv_key_string;
 const issuer = functions.config().oauth2.issuer;
@@ -31,7 +29,7 @@ export const chulaSso = functions.https.onCall(async (data, context) => {
         success: false
       };
     } else {
-      const studentId = (response.ouid as string).substr(0, 8);
+      const studentId = (response.ouid as string).substring(0, 8);
       const token = await admin.auth().createCustomToken(`cunet-${studentId}`);
       return {
         success: true,
@@ -201,7 +199,7 @@ export const registerContestant = functions.https.onCall(
         if (seq !== -1) {
           // Copy the data to liveData
           const pad = '00' + seq.toString();
-          const contestantId = `CUSC${currentDay}${pad.substr(pad.length - 2)}`;
+          const contestantId = `CUSC${currentDay}${pad.substring(pad.length - 2)}`;
           await admin
             .database()
             .ref('data/live')
@@ -237,7 +235,7 @@ export const registerContestant = functions.https.onCall(
             );
             const drive = google.drive('v3');
             try {
-              jwtClient.authorize();
+              await jwtClient.authorize();
               const fileId = filename;
               const dayFolderId = (await admin
                 .database()
