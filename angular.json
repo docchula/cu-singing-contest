@@ -8,7 +8,10 @@
         "locales": {
           "en": "src/locale/messages.en.xlf"
         },
-        "sourceLocale": "th"
+        "sourceLocale": {
+          "baseHref": "",
+          "code": "th"
+        }
       },
       "root": "",
       "sourceRoot": "src",
