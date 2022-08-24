@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormControl, Validators } from '@angular/forms';
-import { FirebaseApp } from '@angular/fire/compat';
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'cusc-reset',
@@ -11,7 +12,7 @@ export class ResetComponent implements OnInit {
   dayInput: UntypedFormControl;
   btnDisabled = false;
 
-  constructor(private fb: UntypedFormBuilder, private fba: FirebaseApp) { }
+  constructor(private fb: UntypedFormBuilder, private fns: AngularFireFunctions) { }
 
   ngOnInit() {
     this.dayInput = this.fb.control(1, [Validators.max(6), Validators.min(1)]);
@@ -20,11 +21,11 @@ export class ResetComponent implements OnInit {
   reset() {
     if (this.dayInput.valid) {
       if (confirm('แน่ใจจริง ๆ หรอ มันจะลบหมดเลยนะะะะ?')) {
-        const fn = this.fba.functions().httpsCallable('resetDay');
+        const fn = this.fns.httpsCallable('resetDay');
         this.btnDisabled = true;
-        fn({
+        lastValueFrom(fn({
           day: this.dayInput.value
-        }).then(res => {
+        })).then(res => {
           if (res.data.success) {
             alert('Reset เรียบร้อย');
           } else {

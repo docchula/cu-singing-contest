@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireFunctionsModule } from '@angular/fire/compat/functions';
 
 import { environment } from '../../environments/environment';
 import { ConfigService } from './config/config.service';
@@ -17,6 +18,7 @@ import { LiveService } from './live.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFireFunctionsModule,
     HttpClientModule
   ],
   declarations: [],

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseApp } from '@angular/fire/compat';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -8,6 +7,7 @@ import { ConfigService } from '../../../core/config/config.service';
 import { LiveService } from '../../../core/live.service';
 import { User } from '../../../shared/user';
 import { AdminService } from '../../admin.service';
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
 
 @Component({
   selector: 'cusc-register-check',
@@ -28,7 +28,7 @@ export class RegisterCheckComponent implements OnInit {
     private adminService: AdminService,
     private liveService: LiveService,
     private configService: ConfigService,
-    private fba: FirebaseApp
+    private fns: AngularFireFunctions
   ) { }
 
   ngOnInit() {
@@ -77,7 +77,7 @@ export class RegisterCheckComponent implements OnInit {
         })
       )
       .subscribe(() => {
-        const fn = this.fba.functions().httpsCallable('registerContestant');
+        const fn = this.fns.httpsCallable('registerContestant');
         this.uid$
           .pipe(
             first(),
