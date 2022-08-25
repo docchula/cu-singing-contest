@@ -46,19 +46,15 @@ export class LoginComponent implements OnInit {
       .getTokenFromTicket(ticket)
       .subscribe(v => {
         if (v.success) {
-          this.userService.signIn(v.token).subscribe(
-            _ => {
+          this.userService.signIn(v.token).subscribe({
+            next: _ => {
               const uid = (jwtDecode(v.token) as object)['uid'];
               this.configService
                 .getConfigObjectSnapshot(`admins/${uid}`)
                 .pipe(first())
                 .subscribe(snap => {
                   if (snap.payload.exists()) {
-                    if (
-                      confirm(
-                        'คุณมีสิทธิในการเข้าสู่หน้าผู้ดูแล ต้องการไปหน้าผู้ดูแลหรือไม่?'
-                      )
-                    ) {
+                    if (confirm('คุณมีสิทธิในการเข้าสู่หน้าผู้ดูแล ต้องการไปหน้าผู้ดูแลหรือไม่?')) {
                       this.router.navigate(['/', snap.payload.val()]);
                     } else {
                       this.router.navigate(['/main']);
@@ -68,10 +64,10 @@ export class LoginComponent implements OnInit {
                   }
                 });
             },
-            error => {
+            error: _ => {
               alert('เกิดข้อผิดพลาดขึ้น กรุณาลองใหม่อีกครั้ง');
             }
-          );
+          });
         } else {
           alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
         }

@@ -14,6 +14,6 @@ export class CunetService {
 
   getTokenFromTicket(ticket: string) {
     const fn = this.fns.httpsCallable('chulaSso');
-    return from(fn({ ticket })).pipe(map(r => r.data as CunetResult));
+    return from(fn({ ticket })).pipe(map(r => r as CunetResult));
   }
 }
