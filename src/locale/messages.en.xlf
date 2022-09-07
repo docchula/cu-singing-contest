@@ -33,7 +33,7 @@
         <note priority="1" from="meaning">copyright</note>
       </trans-unit>
       <trans-unit id="preRegistration" datatype="html">
-        <source>ขณะนี้ยังไม่ถึงเวลาสมัครเข้าการแข่งขัน<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>เริ่มรับสมัคร 18 กันยายน 2562</source><target state="final">Currently, it is not the registration period, yet. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Registration opens on 18th September 2019</target>
+        <source>ขณะนี้ยังไม่ถึงเวลาสมัครเข้าการแข่งขัน<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>เริ่มรับสมัคร 19 กันยายน 2565</source><target state="final">Currently, it is not the registration period, yet. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Registration opens on 19th September 2022</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.html</context>
           <context context-type="linenumber">15</context>
@@ -123,33 +123,33 @@ The registration period has ended.
       </trans-unit>
       <trans-unit id="acceptRule" datatype="html">
         <source>
-  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>การแข่งขัน CU Singing Contest ครั้งที่ 27 ประกอบด้วยการแข่งขัน 3 รอบ ดังนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>การแข่งขัน CU Singing Contest ครั้งที่ 28 ประกอบด้วยการแข่งขัน 3 รอบ ดังนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
   <x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol>"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การแข่งขันในรอบที่ 1 : วันที่ 28 ตุลาคม - 1 พฤศจิกายน 2562 ณ หอประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยจะคัดผู้เข้าแข่งขันวันละ 10 คน รวม 50 คน เข้าสู่รอบถัดไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การแข่งขันในรอบที่ 2 : วันที่ 6 พฤศจิกายน 2562 ณ หอประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยคัดเหลือผู้เข้ารอบสุดท้าย 10 คน<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การแข่งขันรอบชิงชนะเลิศ : วันที่ 24 มกราคม 2562 ณ หอประชุมใหญ่จุฬาลงกรณ์มหาวิทยาลัย<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การแข่งขันในรอบที่ 1 : วันที่ 31 ตุลาคม - 4 พฤศจิกายน 2565 ณ หอประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยจะคัดผู้เข้าแข่งขันวันละ 10 คน รวม 50 คน เข้าสู่รอบถัดไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การแข่งขันในรอบที่ 2 : วันที่ 9 พฤศจิกายน 2565 ณ หอประชุมเฉลิม พรมมาส อาคาร อปร คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยคัดเหลือผู้เข้ารอบสุดท้าย 10 คน<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การแข่งขันรอบชิงชนะเลิศ : วันที่ 27 มกราคม 2565 ณ หอประชุมใหญ่จุฬาลงกรณ์มหาวิทยาลัย<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
   <x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol>"/>
   <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>ผู้สมัคร จะต้องดำเนินการสมัครผ่านทางเว็บไซต์ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> โดยดำเนินการตามขั้นตอนให้ครบถ้วน พร้อมชำระค่าสมัคร 190 บาท ภายในกำหนดเวลาต่อไปนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
   <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>กรอกข้อมูลพื้นฐาน ภายในวันที่ 6 ตุลาคม 2562 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>ชำระค่าสมัคร พร้อมอัพโหลดหลักฐาน ภายในวันที่ 7 ตุลาคม 2562 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>เลือกวันแข่งขันและเพลงที่ใช้ ภายในวันที่ 15 ตุลาคม 2562 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>รับทราบวันแข่งขัน และยืนยันการสมัคร ตั้งแต่วันที่ 19 ตุลาคม 2562 เป็นต้นไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>กรอกข้อมูลพื้นฐาน ภายในวันที่ 1 ตุลาคม 2565 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>ชำระค่าสมัคร พร้อมอัพโหลดหลักฐาน ภายในวันที่ 2 ตุลาคม 2565 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>เลือกวันแข่งขันและเพลงที่ใช้ ภายในวันที่ 9 ตุลาคม 2565 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>รับทราบวันแข่งขัน และยืนยันการสมัคร ตั้งแต่วันที่ 10 - 12 ตุลาคม 2565 เป็นต้นไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
   <x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/>
   <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>หากมีข้อสงสัย สามารถติดต่อสอบถามได้ผ่านทาง Facebook Page <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a>"/>CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
 </source><target state="final">
-<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>27th CU Singing Contest consists of 3 rounds: <x id="CLOSE_PARAGRAPH" ctype="x-p"/>
+<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>28th CU Singing Contest consists of 3 rounds: <x id="CLOSE_PARAGRAPH" ctype="x-p"/>
 <x id="START_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;ol>"/>
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The 1st Round will be held between 28 October 2019 - 1 November 2019 at Chalerm Prommas Auditorium, Faculty of Medicine, Chulalongkorn University. On each day, 10 contestants will proceed to the next round.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The 2nd Round will be held on 6 November 2019 at Chalerm Prommas Auditorium, Faculty of Medicine, Chulalongkorn University. 10 contestants will proceed to the final round.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The final round will be held on 24 January 2019 at the Chulalongkorn University Auditorium.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The 1st Round will be held between 31 October 2022 - 4 November 2022 at Chalerm Prommas Auditorium, Faculty of Medicine, Chulalongkorn University. On each day, 10 contestants will proceed to the next round.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The 2nd Round will be held on 9 November 2022 at Chalerm Prommas Auditorium, Faculty of Medicine, Chulalongkorn University. 10 contestants will proceed to the final round.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The final round will be held on 27 January 2023 at the Chulalongkorn University Auditorium.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
 <x id="CLOSE_ORDERED_LIST" ctype="x-ol"/>
 <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/> Contestants must register via <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a"/> by following all instruction guided. They also need to pay the registration fee of 190 baht. The schedules are as follows:<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
 <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/>
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Complete contestant's profile within 6 October 2019, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Pay registration fee and upload payment slip within 7 October 2019, 10.00 PM. Once your Payment is approved within 24 hours after uploaded, you'll be able to select date of contest and the song.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>All contestants must choose their contest day and song before 15 October 2019, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Contest dates will be announced on 19 October 2019.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Complete contestant's profile within 1 October 2022, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Pay registration fee and upload payment slip within 2 October 2022, 10.00 PM. Once your Payment is approved within 24 hours after uploaded, you'll be able to select date of contest and the song.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>All contestants must choose their contest day and song before 9 October 2022, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Contest dates will be announced on 10 - 12 October 2022.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
 <x id="CLOSE_UNORDERED_LIST" ctype="x-ul"/>
 </target>
         <context-group purpose="location">
@@ -241,9 +241,9 @@ Contestants shall pay the registration fee of 190 baht (One hundred and ninety b
       </trans-unit>
       <trans-unit id="paySlipInstruction" datatype="html">
         <source>
-  หลังจากโอนเงินเรียบร้อยแล้ว ให้ทำการอัพโหลดหลักฐานการโอนเงินผ่านทางฟอร์มต่อไปนี้ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>ภายในวันที่ 7 ตุลาคม 2562 เวลา 22.00 น.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+  หลังจากโอนเงินเรียบร้อยแล้ว ให้ทำการอัพโหลดหลักฐานการโอนเงินผ่านทางฟอร์มต่อไปนี้ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>ภายในวันที่ 2 ตุลาคม 2565 เวลา 22.00 น.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
 </source><target state="final">
-After transferring, contestants shall upload the payment slip below <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>within 7 October 2019, 10.00 PM.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+After transferring, contestants shall upload the payment slip below <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>within 2 October 2022, 10.00 PM.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/pay/pay.component.html</context>
@@ -439,10 +439,10 @@ You have completed your profile. <x id="START_LINK" ctype="x-a" equiv-text="&lt;
       </trans-unit>
       <trans-unit id="dayInstruction" datatype="html">
         <source>
-  ให้ผู้เข้าแข่งขันแจ้งความประสงค์วันที่ต้องการเข้าแข่งขัน 5 อันดับ โดยสามารถแก้ไขข้อมูลได้จนถึง 15 ตุลาคม 2562 เวลา 23.59 น.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
-  โปรดทราบว่าผู้เข้าแข่งขันอาจไม่ได้แข่งขันในวันที่เลือกเป็นอันดับแรก หากจำนวนผู้เข้าแข่งขันในวันนั้น ๆ เกินกว่าจำนวนที่สามารถรองรับได้ จึงขอให้ผู้เข้าแข่งขันทุกท่าน กรุณาเข้าสู่ระบบเพื่อตรวจสอบวันแข่งขันของท่านอีกครั้งในวันที่ 19 ตุลาคมนี้
+  ให้ผู้เข้าแข่งขันแจ้งความประสงค์วันที่ต้องการเข้าแข่งขัน 5 อันดับ โดยสามารถแก้ไขข้อมูลได้จนถึง 9 ตุลาคม 2565 เวลา 23.59 น.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+  โปรดทราบว่าผู้เข้าแข่งขันอาจไม่ได้แข่งขันในวันที่เลือกเป็นอันดับแรก หากจำนวนผู้เข้าแข่งขันในวันนั้น ๆ เกินกว่าจำนวนที่สามารถรองรับได้ จึงขอให้ผู้เข้าแข่งขันทุกท่าน กรุณาเข้าสู่ระบบเพื่อตรวจสอบวันแข่งขันของท่านอีกครั้งในวันที่ 10 - 12 ตุลาคมนี้
   หากมีข้อสงสัยหรือพบปัญหาใด ๆ สามารถติดต่อได้ทาง Facebook Page "CU Singing Contest"
-</source><target state="final">Please order you preference of the contest day for the first round. Modifications will be accepted until 15th October 2019.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>You may or may not be assigned to your most preferred date, depends on the number of contestants. All contestants shall log in to this website again on 19th October 2019 to check your contest date. If you have any questions or concerns, please contact us via Facebook page "CU Singing Contest".
+</source><target state="final">Please order you preference of the contest day for the first round. Modifications will be accepted until 9th October 2022.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>You may or may not be assigned to your most preferred date, depends on the number of contestants. All contestants shall log in to this website again on 10th - 12th October 2022 to check your contest date. If you have any questions or concerns, please contact us via Facebook page "CU Singing Contest".
       </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/select-day/select-day.component.html</context>
@@ -595,7 +595,7 @@ You have selected to perform <x id="INTERPOLATION"/> using live music (<x id="IN
       <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>ท่านสามารถรับทราบเกณฑ์การให้คะแนนในรอบที่ 1 และรอบที่ 2 ได้ที่ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
       <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>ในระหว่างการแข่งขัน จะมีการอัดเสียงการแสดง เพื่อเป็นประโยชน์ในการให้คะแนนของกรรมการในกรณีที่จำเป็น
         ท่านจะได้รับไฟล์เสียงการแสดงของตน ผ่านทางที่อยู่อีเมลที่ใช้สมัครเข้าแข่งขัน<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
-      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>หากผู้เข้าแข่งขันมีปัญหาเกี่ยวกับวันแข่งขันรอบที่ 1 ของตนเอง ให้ติดต่อที่ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> ภายในวันที่ 25 ตุลาคม 2562
+      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>หากผู้เข้าแข่งขันมีปัญหาเกี่ยวกับวันแข่งขันรอบที่ 1 ของตนเอง ให้ติดต่อที่ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> ภายในวันที่ 28 ตุลาคม 2565
         เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
       <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>การตัดสินของคณะกรรมการเป็นที่สิ้นสุด<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
     <x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol>"/>
@@ -614,7 +614,7 @@ The first and the second round will be held at Chalerm Prommas Auditorium, Or-Po
 <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Registration will be open from 4.30 PM until 6.00 PM. <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Failure to register in the specified period will result in disqualification and registration fee is not refundable.<x id="CLOSE_TAG_STRONG" ctype="x-strong"/> In case of any emergencies, contestants shall contact our staff via phone number 09-0464-5791 or <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a"/><x id="CLOSE_LIST_ITEM" ctype="x-li"/>
 <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Contestants can view the scoring criteria for the first and second round at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a"/><x id="CLOSE_LIST_ITEM" ctype="x-li"/>
 <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The performance will be recorded in case the judges want to listen for the second time. You will receive your own performance audio file via the registered email address.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>If contestants should have any problem regarding their contest day for the first round, please contact our staff at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a"/> by 25 October 2019, 10.00 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>If contestants should have any problem regarding their contest day for the first round, please contact our staff at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i"/> CU Singing Contest<x id="CLOSE_LINK" ctype="x-a"/> by 28 October 2022, 10.00 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
 <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>The judges’ decisions are final.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
 <x id="CLOSE_ORDERED_LIST" ctype="x-ol"/>
 </target>
