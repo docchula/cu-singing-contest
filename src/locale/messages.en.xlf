@@ -134,7 +134,7 @@ The registration period has ended.
     <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>กรอกข้อมูลพื้นฐาน ภายในวันที่ 1 ตุลาคม 2565 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
     <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>ชำระค่าสมัคร พร้อมอัพโหลดหลักฐาน ภายในวันที่ 2 ตุลาคม 2565 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
     <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>เลือกวันแข่งขันและเพลงที่ใช้ ภายในวันที่ 9 ตุลาคม 2565 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>รับทราบวันแข่งขัน และยืนยันการสมัคร ตั้งแต่วันที่ 10 - 12 ตุลาคม 2565 เป็นต้นไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>รับทราบวันแข่งขัน และยืนยันการสมัคร ในวันที่ 10 - 12 ตุลาคม 2565<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
   <x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/>
   <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>หากมีข้อสงสัย สามารถติดต่อสอบถามได้ผ่านทาง Facebook Page <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a>"/>CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
 </source><target state="final">
