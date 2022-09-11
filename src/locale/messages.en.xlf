@@ -57,7 +57,7 @@ The registration period has ended.
         <note priority="1" from="meaning">post-registration text</note>
       </trans-unit>
       <trans-unit id="duringRegistration" datatype="html">
-        <source>เปิดรับสมัครวันนี้ ถึง 6 ตุลาคม 2562</source><target state="final">Registration is now open until 6th October 2019</target>
+        <source>เปิดรับสมัครวันนี้ ถึง 1 ตุลาคม 2565</source><target state="final">Registration is now open until 1tst October 2022</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.html</context>
           <context context-type="linenumber">22</context>
