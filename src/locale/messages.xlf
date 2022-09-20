@@ -472,8 +472,8 @@
       </trans-unit>
       <trans-unit id="payInstruction" datatype="html">
         <source>
-  ให้ผู้เข้าแข่งขันชำระค่าสมัคร 190 บาท (หนึ่งร้อยเก้าสิบบาทถ้วน) โดยโอนเงินเข้าบัญชีธนาคารกสิกรไทย สาขาสยามสแควร์ ชื่อบัญชี
-  <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>นายธนนันท์ ว่องวงศ์ศรี<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> เลขที่บัญชี <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>039-107701-0<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>
+  ให้ผู้เข้าแข่งขันชำระค่าสมัคร 300 บาท (สามร้อยบาทถ้วน) โดยโอนเงินเข้าบัญชีธนาคารกสิกรไทย ชื่อบัญชี
+  <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>นางสาวภูชิดา กุสสลานุภาพ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> เลขที่บัญชี <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>119-2-62421-1<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/pay/pay.component.html</context>

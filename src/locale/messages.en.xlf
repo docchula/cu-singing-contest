@@ -228,11 +228,11 @@ You have accepted the rule. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>
       </trans-unit>
       <trans-unit id="payInstruction" datatype="html">
         <source>
-  ให้ผู้เข้าแข่งขันชำระค่าสมัคร 190 บาท (หนึ่งร้อยเก้าสิบบาทถ้วน) โดยโอนเงินเข้าบัญชีธนาคารกสิกรไทย สาขาสยามสแควร์ ชื่อบัญชี
-  <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>นายธนนันท์ ว่องวงศ์ศรี<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> เลขที่บัญชี <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>039-107701-0<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+  ให้ผู้เข้าแข่งขันชำระค่าสมัคร 300 บาท (สามร้อยบาทถ้วน) โดยโอนเงินเข้าบัญชีธนาคารกสิกรไทย ชื่อบัญชี
+  <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>นางสาวภูชิดา กุสสลานุภาพ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> เลขที่บัญชี <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>119-2-62421-1<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
 </source><target state="final">
-Contestants shall pay the registration fee of 190 baht (One hundred and ninety baht only) by transferring the exact amount to the Kasikorn Bank, Siam Square branch, account named
-<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>นายธนนันท์ ว่องวงศ์ศรี<x id="CLOSE_TAG_STRONG" ctype="x-strong"/> Account Number <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>039-107701-0<x id="CLOSE_TAG_STRONG" ctype="x-strong"/>
+Contestants shall pay the registration fee of 300 baht (Three hundred baht only) by transferring the exact amount to the Kasikorn Bank, account named
+<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>นางสาวภูชิดา กุสสลานุภาพ<x id="CLOSE_TAG_STRONG" ctype="x-strong"/> Account Number <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>119-2-62421-1<x id="CLOSE_TAG_STRONG" ctype="x-strong"/>
 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/pay/pay.component.html</context>
