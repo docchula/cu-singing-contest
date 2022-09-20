@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { FirebaseApp } from '@angular/fire/compat';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import firebase from 'firebase/compat/app';
 import { Observable ,  from as fromPromise } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
@@ -11,7 +11,7 @@ export class UserService {
 
   authState: Observable<firebase.User>;
 
-  constructor(private afa: AngularFireAuth, private afd: AngularFireDatabase, private fba: FirebaseApp) {
+  constructor(private afa: AngularFireAuth, private afd: AngularFireDatabase, private storage: AngularFireStorage) {
     this.authState = this.afa.authState;
   }
 
@@ -82,7 +82,7 @@ export class UserService {
     return this.authState.pipe(
       first(),
       switchMap((u) => {
-        return fromPromise(this.fba.storage().ref('slip').child(u.uid).put(file));
+        return fromPromise(this.storage.ref('slip').child(u.uid).put(file));
       }),
       switchMap((ut) => {
         return fromPromise(ut.ref.getDownloadURL() as Promise<string>);
