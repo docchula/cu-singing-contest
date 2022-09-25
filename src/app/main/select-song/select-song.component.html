@@ -5,13 +5,13 @@
 <form [formGroup]="songForm" (ngSubmit)="submit()">
   <div class="field">
     <label class="label" i18n="@@songWhichMode">คุณต้องการใช้ Backing Track จากไหน?</label>
-    <div class="control">
+    <!-- <div class="control">
       <label class="radio">
         <input type="radio" value="standard" formControlName="mode" (change)="setStandardMode()"> <ng-container i18n="@@songModeNormal">ใช้ Backing Track
           ของคณะกรรมการ
         </ng-container>
       </label>
-    </div>
+    </div> -->
     <div class="control">
       <label class="radio">
         <input type="radio" value="custom" formControlName="mode"> <ng-container i18n="@@songModeCustom">ใช้ Backing Track
