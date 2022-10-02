@@ -131,8 +131,8 @@ The registration period has ended.
   <x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol>"/>
   <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>ผู้สมัคร จะต้องดำเนินการสมัครผ่านทางเว็บไซต์ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> โดยดำเนินการตามขั้นตอนให้ครบถ้วน พร้อมชำระค่าสมัคร 300 บาท ภายในกำหนดเวลาต่อไปนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
   <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>กรอกข้อมูลพื้นฐาน ภายในวันที่ 1 ตุลาคม 2565 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>ชำระค่าสมัคร พร้อมอัพโหลดหลักฐาน ภายในวันที่ 2 ตุลาคม 2565 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>กรอกข้อมูลพื้นฐาน ภายในวันที่ 7 ตุลาคม 2565 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>ชำระค่าสมัคร พร้อมอัพโหลดหลักฐาน ภายในวันที่ 8 ตุลาคม 2565 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
     <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>เลือกวันแข่งขันและเพลงที่ใช้ ภายในวันที่ 9 ตุลาคม 2565 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
     <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>รับทราบวันแข่งขัน และยืนยันการสมัคร ในวันที่ 10 - 12 ตุลาคม 2565<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/>
   <x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/>
@@ -146,8 +146,8 @@ The registration period has ended.
 <x id="CLOSE_ORDERED_LIST" ctype="x-ol"/>
 <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/> Contestants must register via <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a"/> by following all instruction guided. They also need to pay the registration fee of 300 baht. The schedules are as follows:<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
 <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/>
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Complete contestant's profile within 1 October 2022, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
-<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Pay registration fee and upload payment slip within 2 October 2022, 10.00 PM. Once your Payment is approved within 24 hours after uploaded, you'll be able to select date of contest and the song.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Complete contestant's profile within 7 October 2022, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
+<x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Pay registration fee and upload payment slip within 8 October 2022, 10.00 PM. Once your Payment is approved within 24 hours after uploaded, you'll be able to select date of contest and the song.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
 <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>All contestants must choose their contest day and song before 9 October 2022, 11.59 PM.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
 <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Contest dates will be announced on 10 - 12 October 2022.<x id="CLOSE_LIST_ITEM" ctype="x-li"/>
 <x id="CLOSE_UNORDERED_LIST" ctype="x-ul"/>

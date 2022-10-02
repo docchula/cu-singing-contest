@@ -165,9 +165,9 @@
   <x id="CLOSE_ORDERED_LIST" ctype="x-ol" equiv-text="&lt;/ol&gt;"/>
   <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>ผู้สมัคร จะต้องดำเนินการสมัครผ่านทางเว็บไซต์ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://cusc.docchula.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> โดยดำเนินการตามขั้นตอนให้ครบถ้วน พร้อมชำระค่าสมัคร 300 บาท ภายในกำหนดเวลาต่อไปนี้<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
   <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>กรอกข้อมูลพื้นฐาน ภายในวันที่ 6 ตุลาคม 2562 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>ชำระค่าสมัคร พร้อมอัพโหลดหลักฐาน ภายในวันที่ 7 ตุลาคม 2562 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
-    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>เลือกวันแข่งขันและเพลงที่ใช้ ภายในวันที่ 15 ตุลาคม 2562 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>กรอกข้อมูลพื้นฐาน ภายในวันที่ 7 ตุลาคม 2565 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>ชำระค่าสมัคร พร้อมอัพโหลดหลักฐาน ภายในวันที่ 8 ตุลาคม 2565 เวลา 22.00 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+    <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>เลือกวันแข่งขันและเพลงที่ใช้ ภายในวันที่ 9 ตุลาคม 2562 เวลา 23.59 น.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
     <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>รับทราบวันแข่งขัน และยืนยันการสมัคร ตั้งแต่วันที่ 19 ตุลาคม 2562 เป็นต้นไป<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
   <x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/>
   <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>หากมีข้อสงสัย สามารถติดต่อสอบถามได้ผ่านทาง Facebook Page <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a&gt;"/>CU Singing Contest<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
