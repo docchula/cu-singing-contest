@@ -54,7 +54,7 @@
         <note priority="1" from="meaning">post-registration text</note>
       </trans-unit>
       <trans-unit id="duringRegistration" datatype="html">
-        <source>เปิดรับสมัครวันนี้ ถึง 6 ตุลาคม 2562</source>
+        <source>เปิดรับสมัครวันนี้ ถึง 7 ตุลาคม 2565</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.html</context>
           <context context-type="linenumber">22</context>
