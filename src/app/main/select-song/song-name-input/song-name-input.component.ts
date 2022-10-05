@@ -33,8 +33,8 @@ export class SongNameInputComponent implements OnInit, ControlValueAccessor, OnD
     'other'
   ];
   stringInstrumentPresetTh = [
-    'ใช้เครื่องดนตรีของงาน “กีต้าร์โปร่งไฟฟ้า”',
-    'ใช้เครื่องดนตรีของงาน “คีย์บอร์ด Roland Juno-Di 61 คีย์”',
+    //'ใช้เครื่องดนตรีของงาน “กีต้าร์โปร่งไฟฟ้า”',
+    //'ใช้เครื่องดนตรีของงาน “คีย์บอร์ด Roland Juno-Di 61 คีย์”',
     'เอาเครื่องดนตรีมาเอง “กีต้าร์โปร่งไฟฟ้า (มีช่องเสียบแจ็ค)”',
     'เอาเครื่องดนตรีมาเอง “คีย์บอร์ด/เปียโนไฟฟ้า”',
     this.stringOtherInstrument
