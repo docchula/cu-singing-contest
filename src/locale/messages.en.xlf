@@ -241,9 +241,9 @@ Contestants shall pay the registration fee of 300 baht (Three hundred baht only)
       </trans-unit>
       <trans-unit id="paySlipInstruction" datatype="html">
         <source>
-  หลังจากโอนเงินเรียบร้อยแล้ว ให้ทำการอัพโหลดหลักฐานการโอนเงินผ่านทางฟอร์มต่อไปนี้ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>ภายในวันที่ 2 ตุลาคม 2565 เวลา 22.00 น.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+  หลังจากโอนเงินเรียบร้อยแล้ว ให้ทำการอัพโหลดหลักฐานการโอนเงินผ่านทางฟอร์มต่อไปนี้ <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>ภายในวันที่ 8 ตุลาคม 2565 เวลา 22.00 น.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
 </source><target state="final">
-After transferring, contestants shall upload the payment slip below <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>within 2 October 2022, 10.00 PM.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+After transferring, contestants shall upload the payment slip below <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>within 8 October 2022, 10.00 PM.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/main/pay/pay.component.html</context>
