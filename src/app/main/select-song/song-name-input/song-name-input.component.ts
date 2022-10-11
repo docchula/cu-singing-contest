@@ -26,7 +26,7 @@ export class SongNameInputComponent implements OnInit, ControlValueAccessor, OnD
   stringOtherInstrument = 'เอาเครื่องดนตรีอื่น ๆ มาเอง';
   stringOtherInstrumentEn = 'Your other instrument';
   stringInstrumentPreset = [
-    'acoustic guitar',
+    //'acoustic guitar',
     'keyboard',
     'your acoustic guitar with jack',
     'your keyboard',
@@ -41,8 +41,9 @@ export class SongNameInputComponent implements OnInit, ControlValueAccessor, OnD
     this.stringOtherInstrument
   ];
   stringInstrumentPresetEn = [
-    'Provided acoustic electric guitar',
-    'Provided keyboard (Roland JUNO-Di 61-Key Synthesizer)',
+    //'Provided acoustic electric guitar',
+    //'Provided keyboard (Roland JUNO-Di 61-Key Synthesizer)',
+    'Provided keyboard (Roland Roland RD-700NX)',
     'Your acoustic electric guitar (with audio jack)',
     'Your keyboard',
     this.stringOtherInstrumentEn
