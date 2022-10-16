@@ -3,8 +3,8 @@ import { resolve, relative } from 'path';
 import { writeFileSync } from 'fs';
 
 const builtAt = new Date().toISOString();
-const sha = (process.env['CI']
-  ? process.env['CI_COMMIT_SHA']
+const sha = (process.env['GITHUB_SHA']
+  ? process.env['GITHUB_SHA']
   : execSync('git rev-parse HEAD')
 )
   .toString()
