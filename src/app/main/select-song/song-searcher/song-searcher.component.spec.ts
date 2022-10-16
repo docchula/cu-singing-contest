@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SongSearcherComponent } from './song-searcher.component';
+import {CoreModule} from '../../../core/core.module';
+import {SharedModule} from '../../../shared/shared.module';
 
 describe('SongSearcherComponent', () => {
   let component: SongSearcherComponent;
@@ -8,6 +10,7 @@ describe('SongSearcherComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [SharedModule, CoreModule],
       declarations: [ SongSearcherComponent ]
     })
     .compileComponents();

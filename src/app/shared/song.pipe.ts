@@ -10,7 +10,7 @@ export class SongPipe implements PipeTransform {
   constructor(@Inject(LOCALE_ID) private localeId: string) { }
 
   transform(value: Song, args?: any): any {
-    if ((value as Object).hasOwnProperty('name')) {
+    if ((value as Object)?.hasOwnProperty('name')) {
       return `${value.artist} - ${value.name}`;
     } else {
       if (this.localeId === 'th') {

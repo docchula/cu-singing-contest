@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ShowBoardComponent } from './show-board.component';
+import {CoreModule} from '../core/core.module';
 
 describe('ShowBoardComponent', () => {
   let component: ShowBoardComponent;
@@ -8,6 +9,7 @@ describe('ShowBoardComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [CoreModule],
       declarations: [ ShowBoardComponent ]
     })
     .compileComponents();

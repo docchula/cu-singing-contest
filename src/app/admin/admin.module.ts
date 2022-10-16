@@ -18,7 +18,7 @@ import { ChangeDayComponent } from './change-day/change-day.component';
 import { SetSongSecondRoundComponent } from './set-song-second-round/set-song-second-round.component';
 
 @NgModule({
-  imports: [CommonModule, AdminRoutingModule, SharedModule, LiveModule, SharedModule],
+  imports: [CommonModule, AdminRoutingModule, SharedModule, LiveModule],
   declarations: [
     AdminComponent,
     SlipCheckComponent,

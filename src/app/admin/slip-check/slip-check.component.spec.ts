@@ -3,8 +3,11 @@ import { StatusPipe } from '../status.pipe';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SlipCheckComponent } from './slip-check.component';
+import {of} from 'rxjs';
 
-class MockAdminService { }
+class MockAdminService {
+  userList = of([]);
+}
 
 describe('SlipCheckComponent', () => {
   let component: SlipCheckComponent;

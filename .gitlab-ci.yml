@@ -1,32 +1,3 @@
-build:
-  image: node:14-alpine
-  stage: build
-  script:
-    - npm ci
-    - npm run postinstall
-    - npx ng build --localize
-    - cp -R ./dist/th/* ./dist
-    - rm -rf ./dist/th
-  artifacts:
-    paths:
-      - dist/
-    expire_in: 24 hours
-  cache:
-    key: build
-    paths:
-      - $HOME/.npm/
-
-deploy-web:
-  stage: deploy
-  image: sarunint/firebase-tools:latest
-  only:
-    refs:
-      - master
-  dependencies:
-    - build
-  script:
-    - firebase deploy --only hosting --token "$FIREBASE_TOKEN"
-
 deploy-functions:
   stage: deploy
   image: sarunint/firebase-tools:latest
@@ -40,5 +11,4 @@ deploy-functions:
     - firebase deploy --only functions --token "$FIREBASE_TOKEN"
 
 stages:
-  - build
   - deploy

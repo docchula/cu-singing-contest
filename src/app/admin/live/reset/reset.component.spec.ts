@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ResetComponent } from './reset.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {CoreModule} from '../../../core/core.module';
 
 describe('ResetComponent', () => {
   let component: ResetComponent;
@@ -8,6 +10,7 @@ describe('ResetComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule, CoreModule],
       declarations: [ ResetComponent ]
     })
     .compileComponents();

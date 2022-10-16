@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ContestantListComponent } from './contestant-list.component';
+import {AdminModule} from '../admin.module';
+import {CoreModule} from '../../core/core.module';
 
 describe('ContestantListComponent', () => {
   let component: ContestantListComponent;
@@ -8,6 +10,7 @@ describe('ContestantListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [AdminModule, CoreModule],
       declarations: [ ContestantListComponent ]
     })
     .compileComponents();

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SongNameInputComponent } from './song-name-input.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 describe('SongNameInputComponent', () => {
   let component: SongNameInputComponent;
@@ -8,6 +9,7 @@ describe('SongNameInputComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule],
       declarations: [ SongNameInputComponent ]
     })
     .compileComponents();

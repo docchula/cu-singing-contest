@@ -1,0 +1,45 @@
+name: Build & Deploy Web
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - "src/**"
+      - "package-lock.json"
+  pull_request:
+    branches: [ master ]
+    paths:
+      - "src/**"
+      - "package-lock.json"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: |
+          npm run postinstall
+          npx ng build --localize
+          cp -R ./dist/th/* ./dist
+          rm -rf ./dist/th
+      # - run: npm test
+      - name: Deploy to Web
+        if: github.event_name != 'pull_request'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CU_SINGING_CONTEST }}"
+          projectId: your-Firebase-project-ID
+          channelId: live

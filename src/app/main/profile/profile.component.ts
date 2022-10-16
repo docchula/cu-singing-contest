@@ -42,7 +42,7 @@ export class ProfileComponent implements OnInit {
         Validators.minLength(10)
       ]),
       faculty: new UntypedFormControl('', Validators.required),
-      education: new UntypedFormControl(null, Validators.required)
+      education: new UntypedFormControl('', Validators.required)
     });
     this.faculties$ = this.configService.getConfigListValue<Faculty>('faculties');
     this.profile$ = this.userService.getUserObjectValue('profile');
