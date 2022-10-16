@@ -4,11 +4,13 @@ on:
   push:
     branches: [ master ]
     paths:
+      - ".github/workflows/build.yml"
       - "src/**"
       - "package-lock.json"
   pull_request:
     branches: [ master ]
     paths:
+      - ".github/workflows/build.yml"
       - "src/**"
       - "package-lock.json"
 
@@ -28,9 +30,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm ci
+      - name: Fetch commit hash
+        run: npm run postinstall
       - name: Build
         run: |
-          npm run postinstall
           npx ng build --localize
           cp -R ./dist/th/* ./dist
           rm -rf ./dist/th
@@ -41,5 +44,5 @@ jobs:
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CU_SINGING_CONTEST }}"
-          projectId: your-Firebase-project-ID
+          projectId: cu-singing-contest
           channelId: live
