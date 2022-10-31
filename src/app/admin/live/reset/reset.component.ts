@@ -27,7 +27,11 @@ export class ResetComponent implements OnInit {
           day: this.dayInput.value
         })).then(res => {
           if (res.data.success) {
-            alert('Reset เรียบร้อย');
+            if (res.data.reason) {
+              alert(`Reset เรียบร้อย (${res.data.reason})`);
+            } else {
+              alert('Reset เรียบร้อย');
+            }
           } else {
             alert(`Reset ไม่ได้ เนื่องจาก ${res.data.reason}`);
           }

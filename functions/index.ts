@@ -11,7 +11,7 @@ const appSecret = functions.config().chula_sso.app_secret;
 
 admin.initializeApp();
 
-export const chulaSso = functions.https.onCall(async (data, context) => {
+export const chulaSso = functions.https.onCall(async (data) => {
   const ticket = data.ticket;
   try {
     const response = await axios.get(
@@ -45,8 +45,11 @@ export const chulaSso = functions.https.onCall(async (data, context) => {
   }
 });
 
-export const resetDay = functions.https.onCall(async (data, context) => {
-  const out: any = {};
+export const resetDay = functions.https.onCall(async (data) => {
+  const out = {
+    success: false,
+    reason: "",
+  };
   const dayToReset = data.day;
   const dayKey = `day${dayToReset}`;
   await admin
@@ -91,62 +94,68 @@ export const resetDay = functions.https.onCall(async (data, context) => {
       .ref("config/dayFolders")
       .child(`day${dayToReset}`);
   const dayFolderId = (await dayRef.once("value")).val();
-  try {
+  if (dayFolderId) {
     try {
-      await drive.files.delete({
-        auth: jwtClient,
-        fileId: dayFolderId,
-        supportsAllDrives: true,
-      });
-    } catch (e) {
-      // Allow failure, in that case, we trash it instead.
       try {
-        await drive.files.update({
+        await drive.files.delete({
           auth: jwtClient,
           fileId: dayFolderId,
           supportsAllDrives: true,
-          requestBody: {
-            trashed: true,
-          },
         });
       } catch (e) {
-        // Still allow failure, in that case, it is not created yet.
+        // Allow failure, in that case, we trash it instead.
+        try {
+          await drive.files.update({
+            auth: jwtClient,
+            fileId: dayFolderId,
+            supportsAllDrives: true,
+            requestBody: {
+              trashed: true,
+            },
+          });
+        } catch (e) {
+          // Still allow failure, in that case, it is not created yet.
+        }
       }
-    }
-    const parentFolderIdRef = admin
-        .database()
-        .ref("config/dayParentFolder")
-        .once("value");
-    const parentFolderId = (await parentFolderIdRef).val();
-    try {
-      const createResult = await drive.files.create({
-        auth: jwtClient,
-        requestBody: {
-          name: `Day${dayToReset}`,
-          mimeType: "application/vnd.google-apps.folder",
-          parents: [parentFolderId],
-        },
-        supportsAllDrives: true,
-      });
-      await dayRef.set(createResult.data.id);
-      out.success = true;
-      return out;
+      const parentFolderIdRef = admin
+          .database()
+          .ref("config/dayParentFolder")
+          .once("value");
+      const parentFolderId = (await parentFolderIdRef).val();
+      try {
+        const createResult = await drive.files.create({
+          auth: jwtClient,
+          requestBody: {
+            name: `Day${dayToReset}`,
+            mimeType: "application/vnd.google-apps.folder",
+            parents: [parentFolderId],
+          },
+          supportsAllDrives: true,
+        });
+        await dayRef.set(createResult.data.id);
+        out.success = true;
+        return out;
+      } catch (e) {
+        console.log(e);
+        out.success = false;
+        out.reason = "Cannot create folder";
+        return out;
+      }
     } catch (e) {
       console.log(e);
       out.success = false;
-      out.reason = "Cannot create folder";
+      out.reason = "Google API JWT failed";
       return out;
     }
-  } catch (e) {
-    console.log(e);
-    out.success = false;
-    out.reason = "Google API JWT failed";
+  } else {
+    out.success = true;
+    out.reason = "Skipped drive management due to no folder found";
     return out;
   }
 });
 
 export const registerContestant = functions.https.onCall(
-    async (data, context) => {
+    async (data) => {
       const uid: string = data.uid;
       const out: any = {};
       // Get Contestant Information
