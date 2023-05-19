@@ -1,10 +1,5 @@
 import { Injectable, Inject, LOCALE_ID } from '@angular/core';
-import {
-  CanActivate,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  Router
-} from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { UserService } from '../core/user/user.service';
 import { ConfigService } from '../core/config/config.service';
@@ -13,7 +8,7 @@ import { first, switchMap, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class PostPayGuard implements CanActivate {
+export class PostPayGuard  {
   constructor(
     @Inject(LOCALE_ID) private locale_id: string,
     private router: Router,

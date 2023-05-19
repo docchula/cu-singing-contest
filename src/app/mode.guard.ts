@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  CanLoad,
-  Route,
-  Router,
-  RouterStateSnapshot
-} from '@angular/router';
+import { ActivatedRouteSnapshot, Route, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 
@@ -14,7 +7,7 @@ import { environment } from '../environments/environment';
 import { ConfigService } from './core/config/config.service';
 
 @Injectable()
-export class ModeGuard implements CanActivate, CanLoad {
+export class ModeGuard  {
   constructor(private configService: ConfigService, private router: Router) {}
 
   canActivate(

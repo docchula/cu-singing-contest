@@ -1,10 +1,5 @@
 import { Inject, Injectable, LOCALE_ID } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  Router,
-  RouterStateSnapshot
-} from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
 import { ConfigService } from '../core/config/config.service';
@@ -13,7 +8,7 @@ import { UserService } from '../core/user/user.service';
 @Injectable({
   providedIn: 'root'
 })
-export class PostSelectDayAndSongGuard implements CanActivate {
+export class PostSelectDayAndSongGuard  {
   constructor(
     @Inject(LOCALE_ID) private locale_id: string,
     private router: Router,
