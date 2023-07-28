@@ -1,8 +1,8 @@
-@import '~bulma/sass/utilities/initial-variables';
+@import '../node_modules/bulma/sass/utilities/initial-variables';
 
 $family-sans-serif: "Roboto", "Trirong", sans-serif;
 
-@import '~bulma/bulma';
+@import '../node_modules/bulma/bulma';
 
 .ng-valid.ng-dirty,
 cusc-title.ng-valid.ng-dirty > .field > .control > .select,
